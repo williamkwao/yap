@@ -17,7 +17,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <React.Fragment>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
             © 2018, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>
         </div>
-      </>
+      </React.Fragment>
     )}
   />
 )
