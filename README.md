@@ -4,8 +4,6 @@
  Yap DC Website
 </h1>
 
-
-## 🚀 Quick start
 1.  **Run Website**
 
     gatsby develop
