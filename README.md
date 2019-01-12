@@ -7,9 +7,8 @@
 1.  **Run Website**
 
     gatsby develop
-    ```
 
-1.  **Open the source code and start editing!**
+2.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
