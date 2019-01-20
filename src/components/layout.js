@@ -28,7 +28,7 @@ const Layout = ({ children }) => (
           }}
         >
           {children}
-          <footer>© 2018</footer>
+          <footer />
         </div>
       </React.Fragment>
     )}
