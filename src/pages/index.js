@@ -9,7 +9,7 @@ const LandingSection = styled.section`
   /* Dextop Styles */
   @media (min-width: 992px) {
     display: grid;
-    grid-template-columns: 400px 700px;
+    grid-template-columns: 30% 70%;
   }
 `
 const YapMission = styled.div`
@@ -25,7 +25,7 @@ const YapMission = styled.div`
   }
 
   @media (min-width: 992px) {
-    margin-right: 20px;
+    padding-right: 20px;
   }
 `
 const IndexPage = () => (

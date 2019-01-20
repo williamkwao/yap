@@ -11,9 +11,11 @@ import {
 } from './headerStyles'
 
 const menuItems = [
-  { text: 'MEET THE TEAM' },
-  { text: "SPEAKER'S CORNER" },
+  { text: 'ABOUT' },
   { text: 'UPCOMING EVENTS' },
+  { text: 'MEMBERSHIP' },
+  { text: 'LEADERSHIP' },
+  { text: 'CONTACT' },
 ]
 class Header extends Component {
   state = {
