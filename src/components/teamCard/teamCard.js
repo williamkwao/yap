@@ -1,22 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import roseImage from '../../images/rose.png'
+import PropTypes from 'prop-types'
 const YapTeamCard = styled.div`
   transition: 0.5s;
   position: relative;
   height: 330px;
   width: 274px;
-  .position {
+  text-transform: uppercase;
+  .sub-text {
     font-size: 0px;
     transition: 0.5s;
   }
   :hover {
-    .position {
+    .sub-text {
       font-size: 18px;
     }
     .img-description {
       background-color: #fcbc19;
-      /* margin-top: -175px; */
     }
   }
   img {
@@ -50,17 +50,22 @@ const YapTeamCard = styled.div`
   }
 `
 
-const TeamCard = () => (
+const TeamCard = props => (
   <YapTeamCard>
-    <img src={roseImage} />
+    <img src={props.image} />
     <div className="img-description">
       <div>
-        <h2>ROSE</h2>
-        <h2>ESSIEM</h2>
-        <h4 className="position">PRESIDENT</h4>
+        <h2>{props.firstName}</h2>
+        <h2>{props.lastName}</h2>
+        <h4 className="sub-text">{props.subText}</h4>
       </div>
     </div>
   </YapTeamCard>
 )
-
+TeamCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string,
+  subText: PropTypes.string,
+}
 export default TeamCard
