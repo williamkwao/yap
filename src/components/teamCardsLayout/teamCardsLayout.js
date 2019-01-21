@@ -72,9 +72,10 @@ const TeamCardsLayout = () => (
   <TeamCardsLayoutDiv>
     <h1>MEET THE TEAM</h1>
     <div className="cards">
-      {TeamMembersData.map(member => {
+      {TeamMembersData.map((member, index) => {
         return (
           <TeamCard
+            key={index}
             image={member.image}
             firstName={member.firstName}
             lastName={member.lastName}
