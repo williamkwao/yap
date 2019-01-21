@@ -59,10 +59,21 @@ const TeamCardsLayoutDiv = styled.div`
   margin: auto;
   margin-top: 10px;
 
+  :hover {
+    h1 {
+      color: #fcbc19;
+    }
+  }
+  h1 {
+    transition: 0.5s;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
   @media (min-width: 992px) {
     padding: 35px;
     .cards {
-      display: grid;
       grid-template-columns: 25% 25% 25% 25%;
     }
   }
