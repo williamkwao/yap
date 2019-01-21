@@ -7,6 +7,9 @@ import Slider from '../components/slider/slider'
 import { TeamCardsLayout } from '../components'
 
 const LandingSection = styled.section`
+  overflow-x: hidden;
+  overflow-y: visible;
+
   /* Dextop Styles */
   @media (min-width: 992px) {
     display: grid;
