@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Slider from '../components/slider/slider'
+import { TeamCardsLayout } from '../components'
 
 const LandingSection = styled.section`
   /* Dextop Styles */
@@ -25,7 +26,8 @@ const YapMission = styled.div`
   }
 
   @media (min-width: 992px) {
-    padding-right: 20px;
+    padding-right: 35px;
+    padding-left: 35px;
   }
 `
 const IndexPage = () => (
@@ -44,6 +46,9 @@ const IndexPage = () => (
       </YapMission>
       <Slider />
     </LandingSection>
+    <section>
+      <TeamCardsLayout />
+    </section>
   </Layout>
 )
 

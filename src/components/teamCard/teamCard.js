@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 const YapTeamCard = styled.div`
+  display: inline-block;
   transition: 0.5s;
   position: relative;
   height: 330px;
-  width: 274px;
+  width: 100%;
   text-transform: uppercase;
   .sub-text {
     font-size: 0px;
@@ -21,7 +22,7 @@ const YapTeamCard = styled.div`
   }
   img {
     height: 330px;
-    width: 274px;
+    width: 100%;
     object-fit: cover;
     margin-bottom: 0px;
   }
@@ -32,14 +33,14 @@ const YapTeamCard = styled.div`
     bottom: 0px;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
-    width: 274px;
+    width: 100%;
     font-size: 36px;
     padding-left: 30px;
     padding-top: 8px;
     overflow: hidden;
 
     h2 {
-      margin-bottom: 10px;
+      margin-bottom: 7px;
     }
 
     div {

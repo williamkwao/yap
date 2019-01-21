@@ -15,8 +15,19 @@ const YapSlider = styled.div`
       img {
         width: 100%;
         object-fit: cover;
-        height:400px;
+        height: 400px;
       }
+    }
+  }
+
+  @media (min-width: 992px) {
+    .slick-track {
+      .slide-div {
+        /* height: 400px !important; */
+
+        img {
+          height: 500px;
+        }
       }
     }
   }
