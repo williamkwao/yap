@@ -8,7 +8,8 @@ import { TeamCardsLayout } from '../components'
 
 const LandingSection = styled.section`
   overflow-x: hidden;
-
+  padding-right: 5px;
+  padding-left: 5px;
   /* Dextop Styles */
   @media (min-width: 992px) {
     padding-right: 35px;
@@ -18,8 +19,14 @@ const LandingSection = styled.section`
   }
 `
 const YapMission = styled.div`
+  :hover {
+    h1 {
+      color: #fcbc19;
+    }
+  }
   h1 {
-    color: #fcbc19;
+    transition: 0.5s;
+    text-transform: uppercase;
   }
 
   a {
