@@ -8,10 +8,11 @@ import { TeamCardsLayout } from '../components'
 
 const LandingSection = styled.section`
   overflow-x: hidden;
-  overflow-y: visible;
 
   /* Dextop Styles */
   @media (min-width: 992px) {
+    padding-right: 35px;
+    padding-left: 35px;
     display: grid;
     grid-template-columns: 30% 70%;
   }
@@ -29,8 +30,6 @@ const YapMission = styled.div`
   }
 
   @media (min-width: 992px) {
-    padding-right: 35px;
-    padding-left: 35px;
   }
 `
 const IndexPage = () => (
