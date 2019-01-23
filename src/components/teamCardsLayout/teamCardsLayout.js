@@ -81,7 +81,7 @@ const TeamCardsLayoutDiv = styled.div`
 
 const TeamCardsLayout = () => (
   <TeamCardsLayoutDiv>
-    <h1>MEET THE TEAM</h1>
+    <h1>LEADERSHIP</h1>
     <div className="cards">
       {TeamMembersData.map((member, index) => {
         return (
