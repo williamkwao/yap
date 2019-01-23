@@ -1,29 +1,26 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Slider from '../components/slider/slider'
-import { TeamCardsLayout } from '../components'
+import { TeamCardsLayout, Layout, Slider, SEO } from '../components'
 
 const LandingSection = styled.section`
   overflow-x: hidden;
   padding-right: 5px;
   padding-left: 5px;
-  /* Dextop Styles */
-  @media (min-width: 992px) {
-    padding-right: 35px;
-    padding-left: 35px;
-    display: grid;
-    grid-template-columns: 30% 70%;
-  }
-`
-const YapMission = styled.div`
   :hover {
     h1 {
       color: #fcbc19;
     }
   }
+  /* Dextop Styles */
+  @media (min-width: 992px) {
+    padding-right: 35px;
+    padding-left: 35px;
+    display: grid;
+    grid-template-columns: 32% 68%;
+  }
+`
+const YapMission = styled.div`
   h1 {
     transition: 0.5s;
     text-transform: uppercase;
