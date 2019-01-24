@@ -11,7 +11,7 @@ import {
 } from './headerStyles'
 
 const menuItems = [
-  { text: 'ABOUT' },
+  { text: 'ABOUT YAP' },
   { text: 'UPCOMING EVENTS' },
   { text: 'MEMBERSHIP' },
   { text: 'LEADERSHIP' },
