@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { TeamCardsLayout, Layout, Slider, SEO } from '../components'
+import SVGIcon from '../components/SVGIcon'
 
 const LandingSection = styled.section`
   overflow-x: hidden;
@@ -36,6 +37,20 @@ const YapMission = styled.div`
   @media (min-width: 992px) {
   }
 `
+const SocialMediaIcons = styled.div`
+  .logo-div {
+    svg {
+      :hover path {
+        fill: #fcbc19;
+      }
+    }
+    svg {
+      margin: 9px;
+      padding: 5px;
+      width: 32px;
+    }
+  }
+`
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`YAP`, 'Young African Professionals']} />
@@ -49,6 +64,34 @@ const IndexPage = () => (
         <a href="#">
           <p>Learn More About YAP’s Offerings</p>
         </a>
+        <SocialMediaIcons>
+          <div className="logo-div">
+            <SVGIcon
+              name="twitter"
+              width={30}
+              fill="#000"
+              link="https://twitter.com/yapdc"
+            />
+            <SVGIcon
+              name="facebook"
+              width={30}
+              fill="#000"
+              link="https://www.facebook.com/YAPDCNetwork/"
+            />
+            <SVGIcon
+              name="instagram"
+              width={30}
+              fill="#000"
+              link="https://www.instagram.com/yap.dc/"
+            />
+            <SVGIcon
+              name="linkedin"
+              width={30}
+              fill="#000"
+              link="https://www.linkedin.com/in/yap-dc-652259148/"
+            />
+          </div>
+        </SocialMediaIcons>
       </YapMission>
       <Slider />
     </LandingSection>
