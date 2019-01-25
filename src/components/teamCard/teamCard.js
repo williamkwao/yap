@@ -5,7 +5,7 @@ const YapTeamCard = styled.div`
   display: inline-block;
   transition: 0.5s;
   position: relative;
-  height: 330px;
+  height: 320px;
   width: 100%;
   text-transform: uppercase;
   .sub-text {
@@ -21,7 +21,7 @@ const YapTeamCard = styled.div`
     }
   }
   img {
-    height: 330px;
+    height: 320px;
     width: 100%;
     object-fit: cover;
     margin-bottom: 0px;
@@ -35,7 +35,7 @@ const YapTeamCard = styled.div`
     color: #fff;
     width: 100%;
     font-size: 36px;
-    padding-left: 30px;
+    padding-left: 8px;
     padding-top: 8px;
     overflow: hidden;
 
@@ -47,6 +47,16 @@ const YapTeamCard = styled.div`
       border-left: 2px solid #ffffff;
       padding-left: 10px;
       padding-bottom: 5px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    height: 330px;
+    .img-description {
+      padding-left: 30px;
+    }
+    img {
+      height: 330px;
     }
   }
 `

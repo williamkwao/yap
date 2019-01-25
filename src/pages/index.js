@@ -50,6 +50,7 @@ const SocialMediaIcons = styled.div`
 `
 const EventsSection = styled.section`
   min-height: 800px;
+  padding: 15px;
   :hover {
     h1 {
       color: #fcbc19;
