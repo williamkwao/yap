@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { TeamCardsLayout, Layout, Slider, SEO } from '../components'
+import { TeamCardsLayout, Layout, Slider, SEO, Events } from '../components'
 import SVGIcon from '../components/SVGIcon'
 
 const LandingSection = styled.section`
@@ -33,9 +33,6 @@ const YapMission = styled.div`
   a:hover {
     color: #fcbc19;
   }
-
-  @media (min-width: 992px) {
-  }
 `
 const SocialMediaIcons = styled.div`
   .logo-div {
@@ -48,6 +45,26 @@ const SocialMediaIcons = styled.div`
       margin: 9px;
       padding: 5px;
       width: 32px;
+    }
+  }
+`
+const EventsSection = styled.section`
+  :hover {
+    h1 {
+      color: #fcbc19;
+      transition: 0.5s;
+    }
+  }
+  h1 {
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 992px) {
+    padding: 80px 35px;
+
+    h1 {
+      margin-bottom: 60px;
     }
   }
 `
@@ -95,6 +112,10 @@ const IndexPage = () => (
       </YapMission>
       <Slider />
     </LandingSection>
+    <EventsSection>
+      <h1>Upcoming Events</h1>
+      <Events />
+    </EventsSection>
     <section>
       <TeamCardsLayout />
     </section>
