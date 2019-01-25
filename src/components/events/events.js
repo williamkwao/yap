@@ -32,7 +32,7 @@ const YapEvents = styled.ul`
   li {
     border: 2px solid #000;
     border-bottom: 1px solid;
-    padding: 18px;
+    padding: 12px;
     margin-bottom: 0px;
     max-width: 100%;
     display: grid;
@@ -93,6 +93,7 @@ const YapEvents = styled.ul`
       grid-template-columns: 30% 40% 30%;
       grid-template-areas: 'date-time name address';
       margin-right: 1px;
+      padding: 18px;
 
       .name {
         padding: 0px 5px;

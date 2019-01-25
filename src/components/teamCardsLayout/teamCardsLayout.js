@@ -58,6 +58,7 @@ const TeamCardsLayoutDiv = styled.div`
   max-width: 100%;
   margin: auto;
   margin-top: 10px;
+  padding: 15px;
 
   :hover {
     h1 {
@@ -70,11 +71,15 @@ const TeamCardsLayoutDiv = styled.div`
   .cards {
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
   }
   @media (min-width: 992px) {
     padding: 35px;
     .cards {
       grid-template-columns: 25% 25% 25% 25%;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
     }
   }
 `
