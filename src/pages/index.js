@@ -49,6 +49,7 @@ const SocialMediaIcons = styled.div`
   }
 `
 const EventsSection = styled.section`
+  min-height: 800px;
   :hover {
     h1 {
       color: #fcbc19;
