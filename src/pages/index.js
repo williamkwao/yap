@@ -1,8 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { TeamCardsLayout, Layout, Slider, SEO, Events } from '../components'
-import SVGIcon from '../components/SVGIcon'
+import {
+  TeamCardsLayout,
+  Layout,
+  Slider,
+  SEO,
+  Events,
+  SocialMediaIcons,
+} from '../components'
 
 const LandingSection = styled.section`
   overflow-x: hidden;
@@ -32,20 +37,6 @@ const YapMission = styled.div`
   }
   a:hover {
     color: #fcbc19;
-  }
-`
-const SocialMediaIcons = styled.div`
-  .logo-div {
-    svg {
-      :hover path {
-        fill: #fcbc19;
-      }
-    }
-    svg {
-      margin: 9px;
-      padding: 5px;
-      width: 32px;
-    }
   }
 `
 const EventsSection = styled.section`
@@ -80,37 +71,10 @@ const IndexPage = () => (
           We provide connections to invauable resources through our network,
           facilitate professional development in workshops.
         </p>
-        <a href="#">
+        <a href="/">
           <p>Learn More About YAP’s Offerings</p>
         </a>
-        <SocialMediaIcons>
-          <div className="logo-div">
-            <SVGIcon
-              name="twitter"
-              width={30}
-              fill="#000"
-              link="https://twitter.com/yapdc"
-            />
-            <SVGIcon
-              name="facebook"
-              width={30}
-              fill="#000"
-              link="https://www.facebook.com/YAPDCNetwork/"
-            />
-            <SVGIcon
-              name="instagram"
-              width={30}
-              fill="#000"
-              link="https://www.instagram.com/yap.dc/"
-            />
-            <SVGIcon
-              name="linkedin"
-              width={30}
-              fill="#000"
-              link="https://www.linkedin.com/in/yap-dc-652259148/"
-            />
-          </div>
-        </SocialMediaIcons>
+        <SocialMediaIcons />
       </YapMission>
       <Slider />
     </LandingSection>
