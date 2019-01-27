@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import logo from './yaplogo.png'
 import toggleIcon from './toggleIcon.png'
 import closeIcon from './close.png'
+import SocialMediaIcons from '../socialMedia/socialmedia'
 import {
   YapHeader,
   MobileNavDraw,
@@ -51,6 +52,7 @@ class Header extends Component {
             <img src={closeIcon} alt="close mobile draw button" />
           </NoStyleButton>
           {generateMenuItemsList()}
+          <SocialMediaIcons />
         </MobileNavDraw>
       </React.Fragment>
     )
