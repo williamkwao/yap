@@ -67,7 +67,6 @@ const EventsSection = styled.section`
 const MemberSection = styled.section`
   padding: 60px 15px;
   display: grid;
-  font-family: georgia, serif;
   :hover {
     h2 {
       color: #fcbc19;
