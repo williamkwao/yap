@@ -41,8 +41,8 @@ const YapMission = styled.div`
   }
 `
 const EventsSection = styled.section`
-  min-height: 800px;
-  padding: 15px;
+  min-height: 720px;
+  padding: 60px 15px;
   :hover {
     h1 {
       color: #fcbc19;
@@ -55,6 +55,7 @@ const EventsSection = styled.section`
   }
 
   @media (min-width: 992px) {
+    min-height: 800px;
     padding: 80px 35px;
 
     h1 {
@@ -64,7 +65,7 @@ const EventsSection = styled.section`
 `
 
 const MemberSection = styled.section`
-  padding: 15px;
+  padding: 60px 15px;
   display: grid;
   font-family: georgia, serif;
   :hover {
@@ -91,6 +92,7 @@ const MemberSection = styled.section`
     color: #fff;
     padding: 19px 52px;
     transition: 0.5s;
+    border: none;
   }
   .yap-app-screenshot {
     display: none;
