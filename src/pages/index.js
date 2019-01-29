@@ -7,6 +7,7 @@ import {
   SEO,
   Events,
   SocialMediaIcons,
+  LandingSectionCard,
 } from '../components'
 import yapAppImg from '../images/yap-app.png'
 
@@ -108,6 +109,12 @@ const MemberSection = styled.section`
     }
   }
 `
+const YapSection = styled.section`
+  padding: 15px;
+  @media (min-width: 992px) {
+    padding: 25px;
+  }
+`
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`YAP`, 'Young African Professionals']} />
@@ -125,6 +132,9 @@ const IndexPage = () => (
       </YapMission>
       <Slider />
     </LandingSection>
+    <YapSection>
+      <LandingSectionCard />
+    </YapSection>
     <EventsSection>
       <h1>Upcoming Events</h1>
       <Events />
