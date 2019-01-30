@@ -8,9 +8,7 @@ export const YapSocialMediaIcons = styled.div`
       }
     }
     svg {
-      margin: 9px;
-      padding: 5px;
-      width: 32px;
+      margin-right: 14px;
     }
   }
 `
