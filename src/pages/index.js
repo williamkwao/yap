@@ -29,6 +29,8 @@ const LandingSection = styled.section`
   }
 `
 const YapMission = styled.div`
+  margin-right: 81px;
+  position: relative;
   h1 {
     transition: 0.5s;
     text-transform: uppercase;
@@ -39,6 +41,14 @@ const YapMission = styled.div`
   }
   a:hover {
     color: #fcbc19;
+  }
+  .social-icons {
+    display: none;
+    @media (min-width: 992px) {
+      display: block;
+      position: absolute;
+      bottom: 25px;
+    }
   }
 `
 const EventsSection = styled.section`
@@ -120,10 +130,15 @@ const IndexPage = () => (
     <SEO title="Home" keywords={[`YAP`, 'Young African Professionals']} />
     <LandingSection>
       <YapMission>
-        <h1>What We Do</h1>
+        <h1>WHO WE ARE</h1>
         <p>
-          We provide connections to invauable resources through our network,
-          facilitate professional development in workshops.
+          The Young African Professionals DC Network (YAP DC) is a 501(c)3
+          organization based in Washington, D.C. Since its inception in 2002,
+          YAP DC has grown into a respected network of more than 10,000 young
+          African professionals across the DC Metro area and the diaspora. Our
+          mission is to address the professional needs of young Africans in the
+          diaspora; support more Africans in positions of power and influence;
+          and positively influence narratives about the continent.
         </p>
         <a href="/">
           <p>Learn More About YAP’s Offerings</p>
