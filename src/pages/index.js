@@ -43,9 +43,12 @@ const YapMission = styled.div`
   }
   .social-icons {
     display: none;
-    @media (min-width: 992px) {
+  }
+
+  @media (min-width: 992px) {
+    margin-right: 81px;
+    .social-icons {
       display: block;
-      margin-right: 81px;
       position: absolute;
       bottom: 25px;
     }
