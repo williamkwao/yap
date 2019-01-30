@@ -63,13 +63,31 @@ export const MobileNavDraw = styled.aside`
   right: 0;
   top: 0;
   background-color: #fcbc19;
-  min-height: 100%;
   position: fixed;
-  display: block;
+  visibility: hidden;
   z-index: 1000;
   width: 0;
+  height: 0px;
+  min-height: 0px;
   overflow-x: hidden;
+  transition: padding 5s ease-out;
   transition: 0.5s;
+  border-bottom-left-radius: 410px;
+  border-top-left-radius: 10px;
+  padding-bottom: 100px !important;
+  padding-right: 0px;
+  /* padding: 23px 18px 10px 5px; */
+  .social-icons {
+    text-align: right;
+    .logo-div {
+      svg {
+        :hover path {
+          fill: #fff !important;
+        }
+      }
+    }
+  }
+
   button {
     :focus {
       border: none;
@@ -87,6 +105,12 @@ export const MobileNavDraw = styled.aside`
   li {
     text-align: right;
     display: block;
+    font-size: 20px;
+    margin-bottom: 25px;
+
+    :hover {
+      color: #fff;
+    }
   }
 
   @media (min-width: 992px) {
@@ -103,6 +127,8 @@ export const NoStyleButton = styled.button`
   border: none;
 `
 export const openDrawerStyle = {
-  padding: '23px 18px 10px 5px',
-  width: '270px',
+  width: '355px',
+  minHeight: '75%',
+  paddingRight: '18px',
+  visibility: 'visible',
 }
