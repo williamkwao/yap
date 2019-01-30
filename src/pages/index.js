@@ -29,7 +29,6 @@ const LandingSection = styled.section`
   }
 `
 const YapMission = styled.div`
-  margin-right: 81px;
   position: relative;
   h1 {
     transition: 0.5s;
@@ -46,6 +45,7 @@ const YapMission = styled.div`
     display: none;
     @media (min-width: 992px) {
       display: block;
+      margin-right: 81px;
       position: absolute;
       bottom: 25px;
     }
