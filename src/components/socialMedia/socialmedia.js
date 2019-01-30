@@ -3,7 +3,7 @@ import SVGIcon from './SVGIcon'
 import { YapSocialMediaIcons } from './socialMediaStyles'
 
 const SocialMediaIcons = props => (
-  <YapSocialMediaIcons>
+  <YapSocialMediaIcons className="social-icons">
     <div className="logo-div">
       <SVGIcon
         name="twitter"
