@@ -13,17 +13,8 @@ import yapAppImg from '../images/yap-app.png'
 
 const LandingSection = styled.section`
   overflow-x: hidden;
-  padding-right: 5px;
-  padding-left: 5px;
-  :hover {
-    h1 {
-      color: #fcbc19;
-    }
-  }
   /* Dextop Styles */
   @media (min-width: 992px) {
-    padding-right: 35px;
-    padding-left: 35px;
     display: grid;
     grid-template-columns: 32% 68%;
   }
@@ -55,14 +46,7 @@ const YapMission = styled.div`
   }
 `
 const EventsSection = styled.section`
-  min-height: 720px;
-  padding: 60px 15px;
-  :hover {
-    h1 {
-      color: #fcbc19;
-      transition: 0.5s;
-    }
-  }
+  min-height: 710px;
   h1 {
     text-align: right;
     text-transform: uppercase;
@@ -70,8 +54,6 @@ const EventsSection = styled.section`
 
   @media (min-width: 992px) {
     min-height: 800px;
-    padding: 80px 35px;
-
     h1 {
       margin-bottom: 60px;
     }
@@ -79,13 +61,7 @@ const EventsSection = styled.section`
 `
 
 const MemberSection = styled.section`
-  padding: 60px 15px;
   display: grid;
-  :hover {
-    h2 {
-      color: #fcbc19;
-    }
-  }
   h2 {
     transition: 0.5s;
   }
@@ -115,7 +91,6 @@ const MemberSection = styled.section`
     }
   }
   @media (min-width: 992px) {
-    padding: 80px 35px;
     grid-template-columns: 35% 65%;
     .yap-app-screenshot {
       display: block;
@@ -124,16 +99,30 @@ const MemberSection = styled.section`
 `
 const YapSection = styled.section`
   padding: 15px;
+  .title{
+    transition: 0.5s;
+  }
+  :hover {
+   .title {
+      color: #fcbc19;
+    }
+  }
+
   @media (min-width: 992px) {
-    padding: 25px;
+
+    padding: 80px 35px;
+    .no-padding{
+       margin-top: -80px;
+    }
   }
 `
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`YAP`, 'Young African Professionals']} />
-    <LandingSection>
+    <YapSection>
+    <LandingSection className="no-padding">
       <YapMission>
-        <h1>WHO WE ARE</h1>
+        <h1 className="title">WHO WE ARE</h1>
         <p>
           The Young African Professionals DC Network (YAP DC) is a 501(c)3
           organization based in Washington, D.C. Since its inception in 2002,
@@ -150,16 +139,18 @@ const IndexPage = () => (
       </YapMission>
       <Slider />
     </LandingSection>
-    <YapSection>
       <LandingSectionCard />
     </YapSection>
+    <YapSection>
     <EventsSection>
-      <h1>Upcoming Events</h1>
+      <h1 className="title">Upcoming Events</h1>
       <Events />
     </EventsSection>
+    </YapSection>
+    <YapSection>
     <MemberSection>
       <div>
-        <h2>Become a Member of our YAP APP</h2>
+        <h2 className="title">Become a Member of our YAP APP</h2>
         <p>
           We are proud to announce our NEW professional networking app for our
           YAP DC Membership. With over 10,000 members to date, we are excited to
@@ -174,9 +165,10 @@ const IndexPage = () => (
         <img src={yapAppImg} alt="Screen shot of mobile app" />
       </div>
     </MemberSection>
-    <section>
+    </YapSection>
+    <YapSection>
       <TeamCardsLayout />
-    </section>
+    </YapSection>
   </Layout>
 )
 
