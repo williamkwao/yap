@@ -58,7 +58,6 @@ const TeamCardsLayoutDiv = styled.div`
   max-width: 100%;
   margin: auto;
   margin-top: 10px;
-  padding: 60px 15px;
   :hover {
     h1 {
       color: #fcbc19;
@@ -74,7 +73,6 @@ const TeamCardsLayoutDiv = styled.div`
     grid-row-gap: 10px;
   }
   @media (min-width: 992px) {
-    padding: 35px;
     .cards {
       grid-template-columns: 25% 25% 25% 25%;
       grid-column-gap: 0px;
