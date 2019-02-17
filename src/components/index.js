@@ -5,6 +5,7 @@ import SEO from './seo'
 import Events from './events/events'
 import SocialMediaIcons from './socialMedia/socialmedia'
 import LandingSectionCard from './landingSectionCard/landingSectionCard'
+import SplashScreen from './SplashScreen'
 export {
   TeamCardsLayout,
   Layout,
@@ -13,4 +14,5 @@ export {
   Events,
   SocialMediaIcons,
   LandingSectionCard,
+  SplashScreen,
 }
