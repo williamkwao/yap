@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import {
   TeamCardsLayout,
@@ -8,6 +8,7 @@ import {
   Events,
   SocialMediaIcons,
   LandingSectionCard,
+  SplashScreen,
 } from '../components'
 import yapAppImg from '../images/yap-app.png'
 
@@ -99,77 +100,92 @@ const MemberSection = styled.section`
 `
 const YapSection = styled.section`
   padding: 15px;
-  .title{
+  .title {
     transition: 0.5s;
   }
   :hover {
-   .title {
+    .title {
       color: #fcbc19;
     }
   }
 
   @media (min-width: 992px) {
-
     padding: 80px 35px;
-    .no-padding{
-       margin-top: -80px;
+    .no-padding {
+      margin-top: -80px;
     }
   }
 `
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`YAP`, 'Young African Professionals']} />
-    <YapSection>
-    <LandingSection className="no-padding">
-      <YapMission>
-        <h1 className="title">WHO WE ARE</h1>
-        <p>
-          The Young African Professionals DC Network (YAP DC) is a 501(c)3
-          organization based in Washington, D.C. Since its inception in 2002,
-          YAP DC has grown into a respected network of more than 10,000 young
-          African professionals across the DC Metro area and the diaspora. Our
-          mission is to address the professional needs of young Africans in the
-          diaspora; support more Africans in positions of power and influence;
-          and positively influence narratives about the continent.
-        </p>
-        <a href="/">
-          <p>Learn More About YAP’s Offerings</p>
-        </a>
-        <SocialMediaIcons />
-      </YapMission>
-      <Slider />
-    </LandingSection>
-      <LandingSectionCard />
-    </YapSection>
-    <YapSection>
-    <EventsSection>
-      <h1 className="title">Upcoming Events</h1>
-      <Events />
-    </EventsSection>
-    </YapSection>
-    <YapSection>
-    <MemberSection>
-      <div>
-        <h2 className="title">Become a Member of our YAP APP</h2>
-        <p>
-          We are proud to announce our NEW professional networking app for our
-          YAP DC Membership. With over 10,000 members to date, we are excited to
-          provide an innovative platform to continue to connect our community
-          for career development opportunities.
-        </p>
-        <a href="https://yapdc.mn.co">
-          <button>GET THE APP</button>
-        </a>
-      </div>
-      <div className="yap-app-screenshot">
-        <img src={yapAppImg} alt="Screen shot of mobile app" />
-      </div>
-    </MemberSection>
-    </YapSection>
-    <YapSection>
-      <TeamCardsLayout />
-    </YapSection>
-  </Layout>
-)
+
+class IndexPage extends Component {
+  state = {
+    splash: true,
+  }
+  componentDidMount() {
+    window.setTimeout(() => {
+      this.setState({ splash: false })
+    }, 2200)
+  }
+  render() {
+    return this.state.splash ? (
+      <SplashScreen />
+    ) : (
+      <Layout>
+        <SEO title="Home" keywords={[`YAP`, 'Young African Professionals']} />
+        <YapSection>
+          <LandingSection className="no-padding">
+            <YapMission>
+              <h1 className="title">WHO WE ARE</h1>
+              <p>
+                The Young African Professionals DC Network (YAP DC) is a 501(c)3
+                organization based in Washington, D.C. Since its inception in
+                2002, YAP DC has grown into a respected network of more than
+                10,000 young African professionals across the DC Metro area and
+                the diaspora. Our mission is to address the professional needs
+                of young Africans in the diaspora; support more Africans in
+                positions of power and influence; and positively influence
+                narratives about the continent.
+              </p>
+              <a href="/">
+                <p>Learn More About YAP’s Offerings</p>
+              </a>
+              <SocialMediaIcons />
+            </YapMission>
+            <Slider />
+          </LandingSection>
+          <LandingSectionCard />
+        </YapSection>
+        <YapSection>
+          <EventsSection>
+            <h1 className="title">Upcoming Events</h1>
+            <Events />
+          </EventsSection>
+        </YapSection>
+        <YapSection>
+          <MemberSection>
+            <div>
+              <h2 className="title">Become a Member of our YAP APP</h2>
+              <p>
+                We are proud to announce our NEW professional networking app for
+                our YAP DC Membership. With over 10,000 members to date, we are
+                excited to provide an innovative platform to continue to connect
+                our community for career development opportunities.
+              </p>
+              <a href="https://yapdc.mn.co">
+                <button>GET THE APP</button>
+              </a>
+            </div>
+            <div className="yap-app-screenshot">
+              <img src={yapAppImg} alt="Screen shot of mobile app" />
+            </div>
+          </MemberSection>
+        </YapSection>
+        <YapSection>
+          <TeamCardsLayout />
+        </YapSection>
+      </Layout>
+    )
+  }
+}
 
 export default IndexPage
