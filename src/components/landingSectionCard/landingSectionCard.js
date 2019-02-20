@@ -12,9 +12,8 @@ const TeamMembersData = [
   },
   {
     image: centerCardImage,
-    title: 'SPEAKER’S CORNER',
-    description:
-      'See some of the distinguished speakers that have presented at our events',
+    title: 'UPCOMING EVENTS',
+    description: 'See some of our upcoming events',
   },
   {
     image: rightCardImage,
@@ -40,7 +39,6 @@ const YapLandingSectionCard = styled.div`
   :hover {
     .img-description {
       background-color: #fcbc19;
-      box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
   width: 100%;
