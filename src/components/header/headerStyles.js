@@ -40,7 +40,7 @@ export const YapHeader = styled.nav`
   /* Dextop Styles */
   @media (min-width: 992px) {
     #logo {
-      width: 198px;
+      width: 170px;
     }
     #nav-toggle {
       display: none;
