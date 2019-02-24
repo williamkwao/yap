@@ -4,6 +4,7 @@ import logo from '../../images/yap-logo.png'
 import toggleIcon from './toggleIcon.png'
 import closeIcon from './close.png'
 import SocialMediaIcons from '../socialMedia/socialmedia'
+import { Link as ScrollLink } from 'react-scroll'
 import {
   YapHeader,
   MobileNavDraw,
@@ -13,10 +14,10 @@ import {
 
 const menuItems = [
   { text: 'ABOUT YAP' },
-  { text: 'UPCOMING EVENTS' },
-  { text: 'MEMBERSHIP' },
-  { text: 'LEADERSHIP' },
-  { text: 'CONTACT' },
+  { text: 'UPCOMING EVENTS', scrollLink: 'events' },
+  { text: 'MEMBERSHIP', scrollLink: 'membership' },
+  { text: 'LEADERSHIP', scrollLink: 'leadership' },
+  { text: 'CONTACT', scrollLink: 'contact' },
 ]
 class Header extends Component {
   state = {
@@ -26,9 +27,22 @@ class Header extends Component {
     const generateMenuItemsList = () => {
       return (
         <ul>
-          {menuItems.map((menuItem, index) => (
-            <li key={index}>{menuItem.text}</li>
-          ))}
+          {menuItems.map((menuItem, index) =>
+            menuItem.scrollLink ? (
+              <ScrollLink
+                to={menuItem.scrollLink}
+                spy={true}
+                smooth={true}
+                offset={20}
+                duration={500}
+                key={index}
+              >
+                <li>{menuItem.text}</li>
+              </ScrollLink>
+            ) : (
+              <li key={index}>{menuItem.text}</li>
+            )
+          )}
         </ul>
       )
     }
