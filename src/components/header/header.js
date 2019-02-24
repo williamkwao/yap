@@ -26,7 +26,7 @@ class Header extends Component {
   render() {
     const generateMenuItemsList = () => {
       let renderedMenuItems = []
-      if (window && window.location.pathname != '/') {
+      if (typeof window !== `undefined` && window.location.pathname != '/') {
         renderedMenuItems = menuItems.filter(items => !items.scrollLink)
       } else {
         renderedMenuItems = menuItems
