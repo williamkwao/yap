@@ -155,13 +155,13 @@ class IndexPage extends Component {
           </LandingSection>
           <LandingSectionCard />
         </YapSection>
-        <YapSection>
+        <YapSection id="events">
           <EventsSection>
             <h1 className="title">Upcoming Events</h1>
             <Events />
           </EventsSection>
         </YapSection>
-        <YapSection>
+        <YapSection id="membership">
           <MemberSection>
             <div>
               <h2 className="title">Become a Member of our YAP APP</h2>
@@ -180,7 +180,7 @@ class IndexPage extends Component {
             </div>
           </MemberSection>
         </YapSection>
-        <YapSection>
+        <YapSection id="leadership">
           <TeamCardsLayout />
         </YapSection>
       </Layout>
