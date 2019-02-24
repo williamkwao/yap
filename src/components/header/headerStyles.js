@@ -55,7 +55,15 @@ export const YapHeader = styled.nav`
       margin-right: 10px;
     }
     li {
+      font-weight: bold;
+      :hover {
+        color: #fcbc19;
+        text-decoration: underline;
+        cursor: pointer;
+      }
       padding: 21px;
+    }
+    a li {
     }
   }
 `
