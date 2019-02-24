@@ -5,7 +5,8 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import slide1 from '../../images/yap-meeting1.png'
-import slide2 from '../../images/yap-meeting.jpg'
+import slide2 from '../../images/slide5.jpg'
+import slide3 from '../../images/slide6.jpg'
 
 const YapSlider = styled.div`
   .slick-dots {
@@ -60,6 +61,9 @@ class Slider extends Component {
           </div>
           <div className="slide-div" alt="slide">
             <img src={slide2} />
+          </div>
+          <div className="slide-div" alt="slide">
+            <img src={slide3} />
           </div>
         </SlickSlider>
       </YapSlider>
