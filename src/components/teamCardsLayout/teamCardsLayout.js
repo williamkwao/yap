@@ -1,56 +1,34 @@
 import React from 'react'
 import TeamCard from '../teamCard/teamCard'
 import styled from 'styled-components'
-import RoseImage from '../../images/rose.png'
-import EmileImage from '../../images/emile.png'
+import RoseImage from '../../images/rose.jpg'
+import MargaretImage from '../../images/margaret.jpg'
+import AishaImage from '../../images/aisha.jpg'
+import ELizabethImage from '../../images/elizabeth.jpg'
 const TeamMembersData = [
   {
-    image: RoseImage,
-    firstName: 'Rose',
-    lastName: 'Essiem',
-    subText: 'President',
-  },
-  {
-    image: EmileImage,
-    firstName: 'Emile',
-    lastName: 'Carson',
+    image: MargaretImage,
+    firstName: 'Margaret',
+    lastName: 'Kamara',
     subText: 'President',
   },
   {
     image: RoseImage,
     firstName: 'Rose',
     lastName: 'Essiem',
-    subText: 'President',
+    subText: 'Executive Director/Board Member',
   },
   {
-    image: RoseImage,
-    firstName: 'Rose',
-    lastName: 'Essiem',
-    subText: 'President',
+    image: AishaImage,
+    firstName: 'Aisha',
+    lastName: 'Saaka',
+    subText: 'Secretary',
   },
   {
-    image: RoseImage,
-    firstName: 'Rose',
-    lastName: 'Essiem',
-    subText: 'President',
-  },
-  {
-    image: RoseImage,
-    firstName: 'Rose',
-    lastName: 'Essiem',
-    subText: 'President',
-  },
-  {
-    image: RoseImage,
-    firstName: 'Rose',
-    lastName: 'Essiem',
-    subText: 'President',
-  },
-  {
-    image: RoseImage,
-    firstName: 'Rose',
-    lastName: 'Essiem',
-    subText: 'President',
+    image: ELizabethImage,
+    firstName: 'Elizabeth',
+    lastName: 'Ogunwo',
+    subText: 'Treasurer',
   },
 ]
 
