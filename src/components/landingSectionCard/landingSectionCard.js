@@ -1,25 +1,29 @@
 import React from 'react'
+import { Link as ScrollLink } from 'react-scroll'
 import styled from 'styled-components'
 import leftCardImage from './leftCardImage.png'
 import centerCardImage from './centerCardImage.png'
 import rightCardImage from './rightCardImage.png'
-const TeamMembersData = [
+const CardData = [
   {
     image: leftCardImage,
     title: 'MEET THE TEAM',
     description:
       'Meet the crew, and get to know what we do to make the DC chapter of YAP successful',
+    link: 'leadership',
   },
   {
     image: centerCardImage,
     title: 'UPCOMING EVENTS',
     description: 'See some of our upcoming events',
+    link: 'events',
   },
   {
     image: rightCardImage,
     title: 'MEMBERSHIP',
     description:
       'Thinking of signing up? See what comes with membership, and get access to the YAP app',
+    link: 'membership',
   },
 ]
 
@@ -81,17 +85,26 @@ const YapLandingSectionCard = styled.div`
 
 const LandingSectionCard = () => (
   <LandingSectionCardDiv>
-    {TeamMembersData.map((member, index) => {
+    {CardData.map((card, index) => {
       return (
-        <YapLandingSectionCard key={index}>
-          <img src={member.image} alt="Quick menu" />
-          <div className="img-description">
-            <div>
-              <h3> {member.title}</h3>
-              <p> {member.description}</p>
+        <ScrollLink
+          to={card.link}
+          spy={true}
+          smooth={true}
+          offset={20}
+          duration={500}
+          key={index}
+        >
+          <YapLandingSectionCard>
+            <img src={card.image} alt="Quick menu" />
+            <div className="img-description">
+              <div>
+                <h3> {card.title}</h3>
+                <p> {card.description}</p>
+              </div>
             </div>
-          </div>
-        </YapLandingSectionCard>
+          </YapLandingSectionCard>
+        </ScrollLink>
       )
     })}
   </LandingSectionCardDiv>
