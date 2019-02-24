@@ -5,6 +5,7 @@ import toggleIcon from './toggleIcon.png'
 import closeIcon from './close.png'
 import SocialMediaIcons from '../socialMedia/socialmedia'
 import { Link as ScrollLink } from 'react-scroll'
+import { Link } from 'gatsby'
 import {
   YapHeader,
   MobileNavDraw,
@@ -13,11 +14,10 @@ import {
 } from './headerStyles'
 
 const menuItems = [
-  { text: 'ABOUT YAP' },
+  { text: 'ABOUT YAP', link: '/about' },
   { text: 'UPCOMING EVENTS', scrollLink: 'events' },
   { text: 'MEMBERSHIP', scrollLink: 'membership' },
   { text: 'LEADERSHIP', scrollLink: 'leadership' },
-  { text: 'CONTACT', scrollLink: 'contact' },
 ]
 class Header extends Component {
   state = {
@@ -25,9 +25,16 @@ class Header extends Component {
   }
   render() {
     const generateMenuItemsList = () => {
+      console.log('location', window.location)
+      let renderedMenuItems = []
+      if (window.location.pathname != '/') {
+        renderedMenuItems = menuItems.filter(items => !items.scrollLink)
+      } else {
+        renderedMenuItems = menuItems
+      }
       return (
         <ul>
-          {menuItems.map((menuItem, index) =>
+          {renderedMenuItems.map((menuItem, index) =>
             menuItem.scrollLink ? (
               <ScrollLink
                 to={menuItem.scrollLink}
@@ -40,7 +47,9 @@ class Header extends Component {
                 <li>{menuItem.text}</li>
               </ScrollLink>
             ) : (
-              <li key={index}>{menuItem.text}</li>
+              <Link to={menuItem.link ? menuItem.link : '/'} key={index}>
+                <li>{menuItem.text}</li>
+              </Link>
             )
           )}
         </ul>
@@ -53,7 +62,9 @@ class Header extends Component {
       <React.Fragment>
         <YapHeader>
           <div>
-            <img id="logo" src={logo} alt="yap logo" />
+            <Link to="/">
+              <img id="logo" src={logo} alt="yap logo" />
+            </Link>
           </div>
           {generateMenuItemsList()}
           <NoStyleButton onClick={toggleNavDrawer}>

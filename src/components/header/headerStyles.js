@@ -2,14 +2,18 @@ import styled from 'styled-components'
 
 export const YapHeader = styled.nav`
   background: transparent;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.2rem;
   display: flex;
   justify-content: space-between;
   padding: 26px 8px;
 
   h1 a {
-    color: black;
+    color: #000;
     text-decoration: none;
+  }
+
+  a {
+    color: #000;
   }
   #logo {
     width: 140px;
