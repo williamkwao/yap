@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 import {
   TeamCardsLayout,
   Layout,
@@ -124,7 +125,7 @@ class IndexPage extends Component {
   componentDidMount() {
     window.setTimeout(() => {
       this.setState({ splash: false })
-    }, 2200)
+    }, 1000)
   }
   render() {
     return this.state.splash ? (
@@ -146,9 +147,9 @@ class IndexPage extends Component {
                 positions of power and influence; and positively influence
                 narratives about the continent.
               </p>
-              <a href="/">
+              <Link to="/about">
                 <p>Learn More About YAP’s Offerings</p>
-              </a>
+              </Link>
               <SocialMediaIcons />
             </YapMission>
             <Slider />
