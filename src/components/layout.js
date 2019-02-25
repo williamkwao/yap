@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './header/header'
+import { Header, Footer } from './'
 import './layout.css'
 
 const Layout = ({ children }) => (
@@ -28,7 +28,7 @@ const Layout = ({ children }) => (
           }}
         >
           {children}
-          <footer />
+          <Footer />
         </div>
       </React.Fragment>
     )}
