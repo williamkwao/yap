@@ -28,6 +28,10 @@ class Header extends Component {
       let renderedMenuItems = []
       if (typeof window !== `undefined` && window.location.pathname != '/') {
         renderedMenuItems = menuItems.filter(items => !items.scrollLink)
+
+        renderedMenuItems = [{ text: 'HOME', link: '/' }].concat(
+          renderedMenuItems
+        )
       } else {
         renderedMenuItems = menuItems
       }
