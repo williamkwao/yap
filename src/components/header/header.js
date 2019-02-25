@@ -23,6 +23,23 @@ class Header extends Component {
   state = {
     showDrawer: false,
   }
+
+  componentWillMount() {
+    if (typeof document !== 'undefined') {
+      document.addEventListener('mousedown', this.handleClick, false)
+    }
+  }
+  componentWillUnmount() {
+    if (typeof document !== 'undefined') {
+      document.removeEventListener('mousedown', this.handleClick, false)
+    }
+  }
+
+  handleClick = e => {
+    if (this.node && !this.node.contains(e.target) && this.state.showDrawer) {
+      this.setState({ showDrawer: false })
+    }
+  }
   render() {
     const generateMenuItemsList = () => {
       let renderedMenuItems = []
@@ -75,7 +92,10 @@ class Header extends Component {
           </NoStyleButton>
         </YapHeader>
 
-        <MobileNavDraw style={this.state.showDrawer ? openDrawerStyle : null}>
+        <MobileNavDraw
+          ref={node => (this.node = node)}
+          style={this.state.showDrawer ? openDrawerStyle : null}
+        >
           <NoStyleButton onClick={toggleNavDrawer}>
             <img src={closeIcon} alt="close mobile draw button" />
           </NoStyleButton>
