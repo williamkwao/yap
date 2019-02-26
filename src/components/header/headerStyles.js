@@ -88,6 +88,11 @@ export const MobileNavDraw = styled.aside`
   border-top-left-radius: 10px;
   padding-bottom: 100px !important;
   padding-right: 0px;
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
   /* padding: 23px 18px 10px 5px; */
   .social-icons {
     text-align: right;
