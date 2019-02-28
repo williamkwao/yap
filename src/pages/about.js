@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout } from '../components'
+import { Layout, TeamCardsLayout } from '../components'
 import styled from 'styled-components'
 import diasporaImg from '../images/diaspora1.jpg'
 
@@ -52,6 +52,9 @@ const AboutStyle = styled.section`
         color: #fcbc19;
       }
     }
+
+    .team {
+    }
   }
 
   @media (min-width: 992px) {
@@ -65,6 +68,15 @@ const AboutStyle = styled.section`
         padding-bottom: 30px;
       }
     }
+
+    .team {
+      .img-description {
+        padding-left: 15px;
+        h2 {
+          font-size: 24px !important;
+        }
+      }
+    }
   }
 `
 
@@ -73,7 +85,6 @@ const About = () => {
     <Layout>
       <AboutStyle>
         <section className="banner-section">
-          <h1>About YAP</h1>
           <img className="banner-image" src={diasporaImg} alt="Yap Banner" />
         </section>
         <section className="text-section">
@@ -128,6 +139,9 @@ const About = () => {
               </p>
             </li>
           </ul>
+        </section>
+        <section className="text-section team">
+          <TeamCardsLayout />
         </section>
       </AboutStyle>
     </Layout>

@@ -62,7 +62,7 @@ const YapTeamCard = styled.div`
 `
 
 const TeamCard = props => (
-  <YapTeamCard>
+  <YapTeamCard className="team-card">
     <img src={props.image} alt="Team members" />
     <div className="img-description">
       <div>
