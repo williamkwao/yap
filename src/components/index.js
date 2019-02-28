@@ -8,6 +8,7 @@ import LandingSectionCard from './landingSectionCard/landingSectionCard'
 import SplashScreen from './SplashScreen'
 import Footer from './footer/footer'
 import Header from './header/header'
+import Sponsors from './sponsors/sponsors'
 export {
   TeamCardsLayout,
   Layout,
@@ -19,4 +20,5 @@ export {
   SplashScreen,
   Header,
   Footer,
+  Sponsors,
 }

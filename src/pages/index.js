@@ -10,6 +10,7 @@ import {
   SocialMediaIcons,
   LandingSectionCard,
   SplashScreen,
+  Sponsors,
 } from '../components'
 import yapAppImg from '../images/yap-app.png'
 
@@ -110,6 +111,10 @@ const YapSection = styled.section`
     }
   }
 
+  .center {
+    text-align: center;
+  }
+
   @media (min-width: 992px) {
     padding: 80px 35px;
     .no-padding {
@@ -183,6 +188,10 @@ class IndexPage extends Component {
         </YapSection>
         <YapSection id="leadership">
           <TeamCardsLayout />
+        </YapSection>
+        <YapSection>
+          <h1 className="title center">SPONSORS</h1>
+          <Sponsors />
         </YapSection>
       </Layout>
     )
