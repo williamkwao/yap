@@ -38,12 +38,14 @@ const YapSlider = styled.div`
   }
 `
 var settings = {
+  autoplay: true,
   dots: true,
   infinite: true,
-  speed: 500,
+  speed: 3000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 2000,
+  pauseOnHover: true,
 }
 class Slider extends Component {
   componentDidMount() {
