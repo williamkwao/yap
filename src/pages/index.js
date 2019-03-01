@@ -190,7 +190,7 @@ class IndexPage extends Component {
           <TeamCardsLayout />
         </YapSection>
         <YapSection>
-          <h1 className="title center">SPONSORS</h1>
+          <h1 className="title center">OUR SPONSORS</h1>
           <Sponsors />
         </YapSection>
       </Layout>
