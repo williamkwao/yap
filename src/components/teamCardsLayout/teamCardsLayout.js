@@ -13,22 +13,23 @@ const TeamMembersData = [
     subText: 'President',
   },
   {
-    image: RoseImage,
-    firstName: 'Rose',
-    lastName: 'Essiem',
-    subText: 'Executive Director/Board Member',
-  },
-  {
     image: AishaImage,
     firstName: 'Aisha',
     lastName: 'Saaka',
     subText: 'Secretary',
   },
+
   {
     image: ELizabethImage,
     firstName: 'Elizabeth',
     lastName: 'Ogunwo',
     subText: 'Treasurer',
+  },
+  {
+    image: RoseImage,
+    firstName: 'Rose',
+    lastName: 'Essiem',
+    subText: 'Executive Director/Board Member',
   },
 ]
 
@@ -61,7 +62,7 @@ const TeamCardsLayoutDiv = styled.div`
 
 const TeamCardsLayout = () => (
   <TeamCardsLayoutDiv>
-    <h1>LEADERSHIP</h1>
+    <h1>BOARD OF DIRECTORS</h1>
     <div className="cards">
       {TeamMembersData.map((member, index) => {
         return (

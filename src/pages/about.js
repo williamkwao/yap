@@ -44,6 +44,7 @@ const AboutStyle = styled.section`
     li {
       list-style: none;
       padding-bottom: 30px;
+      padding-left: 30px;
     }
 
     a {
@@ -88,21 +89,22 @@ const About = () => {
           <img className="banner-image" src={diasporaImg} alt="Yap Banner" />
         </section>
         <section className="text-section">
-          <h1>WHO WE ARE</h1>
-          <p>
-            The Young African Professionals DC Network (YAP DC) is a 501(c)3
-            organization based in Washington, D.C. Since its inception in 2002,
-            YAP DC has grown into a respected network of more than 10,000 young
-            African professionals across the DC Metro area and the diaspora. Our
-            mission is to connect young African professionals for career
-            development and opportunity creation.
-          </p>
-        </section>
-        <section className="text-section">
           <h1>WHAT WE DO</h1>
+          <p>
+            As the premier conveners of events and opportunities for young
+            African professionals in the diaspora, our mission is to connect
+            young African diaspora professionals to career development and
+            opportunity creation. We fulfill this mission providing timely and
+            relevant resources, facilitating innovative professional development
+            experiences, fostering inspirational networking, and encouraging
+            impactful community building. These goals advance our vision to
+            address the professional needs of young Africans in the diaspora;
+            support more Africans in positions of power and influence; and
+            positively influence narratives about the continent.
+          </p>
           <ul>
             <li>
-              <h3>We Provide Resources</h3>
+              <h3>Provide Resources</h3>
               <p>
                 We are excited about the growth of our network over the years.
                 Whether you are a budding entrepreneur, a recent graduate, or a
@@ -115,10 +117,10 @@ const About = () => {
               <h3>Facilitate Professional Development</h3>
               <p>
                 Whether you are considering an advanced degree or looking to
-                advance in the workplace, we can support you. Our curated
-                workshops and networking events can help you launch your
-                entrepreneurial aspirations, advance in your career, and remain
-                relevant in the global market.
+                advance in the workplace, our curated workshops and networking
+                events provide special access to unique professional development
+                opportunities, help you launch entrepreneurial aspirations and
+                advance in your career.
               </p>
             </li>
             <li>
@@ -128,7 +130,8 @@ const About = () => {
                 networking by connecting you to other ambitious, driven, young
                 diaspora professionals like you! This space is for you to
                 continue conversations after an event, meet people with similar
-                interests, and build communities of support and collaboration.
+                interests, and build communities of support and
+                collaboration.&nbsp;
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
@@ -140,8 +143,51 @@ const About = () => {
             </li>
           </ul>
         </section>
+        <section className="text-section">
+          <h1>WHO WE ARE</h1>
+          <li>
+            <p>
+              YAP DC has always been operated by dedicated and highly skilled
+              volunteers. The public and our members are our clients, and we
+              treat them as such. In late 2018, we stood up a Board of Directors
+              and re-structured our Operations Team to maintain YAP DC’s
+              501(c)(3) status and manage operational transitions from year to
+              year. The Board is the highest governing body of the organization,
+              responsible for establishing the vision, mission and overall
+              direction of the organization. Let’s meet the team.
+            </p>
+          </li>
+        </section>
         <section className="text-section team">
           <TeamCardsLayout />
+        </section>
+        <section className="text-section">
+          <h1>OPERATIONS TEAM</h1>
+          <li>
+            <p>
+              The operations team consists of volunteers who serve as the core
+              leaders in envisioning and executing the day to day matters in
+              line with the strategic priorities of the organization. Working
+              with YAP DC is an invaluable and unique experience. If you are
+              interested in being a member of the team, you can view our vacant
+              positions &nbsp;
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.idealist.org/en/nonprofit/b55e85ab2beb4d85b447f4092f56e754-young-african-professionals-dc-yap-dc-washington"
+              >
+                here.
+              </a>
+            </p>
+            <h3>MEMBERS</h3>
+            <p> Rose Essiem </p>
+            <p> Rumbidzai Mufuka</p>
+            <p> Fatmatta Wurie </p>
+            <p> Sika Dunyoh </p>
+            <p> Chinwe Emeruem</p>
+            <p> Thelma Ekeocha </p>
+            <p> Cornelia Poku</p>
+          </li>
         </section>
       </AboutStyle>
     </Layout>

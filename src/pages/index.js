@@ -68,9 +68,9 @@ const MemberSection = styled.section`
   h2 {
     transition: 0.5s;
   }
-  p {
+  /* p {
     padding-bottom: 20px;
-  }
+  } */
   button {
     :focus {
       border: none;
@@ -143,17 +143,15 @@ class IndexPage extends Component {
             <YapMission>
               <h1 className="title">WHO WE ARE</h1>
               <p>
-                The Young African Professionals DC Network (YAP DC) is a 501(c)3
-                organization based in Washington, D.C. Since its inception in
-                2002, YAP DC has grown into a respected network of more than
-                10,000 young African professionals across the DC Metro area and
-                the diaspora. Our mission is to address the professional needs
-                of young Africans in the diaspora; support more Africans in
-                positions of power and influence; and positively influence
-                narratives about the continent.
+                The Young African Professionals DC (YAP DC) is a 501(c)3
+                organization based in Washington, D.C. For 16 years, YAP DC has
+                grown into a respected network of more than 10,000 young African
+                professionals across the DC Metro area and the diaspora. Our
+                mission is to connect young African professionals for career
+                development and opportunity creation.
               </p>
               <Link to="/about">
-                <p>Learn More About YAP’s Offerings</p>
+                <p>Learn More</p>
               </Link>
               <SocialMediaIcons />
             </YapMission>
@@ -170,15 +168,51 @@ class IndexPage extends Component {
         <YapSection id="membership">
           <MemberSection>
             <div>
-              <h2 className="title">Become a Member of our YAP APP</h2>
+              <h2 className="title">Become a YAP DC Premium Member</h2>
               <p>
-                We are proud to announce our NEW professional networking app for
-                our YAP DC Membership. With over 10,000 members to date, we are
-                excited to provide an innovative platform to continue to connect
-                our community for career development opportunities.
+                If you love the opportunities that you get from the basic YAP DC
+                membership, we encourage you to step your membership up and
+                become a premium member today. A YAP DC premium membership
+                affords you opportunities to network with other professionals in
+                the diaspora and to participate in professional development
+                programs that support you at any level of your career.
               </p>
+              As a premium member, you will enjoy the following perks
+              <ul>
+                <li>
+                  Exclusive access to our virtual platform (the YAP App) to swap
+                  resources, job opportunities, advice, and ideas around
+                  building social capital and career development
+                </li>
+                <li>
+                  More than two dozen unique professional development events
+                  designed specifically for premium members - dinner and
+                  dialogue series, embassy events, fireside chat about virtual
+                  currency and development, and more.
+                </li>
+                <li>
+                  Up to a 30% discount on the Annual Georgetown Africa Business
+                  Conference
+                </li>
+                <li>
+                  Preferred seating and 10% discount on books at partnership
+                  events with Politics and Prose Bookstore.
+                </li>
+                <li>
+                  Monthly networking events to connect and engage with
+                  like-minded professionals in the DC region and beyond.
+                </li>
+                <li>
+                  A year-long enterprise membership at I/O SPACES, a loft-style
+                  penthouse workspace in Silver Spring
+                </li>
+                <li>And more in the works!</li>
+              </ul>
+              <p />
               <a href="https://yapdc.mn.co">
-                <button>GET THE APP</button>
+                <button>
+                  Sign up for premium membership through our YAP APP today!
+                </button>
               </a>
             </div>
             <div className="yap-app-screenshot">
@@ -190,7 +224,7 @@ class IndexPage extends Component {
           <TeamCardsLayout />
         </YapSection>
         <YapSection>
-          <h1 className="title center">OUR SPONSORS</h1>
+          <h1 className="title center">OUR PARTNERS AND SPONSERS</h1>
           <Sponsors />
         </YapSection>
       </Layout>

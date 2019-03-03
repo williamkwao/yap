@@ -14,16 +14,22 @@ const eventsData = [
     name: 'Ayesha Harruna Attah - The Hundred Wells of Salaga',
   },
   {
-    date: 'FEB 18',
-    time: '8am',
+    date: 'Mar 6',
+    time: '6pm',
     address: '919 19th St NW, Washington, DC 20006',
-    name: 'Global Summit',
+    name: 'Third Annual YAP DC Townhall',
   },
   {
-    date: 'SEPT 5',
+    date: 'Mar 28',
+    time: '6pm',
+    address: '919 19th St NW, Washington, DC 20006',
+    name: 'Monthly Networking Happy Hour, sponsored by Wave',
+  },
+  {
+    date: 'April 25',
     time: '7pm',
     address: '919 19th St NW, Washington, DC 20006',
-    name: 'Networking Happy Hour: Industry Roundtable',
+    name: 'Sally Nuamah at Politics and Prose',
   },
 ]
 const YapEvents = styled.ul`
