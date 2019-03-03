@@ -5,7 +5,11 @@ export const YapHeader = styled.nav`
   margin-bottom: 0.2rem;
   display: flex;
   justify-content: space-between;
-  padding: 26px 35px;
+  padding: 20px 15px;
+
+  @media (min-width: 992px) {
+    padding: 26px 35px;
+  }
 
   h1 a {
     color: #000;
