@@ -2,14 +2,18 @@ import styled from 'styled-components'
 
 export const YapHeader = styled.nav`
   background: transparent;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.2rem;
   display: flex;
   justify-content: space-between;
-  padding: 26px 8px;
+  padding: 26px 35px;
 
   h1 a {
-    color: black;
+    color: #000;
     text-decoration: none;
+  }
+
+  a {
+    color: #000;
   }
   #logo {
     width: 140px;
@@ -40,7 +44,7 @@ export const YapHeader = styled.nav`
   /* Dextop Styles */
   @media (min-width: 992px) {
     #logo {
-      width: 198px;
+      width: 170px;
     }
     #nav-toggle {
       display: none;
@@ -55,7 +59,15 @@ export const YapHeader = styled.nav`
       margin-right: 10px;
     }
     li {
+      font-weight: bold;
+      :hover {
+        color: #fcbc19;
+        text-decoration: underline;
+        cursor: pointer;
+      }
       padding: 21px;
+    }
+    a li {
     }
   }
 `
@@ -76,6 +88,11 @@ export const MobileNavDraw = styled.aside`
   border-top-left-radius: 10px;
   padding-bottom: 100px !important;
   padding-right: 0px;
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
   /* padding: 23px 18px 10px 5px; */
   .social-icons {
     text-align: right;

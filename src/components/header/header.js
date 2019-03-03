@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import logo from './yaplogo.png'
+import logo from '../../images/yap-logo.png'
 import toggleIcon from './toggleIcon.png'
 import closeIcon from './close.png'
 import SocialMediaIcons from '../socialMedia/socialmedia'
+import { Link as ScrollLink } from 'react-scroll'
+import { Link } from 'gatsby'
 import {
   YapHeader,
   MobileNavDraw,
@@ -12,23 +14,64 @@ import {
 } from './headerStyles'
 
 const menuItems = [
-  { text: 'ABOUT YAP' },
-  { text: 'UPCOMING EVENTS' },
-  { text: 'MEMBERSHIP' },
-  { text: 'LEADERSHIP' },
-  { text: 'CONTACT' },
+  { text: 'ABOUT YAP', link: '/about' },
+  { text: 'UPCOMING EVENTS', scrollLink: 'events' },
+  { text: 'MEMBERSHIP', scrollLink: 'membership' },
+  { text: 'LEADERSHIP', scrollLink: 'leadership' },
 ]
 class Header extends Component {
   state = {
     showDrawer: false,
   }
+
+  componentWillMount() {
+    if (typeof document !== 'undefined') {
+      document.addEventListener('mousedown', this.handleClick, false)
+    }
+  }
+  componentWillUnmount() {
+    if (typeof document !== 'undefined') {
+      document.removeEventListener('mousedown', this.handleClick, false)
+    }
+  }
+
+  handleClick = e => {
+    if (this.node && !this.node.contains(e.target) && this.state.showDrawer) {
+      this.setState({ showDrawer: false })
+    }
+  }
   render() {
     const generateMenuItemsList = () => {
+      let renderedMenuItems = []
+      if (typeof window !== `undefined` && window.location.pathname != '/') {
+        renderedMenuItems = menuItems.filter(items => !items.scrollLink)
+
+        renderedMenuItems = [{ text: 'HOME', link: '/' }].concat(
+          renderedMenuItems
+        )
+      } else {
+        renderedMenuItems = menuItems
+      }
       return (
         <ul>
-          {menuItems.map((menuItem, index) => (
-            <li key={index}>{menuItem.text}</li>
-          ))}
+          {renderedMenuItems.map((menuItem, index) =>
+            menuItem.scrollLink ? (
+              <ScrollLink
+                to={menuItem.scrollLink}
+                spy={true}
+                smooth={true}
+                offset={20}
+                duration={500}
+                key={index}
+              >
+                <li>{menuItem.text}</li>
+              </ScrollLink>
+            ) : (
+              <Link to={menuItem.link ? menuItem.link : '/'} key={index}>
+                <li>{menuItem.text}</li>
+              </Link>
+            )
+          )}
         </ul>
       )
     }
@@ -39,7 +82,9 @@ class Header extends Component {
       <React.Fragment>
         <YapHeader>
           <div>
-            <img id="logo" src={logo} alt="yap logo" />
+            <Link to="/">
+              <img id="logo" src={logo} alt="yap logo" />
+            </Link>
           </div>
           {generateMenuItemsList()}
           <NoStyleButton onClick={toggleNavDrawer}>
@@ -47,7 +92,10 @@ class Header extends Component {
           </NoStyleButton>
         </YapHeader>
 
-        <MobileNavDraw style={this.state.showDrawer ? openDrawerStyle : null}>
+        <MobileNavDraw
+          ref={node => (this.node = node)}
+          style={this.state.showDrawer ? openDrawerStyle : null}
+        >
           <NoStyleButton onClick={toggleNavDrawer}>
             <img src={closeIcon} alt="close mobile draw button" />
           </NoStyleButton>

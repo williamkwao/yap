@@ -5,7 +5,8 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import slide1 from '../../images/yap-meeting1.png'
-import slide2 from '../../images/yap-meeting.jpg'
+import slide2 from '../../images/slide5.jpg'
+import slide3 from '../../images/slide6.jpg'
 
 const YapSlider = styled.div`
   .slick-dots {
@@ -37,12 +38,14 @@ const YapSlider = styled.div`
   }
 `
 var settings = {
+  autoplay: true,
   dots: true,
   infinite: true,
-  speed: 500,
+  speed: 3000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 2000,
+  pauseOnHover: true,
 }
 class Slider extends Component {
   componentDidMount() {
@@ -60,6 +63,9 @@ class Slider extends Component {
           </div>
           <div className="slide-div" alt="slide">
             <img src={slide2} />
+          </div>
+          <div className="slide-div" alt="slide">
+            <img src={slide3} />
           </div>
         </SlickSlider>
       </YapSlider>

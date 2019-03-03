@@ -5,8 +5,8 @@
 
 @font-face {
   font-family: TradeGothic;
-  font-weight: lighter;
-  src: url("../fonts/trade-gothic/TradeGothicLTStd-Bold.otf") format("opentype");
+  font-weight: bold;
+  src: url("../fonts/trade-gothic/TradeGothicLTStd-Bd2.otf") format("opentype");
 }
 
 @font-face {
@@ -22,6 +22,7 @@ html {
 }
 
 body {
+  transition: 0.5s;
   margin: 0;
 }
 
