@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import logo from '../../images/yap-logo.png'
+import logo from '../../images/yap-logo-full.png'
 import toggleIcon from './toggleIcon.png'
 import closeIcon from './close.png'
 import SocialMediaIcons from '../socialMedia/socialmedia'

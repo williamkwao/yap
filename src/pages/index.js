@@ -104,6 +104,7 @@ const YapSection = styled.section`
   padding: 15px;
   .title {
     transition: 0.5s;
+    font-size: 34px;
   }
   :hover {
     .title {
