@@ -5,4 +5,3 @@ event:
     url: >-
       https://www.eventbrite.com/e/3rd-annual-yap-dc-townhall-tickets-56769422872
 ---
-
