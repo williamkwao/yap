@@ -2,18 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 const eventsData = [
   {
-    date: 'FEB 2',
-    time: '8am',
-    address: '919 19th St NW, Washington, DC 20006',
-    name: 'Georgetown Africa Business Conference',
-  },
-  {
-    date: 'FEB 11',
-    time: '7pm',
-    address: '70 District Sq SW Washington, DC  20024',
-    name: 'Ayesha Harruna Attah - The Hundred Wells of Salaga',
-  },
-  {
     date: 'Mar 6',
     time: '6pm',
     address: '919 19th St NW, Washington, DC 20006',
