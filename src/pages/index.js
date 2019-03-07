@@ -12,6 +12,7 @@ import {
   SplashScreen,
   Sponsors,
 } from '../components'
+import { parseEventsFromMarkdown } from '../utils/utils'
 import yapAppImg from '../images/yap-app.png'
 
 const LandingSection = styled.section`
@@ -136,25 +137,7 @@ class IndexPage extends Component {
   render() {
     const data = this.props.data
     const events = data.file.childMarkdownRemark.frontmatter.event
-    events.map(event => {
-      const date = new Date(event.date)
-      const month = date.toLocaleString('en-US', { month: 'short' })
-      const day = date.getDate()
-
-      var timeString = date.toLocaleString('en-US', {
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true,
-      })
-
-      return {
-        date: `${month.toUpperCase} ${day}`,
-        time: timeString,
-        name: event.name,
-      }
-      console.log(timeString)
-      console.log('date', month, day, timeString)
-    })
+    const parsedEventsData = parseEventsFromMarkdown(events)
     return this.state.splash ? (
       <SplashScreen />
     ) : (
@@ -186,7 +169,7 @@ class IndexPage extends Component {
         <YapSection id="events">
           <EventsSection>
             <h1 className="title">Upcoming Events</h1>
-            <Events eventsData={events} />
+            <Events eventsData={parsedEventsData} />
           </EventsSection>
         </YapSection>
         <YapSection id="membership">
@@ -229,6 +212,7 @@ export const query = graphql`
             date
             name
             url
+            address
           }
         }
       }

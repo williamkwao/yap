@@ -102,10 +102,10 @@ const YapEvents = styled.ul`
     }
   }
 `
-const Events = () => {
+const Events = props => {
   return (
     <YapEvents>
-      {eventsData.map((event, index) => {
+      {props.eventsData.map((event, index) => {
         return (
           <li key={index}>
             <div className="date-time">
