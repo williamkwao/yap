@@ -57,15 +57,15 @@ var settings = {
     {
       breakpoint: 1024,
       settings: {
+        arrows: false,
         slidesToShow: 3,
         slidesToScroll: 3,
-        infinite: true,
-        dots: true,
       },
     },
     {
       breakpoint: 600,
       settings: {
+        arrows: false,
         slidesToShow: 2,
         slidesToScroll: 2,
         initialSlide: 2,
