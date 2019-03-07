@@ -9,7 +9,7 @@ collections:
   - name: 'events'
     label: 'Events'
     files:
-      - file: 'src/pages/events/index.md'
+      - file: 'src/pages/events/events.md'
         label: 'Events'
         name: 'events'
         fields:
@@ -22,5 +22,6 @@ collections:
                   { label: 'Name', name: 'name', widget: string },
                   { label: 'Date', name: 'date', widget: datetime },
                   { label: 'URL', name: 'url', widget: string },
+                  { label: 'Address', name: 'address', widget: string },
                 ],
             }

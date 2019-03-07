@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import {
   TeamCardsLayout,
   Layout,
@@ -128,11 +128,33 @@ class IndexPage extends Component {
     splash: true,
   }
   componentDidMount() {
+    console.log('props', this.props)
     window.setTimeout(() => {
       this.setState({ splash: false })
     }, 1000)
   }
   render() {
+    const data = this.props.data
+    const events = data.file.childMarkdownRemark.frontmatter.event
+    events.map(event => {
+      const date = new Date(event.date)
+      const month = date.toLocaleString('en-US', { month: 'short' })
+      const day = date.getDate()
+
+      var timeString = date.toLocaleString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true,
+      })
+
+      return {
+        date: `${month.toUpperCase} ${day}`,
+        time: timeString,
+        name: event.name,
+      }
+      console.log(timeString)
+      console.log('date', month, day, timeString)
+    })
     return this.state.splash ? (
       <SplashScreen />
     ) : (
@@ -164,7 +186,7 @@ class IndexPage extends Component {
         <YapSection id="events">
           <EventsSection>
             <h1 className="title">Upcoming Events</h1>
-            <Events />
+            <Events eventsData={events} />
           </EventsSection>
         </YapSection>
         <YapSection id="membership">
@@ -197,5 +219,21 @@ class IndexPage extends Component {
     )
   }
 }
+export const query = graphql`
+  query getEvents {
+    file(name: { eq: "events" }) {
+      relativePath
+      childMarkdownRemark {
+        frontmatter {
+          event {
+            date
+            name
+            url
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
