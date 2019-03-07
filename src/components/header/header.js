@@ -64,11 +64,25 @@ class Header extends Component {
                 duration={500}
                 key={index}
               >
-                <li>{menuItem.text}</li>
+                <li
+                  onClick={e => {
+                    console.log('Here')
+                    this.setState({ showDrawer: false })
+                  }}
+                >
+                  {menuItem.text}
+                </li>
               </ScrollLink>
             ) : (
               <Link to={menuItem.link ? menuItem.link : '/'} key={index}>
-                <li>{menuItem.text}</li>
+                <li
+                  onClick={e => {
+                    console.log('Here')
+                    this.setState({ showDrawer: false })
+                  }}
+                >
+                  {menuItem.text}
+                </li>
               </Link>
             )
           )}
