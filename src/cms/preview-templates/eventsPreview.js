@@ -1,14 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Events } from '../../components'
+import { parseEventsFromMarkdown } from '../../utils/utils'
 
-import React from 'react'
-
-const EventsPreview = () => {
-  return (
-    <div>
-      <h1>Test</h1>
-    </div>
-  )
+const EventsPreview = ({ widgetsFor }) => {
+  const events = widgetsFor('event').map((event, index) => {
+    const name = event.getIn(['data', 'name'])
+    const date = event.getIn(['data', 'date'])
+    const url = event.getIn(['data', 'url'])
+    const address = event.getIn(['data', 'address'])
+    return { name, date, url, address }
+  })
+  return <Events eventsData={parseEventsFromMarkdown(events)} />
 }
+
 export default EventsPreview
