@@ -7,7 +7,7 @@ import rightCardImage from './rightCardImage.png'
 const CardData = [
   {
     image: leftCardImage,
-    title: 'MEET THE TEAM',
+    title: 'About YAP DC',
     description:
       'Meet the crew, and get to know what we do to make the DC chapter of YAP successful',
     link: 'leadership',
@@ -15,7 +15,8 @@ const CardData = [
   {
     image: centerCardImage,
     title: 'UPCOMING EVENTS',
-    description: 'See some of our upcoming events',
+    description:
+      'YAP DC provides opportunities to engage with and learn from influential people from the DC area and the African continent. We do that through our live programming, which includes everything from networking happy hours to town hall discussions, panel events, author readings, business conferences, international and economic development forums and more!',
     link: 'events',
   },
   {

@@ -69,9 +69,9 @@ const MemberSection = styled.section`
   h2 {
     transition: 0.5s;
   }
-  p {
+  /* p {
     padding-bottom: 20px;
-  }
+  } */
   button {
     :focus {
       border: none;
@@ -149,17 +149,15 @@ class IndexPage extends Component {
             <YapMission>
               <h1 className="title">WHO WE ARE</h1>
               <p>
-                The Young African Professionals DC Network (YAP DC) is a 501(c)3
-                organization based in Washington, D.C. Since its inception in
-                2002, YAP DC has grown into a respected network of more than
-                10,000 young African professionals across the DC Metro area and
-                the diaspora. Our mission is to address the professional needs
-                of young Africans in the diaspora; support more Africans in
-                positions of power and influence; and positively influence
-                narratives about the continent.
+                The Young African Professionals DC (YAP DC) is a 501(c)3
+                organization based in Washington, D.C. For 16 years, YAP DC has
+                grown into a respected network of more than 10,000 young African
+                professionals across the DC Metro area and the diaspora. Our
+                mission is to connect young African professionals for career
+                development and opportunity creation.
               </p>
               <Link to="/about">
-                <p>Learn More About YAP’s Offerings</p>
+                <p>Learn More</p>
               </Link>
               <SocialMediaIcons />
             </YapMission>
@@ -196,7 +194,7 @@ class IndexPage extends Component {
           <TeamCardsLayout />
         </YapSection>
         <YapSection>
-          <h1 className="title center">OUR SPONSORS</h1>
+          <h1 className="title center">OUR PARTNERS AND SPONSERS</h1>
           <Sponsors />
         </YapSection>
       </Layout>
