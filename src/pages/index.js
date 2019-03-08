@@ -168,51 +168,15 @@ class IndexPage extends Component {
         <YapSection id="membership">
           <MemberSection>
             <div>
-              <h2 className="title">Become a YAP DC Premium Member</h2>
+              <h2 className="title">Become a Member of our YAP APP</h2>
               <p>
-                If you love the opportunities that you get from the basic YAP DC
-                membership, we encourage you to step your membership up and
-                become a premium member today. A YAP DC premium membership
-                affords you opportunities to network with other professionals in
-                the diaspora and to participate in professional development
-                programs that support you at any level of your career.
+                We are proud to announce our NEW professional networking app for
+                our YAP DC Membership. With over 10,000 members to date, we are
+                excited to provide an innovative platform to continue to connect
+                our community for career development opportunities.
               </p>
-              As a premium member, you will enjoy the following perks
-              <ul>
-                <li>
-                  Exclusive access to our virtual platform (the YAP App) to swap
-                  resources, job opportunities, advice, and ideas around
-                  building social capital and career development
-                </li>
-                <li>
-                  More than two dozen unique professional development events
-                  designed specifically for premium members - dinner and
-                  dialogue series, embassy events, fireside chat about virtual
-                  currency and development, and more.
-                </li>
-                <li>
-                  Up to a 30% discount on the Annual Georgetown Africa Business
-                  Conference
-                </li>
-                <li>
-                  Preferred seating and 10% discount on books at partnership
-                  events with Politics and Prose Bookstore.
-                </li>
-                <li>
-                  Monthly networking events to connect and engage with
-                  like-minded professionals in the DC region and beyond.
-                </li>
-                <li>
-                  A year-long enterprise membership at I/O SPACES, a loft-style
-                  penthouse workspace in Silver Spring
-                </li>
-                <li>And more in the works!</li>
-              </ul>
-              <p />
               <a href="https://yapdc.mn.co">
-                <button>
-                  Sign up for premium membership through our YAP APP today!
-                </button>
+                <button>GET THE APP</button>
               </a>
             </div>
             <div className="yap-app-screenshot">
@@ -224,7 +188,7 @@ class IndexPage extends Component {
           <TeamCardsLayout />
         </YapSection>
         <YapSection>
-          <h1 className="title center">OUR PARTNERS AND SPONSORS</h1>
+          <h1 className="title center">OUR PARTNERS AND SPONSERS</h1>
           <Sponsors />
         </YapSection>
       </Layout>
