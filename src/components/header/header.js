@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import logo from '../../images/yap-logo.png'
+import logo from '../../images/yap-logo-full.png'
 import toggleIcon from './toggleIcon.png'
 import closeIcon from './close.png'
 import SocialMediaIcons from '../socialMedia/socialmedia'
@@ -64,11 +64,25 @@ class Header extends Component {
                 duration={500}
                 key={index}
               >
-                <li>{menuItem.text}</li>
+                <li
+                  onClick={e => {
+                    console.log('Here')
+                    this.setState({ showDrawer: false })
+                  }}
+                >
+                  {menuItem.text}
+                </li>
               </ScrollLink>
             ) : (
               <Link to={menuItem.link ? menuItem.link : '/'} key={index}>
-                <li>{menuItem.text}</li>
+                <li
+                  onClick={e => {
+                    console.log('Here')
+                    this.setState({ showDrawer: false })
+                  }}
+                >
+                  {menuItem.text}
+                </li>
               </Link>
             )
           )}

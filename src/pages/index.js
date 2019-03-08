@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import {
   TeamCardsLayout,
   Layout,
@@ -12,6 +12,7 @@ import {
   SplashScreen,
   Sponsors,
 } from '../components'
+import { parseEventsFromMarkdown } from '../utils/utils'
 import yapAppImg from '../images/yap-app.png'
 
 const LandingSection = styled.section`
@@ -104,6 +105,7 @@ const YapSection = styled.section`
   padding: 15px;
   .title {
     transition: 0.5s;
+    font-size: 34px;
   }
   :hover {
     .title {
@@ -128,11 +130,15 @@ class IndexPage extends Component {
     splash: true,
   }
   componentDidMount() {
+    console.log('props', this.props)
     window.setTimeout(() => {
       this.setState({ splash: false })
     }, 1000)
   }
   render() {
+    const data = this.props.data
+    const events = data.file.childMarkdownRemark.frontmatter.event
+    const parsedEventsData = parseEventsFromMarkdown(events)
     return this.state.splash ? (
       <SplashScreen />
     ) : (
@@ -162,7 +168,7 @@ class IndexPage extends Component {
         <YapSection id="events">
           <EventsSection>
             <h1 className="title">Upcoming Events</h1>
-            <Events />
+            <Events eventsData={parsedEventsData} />
           </EventsSection>
         </YapSection>
         <YapSection id="membership">
@@ -195,5 +201,22 @@ class IndexPage extends Component {
     )
   }
 }
+export const query = graphql`
+  query getEvents {
+    file(name: { eq: "events" }) {
+      relativePath
+      childMarkdownRemark {
+        frontmatter {
+          event {
+            date
+            name
+            url
+            address
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

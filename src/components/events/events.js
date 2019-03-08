@@ -1,25 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-const eventsData = [
-  {
-    date: 'Mar 6',
-    time: '6pm',
-    address: '919 19th St NW, Washington, DC 20006',
-    name: 'Third Annual YAP DC Townhall',
-  },
-  {
-    date: 'Mar 28',
-    time: '6pm',
-    address: '919 19th St NW, Washington, DC 20006',
-    name: 'Monthly Networking Happy Hour, sponsored by Wave',
-  },
-  {
-    date: 'April 25',
-    time: '7pm',
-    address: '919 19th St NW, Washington, DC 20006',
-    name: 'Sally Nuamah at Politics and Prose',
-  },
-]
 const YapEvents = styled.ul`
   list-style: none;
   margin: auto;
@@ -96,10 +76,10 @@ const YapEvents = styled.ul`
     }
   }
 `
-const Events = () => {
+const Events = props => {
   return (
     <YapEvents>
-      {eventsData.map((event, index) => {
+      {props.eventsData.map((event, index) => {
         return (
           <li key={index}>
             <div className="date-time">
