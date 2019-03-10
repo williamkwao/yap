@@ -25,3 +25,21 @@ collections:
                   { label: 'Address', name: 'address', widget: string },
                 ],
             }
+
+  - name: 'homePage'
+    label: 'Home Page'
+    files:
+      - file: 'src/pages/content/slider.md'
+        label: 'Image Slider'
+        name: 'slider'
+        fields:
+          - {
+              label: 'Slider Images',
+              name: 'image',
+              widget: list,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { name: 'description', label: 'description', widget: string },
+                ],
+            }
