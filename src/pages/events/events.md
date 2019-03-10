@@ -2,7 +2,7 @@
 event:
   - address: '919 19th St NW, Washington, DC 20006'
     date: 2019-03-06T23:00:15.795Z
-    name: Third Annual YAP DC Townhall
+    name: Third Annual YAP DC Town hall
     url: >-
       https://www.eventbrite.com/e/3rd-annual-yap-dc-townhall-tickets-56769422872
   - address: '715 Florida Avenue NW, Washington DC, 20001'
@@ -16,3 +16,4 @@ event:
     url: >-
       https://www.politics-prose.com/event/book/sally-nuamah-how-girls-achieve-politics-and-prose-wharf-presented-young-african
 ---
+
