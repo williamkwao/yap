@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
 import { default as SlickSlider } from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-
-import slide1 from '../../images/yap-meeting1.png'
-import slide2 from '../../images/slide5.jpg'
-import slide3 from '../../images/slide6.jpg'
 
 const YapSlider = styled.div`
   .slick-dots {
@@ -56,19 +53,37 @@ class Slider extends Component {
 
   render() {
     return (
-      <YapSlider>
-        <SlickSlider {...settings}>
-          <div className="slide-div">
-            <img src={slide1} alt="slide" />
-          </div>
-          <div className="slide-div" alt="slide">
-            <img src={slide2} />
-          </div>
-          <div className="slide-div" alt="slide">
-            <img src={slide3} />
-          </div>
-        </SlickSlider>
-      </YapSlider>
+      <StaticQuery
+        query={graphql`
+          query getSLiderImages {
+            file(name: { eq: "slider" }) {
+              childMarkdownRemark {
+                frontmatter {
+                  image {
+                    image
+                    description
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={data => (
+          <YapSlider>
+            <SlickSlider {...settings}>
+              {data.file.childMarkdownRemark.frontmatter.image.map(
+                (image, index) => {
+                  return (
+                    <div key={index} className="slide-div">
+                      <img src={image.image} alt={image.description} />
+                    </div>
+                  )
+                }
+              )}
+            </SlickSlider>
+          </YapSlider>
+        )}
+      />
     )
   }
 }
