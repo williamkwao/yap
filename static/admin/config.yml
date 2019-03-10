@@ -26,12 +26,20 @@ collections:
                 ],
             }
 
-  - name: 'slider'
+  - name: 'homePage'
     label: 'Home Page'
     files:
       - file: 'src/pages/content/slider.md'
-        label: 'Slider'
+        label: 'Image Slider'
         name: 'slider'
         fields:
-          - { name: 'title', label: 'Title', widget: string }
-          - { label: Image, name: image, widget: image }
+          - {
+              label: 'Slider Images',
+              name: 'image',
+              widget: list,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { name: 'description', label: 'description', widget: string },
+                ],
+            }
