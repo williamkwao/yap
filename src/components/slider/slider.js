@@ -44,6 +44,22 @@ var settings = {
   autoplaySpeed: 2000,
   pauseOnHover: true,
 }
+
+const generateSlider = images => {
+  return (
+    <YapSlider>
+      <SlickSlider {...settings}>
+        {images.map((image, index) => {
+          return (
+            <div key={index} className="slide-div">
+              <img src={image.image} alt={image.description} />
+            </div>
+          )
+        })}
+      </SlickSlider>
+    </YapSlider>
+  )
+}
 class Slider extends Component {
   componentDidMount() {
     setTimeout(() => {
@@ -52,6 +68,9 @@ class Slider extends Component {
   }
 
   render() {
+    if (this.props.data) {
+      return generateSlider(this.props.data)
+    }
     return (
       <StaticQuery
         query={graphql`
@@ -68,21 +87,10 @@ class Slider extends Component {
             }
           }
         `}
-        render={data => (
-          <YapSlider>
-            <SlickSlider {...settings}>
-              {data.file.childMarkdownRemark.frontmatter.image.map(
-                (image, index) => {
-                  return (
-                    <div key={index} className="slide-div">
-                      <img src={image.image} alt={image.description} />
-                    </div>
-                  )
-                }
-              )}
-            </SlickSlider>
-          </YapSlider>
-        )}
+        render={data => {
+          const images = data.file.childMarkdownRemark.frontmatter.image
+          return generateSlider(images)
+        }}
       />
     )
   }

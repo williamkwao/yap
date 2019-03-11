@@ -1,7 +1,9 @@
 import React from 'react'
 import CMS from 'netlify-cms'
 import EventsPreview from './preview-templates/eventsPreview'
+import SLiderPreview from './preview-templates/sliderPreview'
 import { StyleSheetManager } from 'styled-components'
+import SliderPreview from './preview-templates/sliderPreview'
 class CSSInjector extends React.Component {
   constructor(props) {
     super(props)
@@ -33,5 +35,11 @@ class CSSInjector extends React.Component {
 CMS.registerPreviewTemplate('events', props => (
   <CSSInjector>
     <EventsPreview {...props} />
+  </CSSInjector>
+))
+
+CMS.registerPreviewTemplate('slider', props => (
+  <CSSInjector>
+    <SliderPreview {...props} />
   </CSSInjector>
 ))
