@@ -15,5 +15,6 @@ export const parseEventsFromMarkdown = events =>
       time: timeString,
       name: event.name,
       address: event.address,
+      url: event.url,
     }
   })
