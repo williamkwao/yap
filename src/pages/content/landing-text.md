@@ -6,5 +6,6 @@ text: >-
   more than 10,000 young African professionals across the DC Metro area and the
   diaspora. Our mission is to connect young African professionals for career
   development and opportunity creation
+aboutLink: Learn More
 ---
 
