@@ -29,6 +29,14 @@ collections:
   - name: 'homePage'
     label: 'Home Page'
     files:
+      - file: 'src/pages/content/landing-text.md'
+        label: 'Landing Page Text'
+        name: 'landingText'
+        fields:
+          - { label: 'Title', name: Title, widget: string }
+          - { label: 'Text', name: 'text', widget: string }
+          - { label: 'About Page Link', name: 'aboutLink', widget: string }
+
       - file: 'src/pages/content/slider.md'
         label: 'Image Slider'
         name: 'slider'
