@@ -1,9 +1,9 @@
 import React from 'react'
 import CMS from 'netlify-cms'
-import EventsPreview from './preview-templates/eventsPreview'
-import SLiderPreview from './preview-templates/sliderPreview'
 import { StyleSheetManager } from 'styled-components'
 import SliderPreview from './preview-templates/sliderPreview'
+import EventsPreview from './preview-templates/eventsPreview'
+import LandingTextPreview from './preview-templates/landingTextPreview'
 class CSSInjector extends React.Component {
   constructor(props) {
     super(props)
@@ -41,5 +41,11 @@ CMS.registerPreviewTemplate('events', props => (
 CMS.registerPreviewTemplate('slider', props => (
   <CSSInjector>
     <SliderPreview {...props} />
+  </CSSInjector>
+))
+
+CMS.registerPreviewTemplate('landingText', props => (
+  <CSSInjector>
+    <LandingTextPreview {...props} />
   </CSSInjector>
 ))

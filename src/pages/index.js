@@ -23,7 +23,7 @@ const LandingSection = styled.section`
     grid-template-columns: 32% 68%;
   }
 `
-const YapMission = styled.div`
+export const YapMission = styled.div`
   position: relative;
   h1 {
     transition: 0.5s;
