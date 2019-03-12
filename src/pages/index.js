@@ -23,7 +23,7 @@ const LandingSection = styled.section`
     grid-template-columns: 32% 68%;
   }
 `
-const YapMission = styled.div`
+export const YapMission = styled.div`
   position: relative;
   h1 {
     transition: 0.5s;
@@ -137,8 +137,10 @@ class IndexPage extends Component {
   }
   render() {
     const data = this.props.data
-    const events = data.file.childMarkdownRemark.frontmatter.event
+    const events = data.events.childMarkdownRemark.frontmatter.event
     const parsedEventsData = parseEventsFromMarkdown(events)
+    const landingText = data.landingText.childMarkdownRemark.frontmatter
+    console.log('data', landingText)
     return this.state.splash ? (
       <SplashScreen />
     ) : (
@@ -147,17 +149,10 @@ class IndexPage extends Component {
         <YapSection>
           <LandingSection className="no-padding">
             <YapMission>
-              <h1 className="title">WHO WE ARE</h1>
-              <p>
-                The Young African Professionals DC (YAP DC) is a 501(c)3
-                organization based in Washington, D.C. For 16 years, YAP DC has
-                grown into a respected network of more than 10,000 young African
-                professionals across the DC Metro area and the diaspora. Our
-                mission is to connect young African professionals for career
-                development and opportunity creation.
-              </p>
+              <h1 className="title">{landingText.Title}</h1>
+              <p>{landingText.text}</p>
               <Link to="/about">
-                <p>Learn More</p>
+                <p>{landingText.aboutLink}</p>
               </Link>
               <SocialMediaIcons />
             </YapMission>
@@ -202,8 +197,8 @@ class IndexPage extends Component {
   }
 }
 export const query = graphql`
-  query getEvents {
-    file(name: { eq: "events" }) {
+  query {
+    events: file(name: { eq: "events" }) {
       relativePath
       childMarkdownRemark {
         frontmatter {
@@ -213,6 +208,15 @@ export const query = graphql`
             url
             address
           }
+        }
+      }
+    }
+    landingText: file(name: { eq: "landing-text" }) {
+      childMarkdownRemark {
+        frontmatter {
+          Title
+          text
+          aboutLink
         }
       }
     }
