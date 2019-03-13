@@ -140,7 +140,9 @@ class IndexPage extends Component {
     const events = data.events.childMarkdownRemark.frontmatter.event
     const parsedEventsData = parseEventsFromMarkdown(events)
     const landingText = data.landingText.childMarkdownRemark.frontmatter
-    console.log('data', landingText)
+    const landingCardsData =
+      data.landingCards.childMarkdownRemark.frontmatter.cards
+
     return this.state.splash ? (
       <SplashScreen />
     ) : (
@@ -158,7 +160,7 @@ class IndexPage extends Component {
             </YapMission>
             <Slider />
           </LandingSection>
-          <LandingSectionCard />
+          <LandingSectionCard data={landingCardsData} />
         </YapSection>
         <YapSection id="events">
           <EventsSection>
@@ -217,6 +219,18 @@ export const query = graphql`
           Title
           text
           aboutLink
+        }
+      }
+    }
+    landingCards: file(name: { eq: "landing-cards" }) {
+      childMarkdownRemark {
+        frontmatter {
+          cards {
+            header
+            description
+            image
+            link
+          }
         }
       }
     }

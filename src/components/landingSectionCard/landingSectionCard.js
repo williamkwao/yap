@@ -84,30 +84,32 @@ const YapLandingSectionCard = styled.div`
   }
 `
 
-const LandingSectionCard = () => (
+const LandingSectionCard = ({ data }) => (
   <LandingSectionCardDiv>
-    {CardData.map((card, index) => {
-      return (
-        <ScrollLink
-          to={card.link}
-          spy={true}
-          smooth={true}
-          offset={20}
-          duration={500}
-          key={index}
-        >
-          <YapLandingSectionCard>
-            <img src={card.image} alt="Quick menu" />
-            <div className="img-description">
-              <div>
-                <h3> {card.title}</h3>
-                <p> {card.description}</p>
-              </div>
-            </div>
-          </YapLandingSectionCard>
-        </ScrollLink>
-      )
-    })}
+    {data
+      ? data.map((card, index) => {
+          return (
+            <ScrollLink
+              to={card.link.trim()}
+              spy={true}
+              smooth={true}
+              offset={20}
+              duration={500}
+              key={index}
+            >
+              <YapLandingSectionCard>
+                <img src={card.image} alt="Quick menu" />
+                <div className="img-description">
+                  <div>
+                    <h3> {card.header}</h3>
+                    <p> {card.description}</p>
+                  </div>
+                </div>
+              </YapLandingSectionCard>
+            </ScrollLink>
+          )
+        })
+      : null}
   </LandingSectionCardDiv>
 )
 
