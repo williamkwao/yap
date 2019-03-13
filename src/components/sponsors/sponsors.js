@@ -40,8 +40,6 @@ const images = importAll(
   require.context('../../images/sponsors/', false, /\.(png|jpe?g|svg)$/)
 )
 
-console.log('here we are', images)
-
 var settings = {
   autoplay: true,
   dots: false,

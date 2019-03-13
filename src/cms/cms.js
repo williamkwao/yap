@@ -16,7 +16,6 @@ class CSSInjector extends React.Component {
 
   componentDidMount() {
     const iframe = document.getElementsByTagName('iframe')[0]
-    console.log('ifram', iframe)
     const iframeHeadElem = iframe.contentDocument.head
     this.setState({ iframeRef: iframeHeadElem })
   }
