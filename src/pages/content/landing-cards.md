@@ -10,5 +10,11 @@ cards:
     header: UPCOMING EVENTS
     image: /img/centercardimage.png
     link: events
+  - Description: >-
+      Thinking of signing up? See what comes with membership, and get access to
+      the YAP app
+    header: MEMBERSHIP
+    image: /img/membership.jpg
+    link: membership
 ---
 
