@@ -51,3 +51,18 @@ collections:
                   { name: 'description', label: 'description', widget: string },
                 ],
             }
+      - file: 'src/pages/content/landing-cards.md'
+        label: 'Landing Cards'
+        name: 'landingCards'
+        fields:
+          - {
+              label: 'cards',
+              name: 'cards',
+              widget: list,
+              fields: [
+                  {label: 'Header', name: 'header', widget: string},
+                  {label: 'Description', name: 'description', widget: string},
+                  {label: 'Background Image', name: 'image', widget: image},
+                  {label: 'link', name: 'link', widget: 'string'}
+              ]
+          }
