@@ -80,7 +80,7 @@ const SVGIcon = ({
   height = '100%',
   link = '',
 }) => (
-  <a href={link} target="_blank">
+  <a target="_blank" rel="noopener noreferrer" href={link}>
     <svg
       width={width}
       style={style}

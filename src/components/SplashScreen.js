@@ -23,7 +23,7 @@ const SplashScreen = () => {
   return (
     <SplashStyle>
       <div>
-        <img src={YapLogoSVG} />
+        <img src={YapLogoSVG} alt="splash screen" />
       </div>
     </SplashStyle>
   )

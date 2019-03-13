@@ -43,7 +43,7 @@ class Header extends Component {
   render() {
     const generateMenuItemsList = () => {
       let renderedMenuItems = []
-      if (typeof window !== `undefined` && window.location.pathname != '/') {
+      if (typeof window !== `undefined` && window.location.pathname !== '/') {
         renderedMenuItems = menuItems.filter(items => !items.scrollLink)
 
         renderedMenuItems = [{ text: 'HOME', link: '/' }].concat(
