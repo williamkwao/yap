@@ -48,6 +48,9 @@ const YapEvents = styled.ul`
       grid-area: address;
     }
   }
+  a {
+    color: #000;
+  }
 
   @media (min-width: 992px) {
     width: 825px;
@@ -81,14 +84,16 @@ const Events = props => {
     <YapEvents>
       {props.eventsData.map((event, index) => {
         return (
-          <li key={index}>
-            <div className="date-time">
-              <h5 className="date">{event.date}</h5>
-              <h4 className="time">{event.time}</h4>
-            </div>
-            <h3 className="name">{event.name}</h3>
-            <h5 className="address">{event.address}</h5>
-          </li>
+          <a target="_blank" rel="noopener noreferrer" href={event.url}>
+            <li key={index}>
+              <div className="date-time">
+                <h5 className="date">{event.date}</h5>
+                <h4 className="time">{event.time}</h4>
+              </div>
+              <h3 className="name">{event.name}</h3>
+              <h5 className="address">{event.address}</h5>
+            </li>
+          </a>
         )
       })}
     </YapEvents>
