@@ -50,6 +50,7 @@ const YapEvents = styled.ul`
   }
   a {
     color: #000;
+    text-decoration: none;
   }
 
   @media (min-width: 992px) {
@@ -84,8 +85,13 @@ const Events = props => {
     <YapEvents>
       {props.eventsData.map((event, index) => {
         return (
-          <a target="_blank" rel="noopener noreferrer" href={event.url}>
-            <li key={index}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={event.url}
+            key={index}
+          >
+            <li>
               <div className="date-time">
                 <h5 className="date">{event.date}</h5>
                 <h4 className="time">{event.time}</h4>
