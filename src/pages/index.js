@@ -130,7 +130,6 @@ class IndexPage extends Component {
     splash: true,
   }
   componentDidMount() {
-    console.log('props', this.props)
     window.setTimeout(() => {
       this.setState({ splash: false })
     }, 1000)
