@@ -5,6 +5,11 @@ import 'slick-carousel/slick/slick-theme.css'
 import styled from 'styled-components'
 
 const SlideStyle = styled.div`
+  a {
+    :focus {
+      border: none;
+    }
+  }
   .image-container {
     min-height: 100%;
   }
@@ -27,18 +32,6 @@ const SlideStyle = styled.div`
     color: #000;
   }
 `
-
-function importAll(r) {
-  let images = {}
-  r.keys().map((item, index) => {
-    return (images[item.replace('./', '')] = r(item))
-  })
-  return images
-}
-
-const images = importAll(
-  require.context('../../images/sponsors/', false, /\.(png|jpe?g|svg)$/)
-)
 
 var settings = {
   autoplay: true,
@@ -79,13 +72,27 @@ var settings = {
     },
   ],
 }
-const Sponsors = () => {
+const Sponsors = ({ data }) => {
+  const header = data.header
+  const sponsors = data.sponsor
   return (
     <SlideStyle>
+      <h1 className="title center">{header}</h1>
       <SlickSlider {...settings}>
-        {Object.values(images).map(imgSrc => (
-          <img key={imgSrc} src={imgSrc} alt="sponsor logo" />
-        ))}
+        {sponsors.map((sponsor, index) => {
+          return sponsor.url ? (
+            <a
+              key={index}
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={sponsor.image} alt={sponsor.name} />
+            </a>
+          ) : (
+            <img key={index} src={sponsor.image} alt={sponsor.name} />
+          )
+        })}
       </SlickSlider>
     </SlideStyle>
   )
