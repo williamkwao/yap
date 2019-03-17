@@ -27,5 +27,7 @@ sponsor:
     name: New Wave Foundation
   - image: /img/nsl-logo.jpg
     name: Nigerian Soccer League
+  - image: /img/moaa-logo.jpg
+    name: District of Columbia Mayors Office on African Affairs
 ---
 
