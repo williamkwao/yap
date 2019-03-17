@@ -35,5 +35,7 @@ sponsor:
     name: Georgetown University  McDonough School of Business
   - image: /img/fs-circumspecte-id-logo-color-2017-1.png
     name: Circumspecte
+  - image: /img/engine-blox_logo-blue.png
+    name: Engine Blox
 ---
 
