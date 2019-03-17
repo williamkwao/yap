@@ -29,23 +29,25 @@ const TeamCardsLayoutDiv = styled.div`
   }
 `
 
-const TeamCardsLayout = props => (
-  <TeamCardsLayoutDiv>
-    <h1>BOARD OF DIRECTORS</h1>
-    <div className="cards">
-      {props.data.map((member, index) => {
-        return (
-          <TeamCard
-            key={index}
-            image={member.image}
-            firstName={member.firstName}
-            lastName={member.lastName}
-            subText={member.description}
-          />
-        )
-      })}
-    </div>
-  </TeamCardsLayoutDiv>
-)
-
+const TeamCardsLayout = props => {
+  const data = props.data
+  return (
+    <TeamCardsLayoutDiv>
+      <h1>BOARD OF DIRECTORS</h1>
+      <div className="cards">
+        {data.map((member, index) => {
+          return (
+            <TeamCard
+              key={index}
+              image={member.image}
+              firstName={member.firstName}
+              lastName={member.lastName}
+              subText={member.description}
+            />
+          )
+        })}
+      </div>
+    </TeamCardsLayoutDiv>
+  )
+}
 export default TeamCardsLayout
