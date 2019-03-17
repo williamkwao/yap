@@ -3,5 +3,7 @@ header: OUR PARTNERS AND SPONSORS
 sponsor:
   - image: /img/wave.jpg
     name: Wave
+  - image: /img/mansa.jpg
+    name: Mansa Colabs
 ---
 
