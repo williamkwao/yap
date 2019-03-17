@@ -37,5 +37,7 @@ sponsor:
     name: Circumspecte
   - image: /img/engine-blox_logo-blue.png
     name: Engine Blox
+  - image: /img/atigs-2018-logo.png
+    name: 'America Trade and Investment Global Summit '
 ---
 
