@@ -33,5 +33,7 @@ sponsor:
     name: Georgetown University
   - image: /img/gu_msob.vert_rev-with-bluergb-1-.jpg
     name: Georgetown University  McDonough School of Business
+  - image: /img/fs-circumspecte-id-logo-color-2017-1.png
+    name: Circumspecte
 ---
 
