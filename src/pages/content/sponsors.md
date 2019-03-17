@@ -9,5 +9,7 @@ sponsor:
     name: KPMG
   - image: /img/jk-logo.jpg
     name: J.K Studios
+  - image: /img/io-spaces.png
+    name: I.O Spaces
 ---
 
