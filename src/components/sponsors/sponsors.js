@@ -73,9 +73,11 @@ var settings = {
   ],
 }
 const Sponsors = ({ data }) => {
+  const header = data.header
   const sponsors = data.sponsor
   return (
     <SlideStyle>
+      <h1 className="title center">{header}</h1>
       <SlickSlider {...settings}>
         {sponsors.map((sponsor, index) => {
           return sponsor.url ? (
