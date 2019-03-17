@@ -5,5 +5,7 @@ sponsor:
     name: Wave
   - image: /img/mansa.jpg
     name: Mansa Colabs
+  - image: /img/kpmg.png
+    name: KPMG
 ---
 
