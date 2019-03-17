@@ -17,5 +17,7 @@ sponsor:
     name: Dine Diaspora
   - image: /img/axn.png
     name: Africa Expert Network
+  - image: /img/afrinection-logo.png
+    name: Afrinection
 ---
 
