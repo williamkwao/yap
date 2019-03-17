@@ -5,6 +5,11 @@ import 'slick-carousel/slick/slick-theme.css'
 import styled from 'styled-components'
 
 const SlideStyle = styled.div`
+  a {
+    :focus {
+      border: none;
+    }
+  }
   .image-container {
     min-height: 100%;
   }
@@ -72,9 +77,20 @@ const Sponsors = ({ data }) => {
   return (
     <SlideStyle>
       <SlickSlider {...settings}>
-        {sponsors.map((sponsor, index) => (
-          <img key={index} src={sponsor.image} alt={sponsor.name} />
-        ))}
+        {sponsors.map((sponsor, index) => {
+          return sponsor.url ? (
+            <a
+              key={index}
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={sponsor.image} alt={sponsor.name} />
+            </a>
+          ) : (
+            <img key={index} src={sponsor.image} alt={sponsor.name} />
+          )
+        })}
       </SlickSlider>
     </SlideStyle>
   )
