@@ -1,32 +1,6 @@
 import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import styled from 'styled-components'
-import leftCardImage from './leftCardImage.png'
-import centerCardImage from './centerCardImage.png'
-import rightCardImage from './rightCardImage.png'
-const CardData = [
-  {
-    image: leftCardImage,
-    title: 'About YAP DC',
-    description:
-      'Meet the crew, and get to know what we do to make the DC chapter of YAP successful',
-    link: 'leadership',
-  },
-  {
-    image: centerCardImage,
-    title: 'UPCOMING EVENTS',
-    description:
-      'YAP DC provides opportunities to engage with and learn from influential people from the DC area and the African continent. We do that through our live programming, which includes everything from networking happy hours to town hall discussions, panel events, author readings, business conferences, international and economic development forums and more!',
-    link: 'events',
-  },
-  {
-    image: rightCardImage,
-    title: 'MEMBERSHIP',
-    description:
-      'Thinking of signing up? See what comes with membership, and get access to the YAP app',
-    link: 'membership',
-  },
-]
 
 const LandingSectionCardDiv = styled.div`
   text-align: center;
