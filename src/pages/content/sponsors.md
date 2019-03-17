@@ -33,11 +33,12 @@ sponsor:
     name: Georgetown University
   - image: /img/gu_msob.vert_rev-with-bluergb-1-.jpg
     name: Georgetown University  McDonough School of Business
+    url: 'https://msb.georgetown.edu/'
   - image: /img/fs-circumspecte-id-logo-color-2017-1.png
     name: Circumspecte
   - image: /img/engine-blox_logo-blue.png
     name: Engine Blox
   - image: /img/atigs-2018-logo.png
     name: America Trade and Investment Global Summit (ATIGS)
-    url: ''
 ---
+
