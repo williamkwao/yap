@@ -23,5 +23,7 @@ sponsor:
     name: Y.E.P
   - image: /img/star-white-background-1-.jpg
     name: South African Airways
+  - image: /img/newwave_foundation_primary_magenta-purple_gradient.png
+    name: New Wave Foundation
 ---
 
