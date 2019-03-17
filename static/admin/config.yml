@@ -104,6 +104,6 @@ collections:
              fields: [
                 {label: 'Name', name: 'name', widget: string,  hint: 'For accessibility purposes'},
                 {label: 'Image', name: 'image', widget: image },
-                {label: 'url', name: 'url', widget: string, required: false},
+                {label: 'url', name: 'url', widget: string, required: false, default: '' },
              ]
            }

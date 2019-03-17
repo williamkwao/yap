@@ -28,18 +28,6 @@ const SlideStyle = styled.div`
   }
 `
 
-function importAll(r) {
-  let images = {}
-  r.keys().map((item, index) => {
-    return (images[item.replace('./', '')] = r(item))
-  })
-  return images
-}
-
-const images = importAll(
-  require.context('../../images/sponsors/', false, /\.(png|jpe?g|svg)$/)
-)
-
 var settings = {
   autoplay: true,
   dots: false,
@@ -79,12 +67,13 @@ var settings = {
     },
   ],
 }
-const Sponsors = () => {
+const Sponsors = ({ data }) => {
+  const sponsors = data.sponsor
   return (
     <SlideStyle>
       <SlickSlider {...settings}>
-        {Object.values(images).map(imgSrc => (
-          <img key={imgSrc} src={imgSrc} alt="sponsor logo" />
+        {sponsors.map((sponsor, index) => (
+          <img key={index} src={sponsor.image} alt={sponsor.name} />
         ))}
       </SlickSlider>
     </SlideStyle>

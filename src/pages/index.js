@@ -142,6 +142,7 @@ class IndexPage extends Component {
     const landingCardsData =
       data.landingCards.childMarkdownRemark.frontmatter.cards
     const leadershipData = data.leadership.childMarkdownRemark.frontmatter
+    const sponsorshipData = data.sponsors.childMarkdownRemark.frontmatter
     return this.state.splash ? (
       <SplashScreen />
     ) : (
@@ -191,7 +192,7 @@ class IndexPage extends Component {
         </YapSection>
         <YapSection>
           <h1 className="title center">OUR PARTNERS AND SPONSORS</h1>
-          <Sponsors />
+          <Sponsors data={sponsorshipData} />
         </YapSection>
       </Layout>
     )
@@ -244,6 +245,19 @@ export const query = graphql`
             about
             image
             description
+          }
+        }
+      }
+    }
+
+    sponsors: file(name: { eq: "sponsors" }) {
+      childMarkdownRemark {
+        frontmatter {
+          header
+          sponsor {
+            name
+            image
+            url
           }
         }
       }

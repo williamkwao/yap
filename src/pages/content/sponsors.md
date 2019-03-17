@@ -39,5 +39,5 @@ sponsor:
     name: Engine Blox
   - image: /img/atigs-2018-logo.png
     name: America Trade and Investment Global Summit (ATIGS)
+    url: ''
 ---
-
