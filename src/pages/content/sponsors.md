@@ -25,5 +25,7 @@ sponsor:
     name: South African Airways
   - image: /img/newwave_foundation_primary_magenta-purple_gradient.png
     name: New Wave Foundation
+  - image: /img/nsl-logo.jpg
+    name: Nigerian Soccer League
 ---
 
