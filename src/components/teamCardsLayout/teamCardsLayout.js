@@ -30,7 +30,7 @@ const TeamCardsLayoutDiv = styled.div`
 `
 
 const TeamCardsLayout = props => {
-  const data = props.data
+  const data = props.data ? props.data : []
   return (
     <TeamCardsLayoutDiv>
       <h1>BOARD OF DIRECTORS</h1>
