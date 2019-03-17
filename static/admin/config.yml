@@ -66,3 +66,19 @@ collections:
                   {label: 'link', name: 'link', widget: 'string'}
               ]
           }
+      - file: 'src/pages/content/leadership.md'
+        label: 'Leadership' 
+        name: 'leadershp'
+        fields: 
+          - {
+            label: 'leaders',
+            name: 'leaders',
+            widget: list,
+            fields: [
+              {label: 'First Name', name: 'firstName', widget: string },
+              {label: 'Last Name', name: 'lastName', widget: string },
+              {label: 'Description', name: 'description', widget: string },
+              {label: 'About Text', name: 'about', required: false ,widget: text},
+              {label: 'Image', name: 'image', widget: image},
+            ]
+          }
