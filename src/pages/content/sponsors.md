@@ -11,5 +11,7 @@ sponsor:
     name: J.K Studios
   - image: /img/io-spaces.png
     name: I.O Spaces
+  - image: /img/harvest-logo.png
+    name: harvest
 ---
 
