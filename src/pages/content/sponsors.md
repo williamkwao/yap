@@ -15,5 +15,7 @@ sponsor:
     name: harvest
   - image: /img/dd.png
     name: Dine Diaspora
+  - image: /img/axn.png
+    name: Africa Expert Network
 ---
 
