@@ -13,5 +13,7 @@ sponsor:
     name: I.O Spaces
   - image: /img/harvest-logo.png
     name: harvest
+  - image: /img/dd.png
+    name: Dine Diaspora
 ---
 
