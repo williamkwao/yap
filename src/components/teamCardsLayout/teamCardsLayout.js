@@ -30,12 +30,13 @@ const TeamCardsLayoutDiv = styled.div`
 `
 
 const TeamCardsLayout = props => {
-  const data = props.data ? props.data : []
+  const header = props.data ? props.data.header : ''
+  const leaders = props.data ? props.data.leaders : []
   return (
     <TeamCardsLayoutDiv>
-      <h1>{data.header}</h1>
+      <h1>{header}</h1>
       <div className="cards">
-        {data.leaders.map((member, index) => {
+        {leaders.map((member, index) => {
           return (
             <TeamCard
               key={index}
