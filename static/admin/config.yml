@@ -87,3 +87,23 @@ collections:
               {label: 'Image', name: 'image', widget: image},
             ]
           }
+      - file: 'src/pages/content/sponsors.md'
+        label: 'PARTNERS AND SPONSORS'
+        name: 'sponsors' 
+        widget: list
+        fields: 
+           - {
+             label: 'Header',
+             name: 'header',
+             widget: string
+           }
+           - {
+             label: 'Sponsors & Partners', 
+             name: 'sponsor',
+             widget: list,
+             fields: [
+                {label: 'Name', name: 'name', widget: string,  hint: 'For accessibility purposes'},
+                {label: 'Image', name: 'image', widget: image },
+                {label: 'url', name: 'url', widget: string, required: false},
+             ]
+           }
