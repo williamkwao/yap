@@ -1,4 +1,5 @@
 ---
+header: BOARD OF DIRECTORS
 leaders:
   - about: ''
     description: PRESIDENT

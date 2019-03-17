@@ -141,8 +141,7 @@ class IndexPage extends Component {
     const landingText = data.landingText.childMarkdownRemark.frontmatter
     const landingCardsData =
       data.landingCards.childMarkdownRemark.frontmatter.cards
-    const leadershipData =
-      data.leadership.childMarkdownRemark.frontmatter.leaders
+    const leadershipData = data.leadership.childMarkdownRemark.frontmatter
     return this.state.splash ? (
       <SplashScreen />
     ) : (
@@ -238,6 +237,7 @@ export const query = graphql`
     leadership: file(name: { eq: "leadership" }) {
       childMarkdownRemark {
         frontmatter {
+          header
           leaders {
             firstName
             lastName

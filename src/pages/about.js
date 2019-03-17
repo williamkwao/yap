@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import { Layout, TeamCardsLayout } from '../components'
 import styled from 'styled-components'
 import diasporaImg from '../images/diaspora1.jpg'
@@ -81,7 +82,9 @@ const AboutStyle = styled.section`
   }
 `
 
-const About = () => {
+const About = props => {
+  const data = props.data
+  const leadershipData = data.leadership.childMarkdownRemark.frontmatter
   return (
     <Layout>
       <AboutStyle>
@@ -159,7 +162,7 @@ const About = () => {
           </li>
         </section>
         <section className="text-section team">
-          <TeamCardsLayout />
+          <TeamCardsLayout data={leadershipData} />
         </section>
         <section className="text-section">
           <h1>OPERATIONS TEAM</h1>
@@ -195,3 +198,22 @@ const About = () => {
 }
 
 export default About
+
+export const query = graphql`
+  query {
+    leadership: file(name: { eq: "leadership" }) {
+      childMarkdownRemark {
+        frontmatter {
+          header
+          leaders {
+            firstName
+            lastName
+            about
+            image
+            description
+          }
+        }
+      }
+    }
+  }
+`

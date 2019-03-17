@@ -71,6 +71,11 @@ collections:
         name: 'leadershp'
         fields: 
           - {
+            label: 'Header',
+            name: 'header',
+            widget: string
+          }
+          - {
             label: 'leaders',
             name: 'leaders',
             widget: list,
