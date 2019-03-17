@@ -21,5 +21,7 @@ sponsor:
     name: Afrinection
   - image: /img/yep-logo.jpg
     name: Y.E.P
+  - image: /img/star-white-background-1-.jpg
+    name: South African Airways
 ---
 
