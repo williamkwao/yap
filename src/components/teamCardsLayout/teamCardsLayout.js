@@ -33,9 +33,9 @@ const TeamCardsLayout = props => {
   const data = props.data ? props.data : []
   return (
     <TeamCardsLayoutDiv>
-      <h1>BOARD OF DIRECTORS</h1>
+      <h1>{data.header}</h1>
       <div className="cards">
-        {data.map((member, index) => {
+        {data.leaders.map((member, index) => {
           return (
             <TeamCard
               key={index}
