@@ -19,5 +19,7 @@ sponsor:
     name: Africa Expert Network
   - image: /img/afrinection-logo.png
     name: Afrinection
+  - image: /img/yep-logo.jpg
+    name: Y.E.P
 ---
 
