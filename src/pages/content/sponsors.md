@@ -31,5 +31,7 @@ sponsor:
     name: District of Columbia Mayors Office on African Affairs
   - image: /img/georgetown_s_sfs_bluergb.jpg
     name: Georgetown University
+  - image: /img/gu_msob.vert_rev-with-bluergb-1-.jpg
+    name: Georgetown University  McDonough School of Business
 ---
 
