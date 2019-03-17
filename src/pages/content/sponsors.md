@@ -29,5 +29,7 @@ sponsor:
     name: Nigerian Soccer League
   - image: /img/moaa-logo.jpg
     name: District of Columbia Mayors Office on African Affairs
+  - image: /img/georgetown_s_sfs_bluergb.jpg
+    name: Georgetown University
 ---
 
