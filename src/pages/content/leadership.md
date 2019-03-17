@@ -13,5 +13,9 @@ leaders:
     firstName: ELIZABETH
     image: /img/elizabeth.jpg
     lastName: OGUNWO
+  - description: EXECUTIVE DIRECTOR/BOARD MEMBER
+    firstName: ROSE
+    image: /img/rose.jpg
+    lastName: ESSIEM
 ---
 
