@@ -1,7 +1,7 @@
 ---
 coverImage: /img/diaspora1.jpg
 content1: >-
-  WHAT WE DO
+  # WHAT WE DO
 
 
   As the premier conveners of events and opportunities for young African
@@ -15,7 +15,7 @@ content1: >-
   positively influence narratives about the continent.
 
 
-  Provide Resources
+  ## Provide Resources
 
 
   We are excited about the growth of our network over the years. Whether you are
@@ -24,7 +24,7 @@ content1: >-
   career-building opportunities available on our various online platforms.
 
 
-  Facilitate Professional Development
+  ## Facilitate Professional Development
 
 
   Whether you are considering an advanced degree or looking to advance in the
@@ -33,7 +33,7 @@ content1: >-
   entrepreneurial aspirations and advance in your career.
 
 
-  Foster Networking and Encourage Community Building
+  ## Foster Networking and Encourage Community Building
 
 
   Our online networking platform can help you elevate your networking by
@@ -43,7 +43,7 @@ content1: >-
   collaboration. Become a member today!
 
 
-  WHO WE ARE
+  # WHO WE ARE
 
 
   YAP DC has always been operated by dedicated and highly skilled volunteers.
@@ -53,49 +53,17 @@ content1: >-
   year to year. The Board is the highest governing body of the organization,
   responsible for establishing the vision, mission and overall direction of the
   organization. Let’s meet the team.
-content2: >-
-  OPERATIONS TEAM
+content2: |-
+  # OPERATIONS TEAM
 
-
-  The operations team consists of volunteers who serve as the core leaders in
-  envisioning and executing the day to day matters in line with the strategic
-  priorities of the organization. Working with YAP DC is an invaluable and
-  unique experience. If you are interested in being a member of the team, you
-  can view our vacant positions  here.
-
-
-
-
-  MEMBERS
-
-
-  OPERATIONS TEAM
-
-
-  The operations team consists of volunteers who serve as the core leaders in
-  envisioning and executing the day to day matters in line with the strategic
-  priorities of the organization. Working with YAP DC is an invaluable and
-  unique experience. If you are interested in being a member of the team, you
-  can view our vacant positions  here.
-
-
-
-
-  MEMBERS
-
+  ## MEMBERS
 
   * Rose Essiem
-
   * Rumbidzai Mufuka
-
   * Fatmatta Wurie
-
   * Sika Dunyoh
-
   * Chinwe Emeruem
-
   * Thelma Ekeocha
-
   * Cornelia Poku
 ---
 
