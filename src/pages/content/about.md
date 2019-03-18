@@ -40,7 +40,7 @@ content1: >-
   connecting you to other ambitious, driven, young diaspora professionals like
   you! This space is for you to continue conversations after an event, meet
   people with similar interests, and build communities of support and
-  collaboration. Become a member today!
+  collaboration.[ Become a member today!](https://yapdc.mn.co/)
 
 
   # WHO WE ARE
@@ -53,17 +53,33 @@ content1: >-
   year to year. The Board is the highest governing body of the organization,
   responsible for establishing the vision, mission and overall direction of the
   organization. Let’s meet the team.
-content2: |-
+content2: >-
   # OPERATIONS TEAM
+
+
+  The operations team consists of volunteers who serve as the core leaders in
+  envisioning and executing the day to day matters in line with the strategic
+  priorities of the organization. Working with YAP DC is an invaluable and
+  unique experience. If you are interested in being a member of the team, you
+  can view our vacant positions 
+  [here.](https://www.idealist.org/en/nonprofit/b55e85ab2beb4d85b447f4092f56e754-young-african-professionals-dc-yap-dc-washington)
+
 
   ## MEMBERS
 
+
   * Rose Essiem
+
   * Rumbidzai Mufuka
+
   * Fatmatta Wurie
+
   * Sika Dunyoh
+
   * Chinwe Emeruem
+
   * Thelma Ekeocha
+
   * Cornelia Poku
 ---
 
