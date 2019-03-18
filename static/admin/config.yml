@@ -90,7 +90,6 @@ collections:
       - file: 'src/pages/content/sponsors.md'
         label: 'PARTNERS AND SPONSORS'
         name: 'sponsors' 
-        widget: list
         fields: 
            - {
              label: 'Header',
