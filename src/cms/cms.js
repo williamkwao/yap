@@ -6,6 +6,7 @@ import EventsPreview from './preview-templates/eventsPreview'
 import LandingTextPreview from './preview-templates/landingTextPreview'
 import LandingCardsPreview from './preview-templates/landingCardsPreview'
 import LeadershipPreview from './preview-templates/leadershipPreview'
+import SponsorsPreview from './preview-templates/sponsorsPreview'
 class CSSInjector extends React.Component {
   constructor(props) {
     super(props)
@@ -60,5 +61,11 @@ CMS.registerPreviewTemplate('landingCards', props => (
 CMS.registerPreviewTemplate('leadershp', props => (
   <CSSInjector>
     <LeadershipPreview {...props} />
+  </CSSInjector>
+))
+
+CMS.registerPreviewTemplate('sponsors', props => (
+  <CSSInjector>
+    <SponsorsPreview {...props} />
   </CSSInjector>
 ))
