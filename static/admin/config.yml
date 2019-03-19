@@ -109,7 +109,7 @@ collections:
   - name: 'about'
     label: 'About Page'
     files: 
-      - file: 'src/pages/content/about.md'
+      - file: 'src/pages/content/about-content.md'
         label: 'About Content'
         name: 'about'
         fields: 
