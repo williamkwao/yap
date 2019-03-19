@@ -3,16 +3,17 @@ import styled from 'styled-components'
 import yapAppImg from './yap-app.png'
 import Modal from 'react-modal'
 
-const customStyles = {
-  content: {
+const customStyles = styled.section`
+content: {
     top: '50%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-  },
-}
+  }
+`
+
 const MemberSectionDiv = styled.section`
   display: grid;
   h2 {
@@ -93,16 +94,46 @@ class MemberSection extends Component {
               style={customStyles}
               contentLabel="Example Modal"
             >
-              <h2 ref={subtitle => (this.subtitle = subtitle)}>Hello</h2>
+              <h3>We Provide Resources</h3>
+              <p>
+                We are excited about the growth of our network over the years.
+                Whether you are a budding entrepreneur, a recent graduate, or a
+                seasoned professional, you can enjoy preferred access to
+                tailored professional development resources and career-building
+                opportunities on our online network. We Facilitate Professional
+                Development Whether you are considering an advanced degree or
+                looking to advance in the workplace, we can support you. Our
+                curated workshops and networking events can help you launch your
+                entrepreneurial aspirations, advance in your career, and remain
+                relevant in the global market. See our upcoming professional
+                development programs here [hyperlink to program calendar?] We
+                Foster Networking and Encourage Community Building This year we
+                launched an online networking platform to help you elevate your
+                networking by connecting you to other ambitious, driven, young
+                diaspora professionals like you! This space is for you to
+                continue conversations after an event, meet people with similar
+                interests, and build communities of support and collaboration.
+                Become a member today!
+              </p>
+              <h3>We Facilitate Professional Development</h3>
+              <p>
+                Whether you are considering an advanced degree or looking to
+                advance in the workplace, we can support you. Our curated
+                workshops and networking events can help you launch your
+                entrepreneurial aspirations, advance in your career, and remain
+                relevant in the global market. See our upcoming professional
+                development programs here [hyperlink to program calendar?]
+              </p>
+              <h3>We Foster Networking and Encourage Community Building</h3>
+              <p>
+                This year we launched an online networking platform to help you
+                elevate your networking by connecting you to other ambitious,
+                driven, young diaspora professionals like you! This space is for
+                you to continue conversations after an event, meet people with
+                similar interests, and build communities of support and
+                collaboration. Become a member today!
+              </p>
               <button onClick={this.closeModal}>close</button>
-              <div>I am a modal</div>
-              <form>
-                <input />
-                <button>tab navigation</button>
-                <button>stays</button>
-                <button>inside</button>
-                <button>the modal</button>
-              </form>
             </Modal>
           </div>
           <div className="yap-app-screenshot">
