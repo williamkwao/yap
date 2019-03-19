@@ -106,3 +106,13 @@ collections:
                 {label: 'url', name: 'url', widget: string, required: false, default: '' },
              ]
            }
+  - name: 'about'
+    label: 'About Page'
+    files: 
+      - file: 'src/pages/content/about-content.md'
+        label: 'About Content'
+        name: 'about'
+        fields: 
+           - {label: 'Cover Image', name: 'coverImage', widget: image}
+           - {label: 'About Page Content', name: 'content1', widget: 'markdown'} 
+           - {label: 'About Page Content 2', name: 'content2', widget: 'markdown'} 

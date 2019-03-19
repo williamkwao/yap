@@ -8,6 +8,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "add": "^2.0.6",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.76",
     "gatsby-image": "^2.0.20",
@@ -31,6 +32,9 @@
     "react-modal": "^3.8.1",
     "react-scroll": "^1.7.11",
     "react-slick": "^0.23.2",
+    "remark": "^10.0.1",
+    "remark-html": "^9.0.0",
+    "remark-preset-lint-recommended": "^3.0.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.1.3"
   },
