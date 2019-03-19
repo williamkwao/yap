@@ -11,9 +11,9 @@ import {
   LandingSectionCard,
   SplashScreen,
   Sponsors,
+  MemberSection,
 } from '../components'
 import { parseEventsFromMarkdown } from '../utils/utils'
-import yapAppImg from '../images/yap-app.png'
 
 const LandingSection = styled.section`
   overflow-x: hidden;
@@ -60,44 +60,6 @@ const EventsSection = styled.section`
     min-height: 800px;
     h1 {
       margin-bottom: 60px;
-    }
-  }
-`
-
-const MemberSection = styled.section`
-  display: grid;
-  h2 {
-    transition: 0.5s;
-  }
-  /* p {
-    padding-bottom: 20px;
-  } */
-  button {
-    :focus {
-      border: none;
-    }
-    :hover {
-      background-color: #fcbc19;
-      box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    font-size: 18px;
-    background: #000;
-    color: #fff;
-    padding: 19px 52px;
-    transition: 0.5s;
-    border: none;
-  }
-  .yap-app-screenshot {
-    display: none;
-    img {
-      width: 100%;
-      max-width: 100%;
-    }
-  }
-  @media (min-width: 992px) {
-    grid-template-columns: 35% 65%;
-    .yap-app-screenshot {
-      display: block;
     }
   }
 `
@@ -167,23 +129,7 @@ class IndexPage extends Component {
           </EventsSection>
         </YapSection>
         <YapSection id="membership">
-          <MemberSection>
-            <div>
-              <h2 className="title">Become a Member of our YAP APP</h2>
-              <p>
-                We are proud to announce our NEW professional networking app for
-                our YAP DC Membership. With over 10,000 members to date, we are
-                excited to provide an innovative platform to continue to connect
-                our community for career development opportunities.
-              </p>
-              <a href="https://yapdc.mn.co">
-                <button>GET THE APP</button>
-              </a>
-            </div>
-            <div className="yap-app-screenshot">
-              <img src={yapAppImg} alt="Screen shot of mobile app" />
-            </div>
-          </MemberSection>
+          <MemberSection />
         </YapSection>
         <YapSection id="leadership">
           <TeamCardsLayout />
