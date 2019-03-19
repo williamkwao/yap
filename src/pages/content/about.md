@@ -15,33 +15,12 @@ content1: >-
   positively influence narratives about the continent.
 
 
-  ## Provide Resources
-
-
-  We are excited about the growth of our network over the years. Whether you are
-  a budding entrepreneur, a recent graduate, or a seasoned professional, you can
-  enjoy preferred access to tailored professional development resources and
-  career-building opportunities available on our various online platforms.
-
-
-  ## Facilitate Professional Development
-
-
-  Whether you are considering an advanced degree or looking to advance in the
-  workplace, our curated workshops and networking events provide special access
-  to unique professional development opportunities, help you launch
-  entrepreneurial aspirations and advance in your career.
-
-
-  ## Foster Networking and Encourage Community Building
-
-
-  Our online networking platform can help you elevate your networking by
-  connecting you to other ambitious, driven, young diaspora professionals like
-  you! This space is for you to continue conversations after an event, meet
-  people with similar interests, and build communities of support and
-  collaboration.[ Become a member today!](https://yapdc.mn.co/)
-
+  * ## Provide Resources.
+    We are excited about the growth of our network over the years. Whether you are a budding entrepreneur, a recent graduate, or a seasoned professional, you can enjoy preferred access to tailored professional development resources and career-building opportunities available on our various online platforms.
+  * ## Facilitate Professional Development
+    Whether you are considering an advanced degree or looking to advance in the workplace, our curated workshops and networking events provide special access to unique professional development opportunities, help you launch entrepreneurial aspirations and advance in your career.
+  * ## Foster Networking and Encourage Community Building
+    Our online networking platform can help you elevate your networking by connecting you to other ambitious, driven, young diaspora professionals like you! This space is for you to continue conversations after an event, meet people with similar interests, and build communities of support and collaboration.[ Become a member today!](https://yapdc.mn.co/)
 
 
 
