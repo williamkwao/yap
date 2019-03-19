@@ -20,9 +20,7 @@ content1: >-
   * ## Facilitate Professional Development
     Whether you are considering an advanced degree or looking to advance in the workplace, our curated workshops and networking events provide special access to unique professional development opportunities, help you launch entrepreneurial aspirations and advance in your career.
   * ## Foster Networking and Encourage Community Building
-    Our online networking platform can help you elevate your networking by connecting you to other ambitious, driven, young diaspora professionals like you! This space is for you to continue conversations after an event, meet people with similar interests, and build communities of support and collaboration.[ Become a member today!](https://yapdc.mn.co/)
-
-
+    Our online networking platform can help you elevate your networking by connecting you to other ambitious, driven, young diaspora professionals like you! This space is for you to continue conversations after an event, meet people with similar interests, and build communities of support and collaboration. [Become a member today!](https://yapdc.mn.co/)
 
   # WHO WE ARE
 
@@ -43,7 +41,7 @@ content2: >-
   priorities of the organization. Working with YAP DC is an invaluable and
   unique experience. If you are interested in being a member of the team, you
   can view our vacant positions 
-  [here.](https://www.idealist.org/en/nonprofit/b55e85ab2beb4d85b447f4092f56e754-young-african-professionals-dc-yap-dc-washington)
+  [here](https://www.idealist.org/en/nonprofit/b55e85ab2beb4d85b447f4092f56e754-young-african-professionals-dc-yap-dc-washington).
 
 
   ## MEMBERS
