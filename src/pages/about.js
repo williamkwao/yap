@@ -90,45 +90,53 @@ const AboutStyle = styled.section`
     }
   }
 `
+const covertMarkdownToHtml = markdown =>
+  remark()
+    .use(recommended)
+    .use(remarkHtml)
+    .processSync(markdown)
+    .toString()
 
+export const AboutTemplate = props => {
+  return (
+    <AboutStyle>
+      <section className="banner-section">
+        <img className="banner-image" src={props.coverImage} alt="Yap Banner" />
+      </section>
+      <section
+        className="text-section"
+        dangerouslySetInnerHTML={{
+          __html: covertMarkdownToHtml(props.html1),
+        }}
+      />
+      <section className="text-section">
+        <TeamCardsLayout data={props.leadershipData} />
+      </section>
+      <section
+        className="text-section content2"
+        dangerouslySetInnerHTML={{
+          __html: covertMarkdownToHtml(props.html2),
+        }}
+      />
+    </AboutStyle>
+  )
+}
 const About = props => {
   const data = props.data
-  const leadershipData = data.leadership.childMarkdownRemark.frontmatter
-  const content = data.content.childMarkdownRemark.frontmatter
-  const html1 = remark()
-    .use(recommended)
-    .use(remarkHtml)
-    .processSync(content.content1)
-    .toString()
-  const html2 = remark()
-    .use(recommended)
-    .use(remarkHtml)
-    .processSync(content.content2)
-    .toString()
+  const leadershipData =
+    data && data.leadership
+      ? data.leadership.childMarkdownRemark.frontmatter
+      : {}
+  const content = props.preview || data.content.childMarkdownRemark.frontmatter
 
   return (
     <Layout>
-      <AboutStyle>
-        <section className="banner-section">
-          <img
-            className="banner-image"
-            src={content.coverImage}
-            alt="Yap Banner"
-          />
-        </section>
-        <section
-          className="text-section"
-          dangerouslySetInnerHTML={{ __html: html1 }}
-        />
-
-        <section className="text-section team">
-          <TeamCardsLayout data={leadershipData} />
-        </section>
-        <section
-          className="text-section content2"
-          dangerouslySetInnerHTML={{ __html: html2 }}
-        />
-      </AboutStyle>
+      <AboutTemplate
+        coverImage={content.coverImage}
+        html1={content.content1}
+        html2={content.content2}
+        leadershipData={leadershipData}
+      />
     </Layout>
   )
 }
