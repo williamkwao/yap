@@ -63,6 +63,50 @@ collections:
                   { label: 'Address', name: 'address', widget: string },
                 ],
             }
+      - file: 'src/pages/content/membership-content.md'  
+        label: 'Membership'    
+        name: 'membership'
+        fields: 
+          - {label: 'Header', name: 'header', widget: string }
+          - {label: 'Section Text', name: 'sectionText', widget: text }
+          - label: 'Section Image'
+            name: 'sectionImage' 
+            widget: object
+            fields: 
+              - { 
+                 name: 'description', 
+                 label: 'Description', 
+                 widget: string, 
+                 hint: 'For accessibility purposes', 
+              } 
+              - { name: 'image', label: 'Image', widget: image }
+          - label: 'App Button'
+            name: 'appButton' 
+            widget: object
+            fields: 
+              - { name: 'text', label: 'Button Text', widget: string }  
+              - { 
+                  name: 'url', 
+                  label: 'url', 
+                  widget: string, 
+                  hint: 'External link to YAP app',
+                  pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)', 'Must be valid URL beginning with http']         
+                } 
+          - {label: 'Popup Button Text', name: 'modalButtonText', widget: string}
+          - label: 'Popup Content'
+            name: 'popup'
+            widget: object
+            fields:
+              - {name: 'content', label: 'Content', widget: markdown}
+              - {name: 'actionButtonText', label: 'Action Button Text', widget: string}
+              - { 
+                  name: 'buttonUrl', 
+                  label: 'Button url', 
+                  widget: string,
+                  pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)', 'Must be valid URL beginning with http']         
+                } 
+          
+         
       - file: 'src/pages/content/leadership.md'
         label: 'Leadership' 
         name: 'leadershp'
