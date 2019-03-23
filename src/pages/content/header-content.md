@@ -7,5 +7,8 @@ items:
   - pageLink: N/A
     scrollLink: events
     text: UPCOMING EVENTS
+  - pageLink: N/A
+    scrollLink: membership
+    text: MEMBERSHIP
 ---
 
