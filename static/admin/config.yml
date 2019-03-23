@@ -113,4 +113,37 @@ collections:
            - {label: 'Cover Image', name: 'coverImage', widget: image}
            - {label: 'About Page Content', name: 'content1', widget: 'markdown'} 
            - {label: 'About Page Content 2', name: 'content2', widget: 'markdown'} 
-  
+  - name: 'sharedComponents' 
+    label: 'Shared Components'
+    files: 
+      - file: 'src/pages/content/social-media-data.md'
+        label: 'Social Media'
+        name: 'socialMedia'
+        fields: 
+          - {
+            label: 'Twitter', 
+            name: 'twitter', 
+            widget: string, 
+            pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)', 'Must be valid URL beginning with https']
+          }
+          - {
+            label: 'Facebook', 
+            name: 'facebook', 
+            widget: string,
+            pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)' , 'Must be valid URL beginning with https']
+          }
+          - {
+             label: 'Instagram', 
+             name: 'instagram', 
+             widget: string,
+             pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)', 'Must be valid URL beginning with https']
+
+          }
+          - {
+            label: 'LinkedIn', 
+            name: 'linkedin', 
+            widget: string,
+            pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)', 'Must be valid URL beginning with https']         
+          }
+              
+          
