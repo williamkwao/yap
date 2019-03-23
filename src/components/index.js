@@ -9,6 +9,7 @@ import SplashScreen from './SplashScreen'
 import Footer from './footer/footer'
 import Header from './header/header'
 import Sponsors from './sponsors/sponsors'
+import MemberSection from './MemberSection/MemberSection'
 export {
   TeamCardsLayout,
   Layout,
@@ -21,4 +22,5 @@ export {
   Header,
   Footer,
   Sponsors,
+  MemberSection,
 }
