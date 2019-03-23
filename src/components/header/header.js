@@ -66,7 +66,6 @@ class Header extends Component {
               >
                 <li
                   onClick={e => {
-                    console.log('Here')
                     this.setState({ showDrawer: false })
                   }}
                 >
@@ -77,7 +76,6 @@ class Header extends Component {
               <Link to={menuItem.link ? menuItem.link : '/'} key={index}>
                 <li
                   onClick={e => {
-                    console.log('Here')
                     this.setState({ showDrawer: false })
                   }}
                 >

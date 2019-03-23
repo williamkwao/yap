@@ -4,28 +4,9 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+logo_url: https://yapdc.netlify.com/static/yap-logo-full-45a374c79c6ab1c971af630dbe9bb74f.png
 
 collections:
-  - name: 'events'
-    label: 'Events'
-    files:
-      - file: 'src/pages/events/events.md'
-        label: 'Events'
-        name: 'events'
-        fields:
-          - {
-              label: 'Event',
-              name: 'event',
-              widget: list,
-              fields:
-                [
-                  { label: 'Name', name: 'name', widget: string },
-                  { label: 'Date', name: 'date', widget: datetime },
-                  { label: 'URL', name: 'url', widget: string },
-                  { label: 'Address', name: 'address', widget: string },
-                ],
-            }
-
   - name: 'homePage'
     label: 'Home Page'
     files:
@@ -51,3 +32,162 @@ collections:
                   { name: 'description', label: 'description', widget: string },
                 ],
             }
+      - file: 'src/pages/content/landing-cards.md'
+        label: 'Landing Cards'
+        name: 'landingCards'
+        fields:
+          - {
+              label: 'cards',
+              name: 'cards',
+              widget: list,
+              fields: [
+                  {label: 'Header', name: 'header', widget: string},
+                  {label: 'Description', name: 'description', widget: string},
+                  {label: 'Background Image', name: 'image', widget: image},
+                  {label: 'link', name: 'link', widget: 'string'}
+              ]
+          }
+      - file: 'src/pages/events/events.md'
+        label: 'Events'
+        name: 'events'
+        fields:
+          - {
+              label: 'Event',
+              name: 'event',
+              widget: list,
+              fields:
+                [
+                  { label: 'Name', name: 'name', widget: string },
+                  { label: 'Date', name: 'date', widget: datetime },
+                  { label: 'URL', name: 'url', widget: string },
+                  { label: 'Address', name: 'address', widget: string },
+                ],
+            }
+      - file: 'src/pages/content/membership-content.md'  
+        label: 'Membership'    
+        name: 'membership'
+        fields: 
+          - {label: 'Header', name: 'header', widget: string }
+          - {label: 'Section Text', name: 'sectionText', widget: text }
+          - label: 'Section Image'
+            name: 'sectionImage' 
+            widget: object
+            fields: 
+              - { 
+                 name: 'description', 
+                 label: 'Description', 
+                 widget: string, 
+                 hint: 'For accessibility purposes', 
+              } 
+              - { name: 'image', label: 'Image', widget: image }
+          - label: 'App Button'
+            name: 'appButton' 
+            widget: object
+            fields: 
+              - { name: 'text', label: 'Button Text', widget: string }  
+              - { 
+                  name: 'url', 
+                  label: 'url', 
+                  widget: string, 
+                  hint: 'External link to YAP app',
+                  pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)', 'Must be valid URL beginning with http']         
+                } 
+          - {label: 'Popup Button Text', name: 'modalButtonText', widget: string}
+          - label: 'Popup Content'
+            name: 'popup'
+            widget: object
+            fields:
+              - {name: 'content', label: 'Content', widget: markdown}
+              - {name: 'actionButtonText', label: 'Action Button Text', widget: string}
+              - { 
+                  name: 'buttonUrl', 
+                  label: 'Button url', 
+                  widget: string,
+                  pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)', 'Must be valid URL beginning with http']         
+                } 
+          
+         
+      - file: 'src/pages/content/leadership.md'
+        label: 'Leadership' 
+        name: 'leadershp'
+        fields: 
+          - {
+            label: 'Header',
+            name: 'header',
+            widget: string
+          }
+          - {
+            label: 'leaders',
+            name: 'leaders',
+            widget: list,
+            fields: [
+              {label: 'First Name', name: 'firstName', widget: string },
+              {label: 'Last Name', name: 'lastName', widget: string },
+              {label: 'Description', name: 'description', widget: string },
+              {label: 'About Text', name: 'about', required: false ,widget: text},
+              {label: 'Image', name: 'image', widget: image},
+            ]
+          }
+      - file: 'src/pages/content/sponsors.md'
+        label: 'PARTNERS AND SPONSORS'
+        name: 'sponsors' 
+        fields: 
+           - {
+             label: 'Header',
+             name: 'header',
+             widget: string
+           }
+           - {
+             label: 'Sponsors & Partners', 
+             name: 'sponsor',
+             widget: list,
+             fields: [
+                {label: 'Name', name: 'name', widget: string,  hint: 'For accessibility purposes'},
+                {label: 'Image', name: 'image', widget: image },
+                {label: 'url', name: 'url', widget: string, required: false, default: '' },
+             ]
+           }
+  - name: 'about'
+    label: 'About Page'
+    files: 
+      - file: 'src/pages/content/about-content.md'
+        label: 'About Content'
+        name: 'about'
+        fields: 
+           - {label: 'Cover Image', name: 'coverImage', widget: image}
+           - {label: 'About Page Content', name: 'content1', widget: 'markdown'} 
+           - {label: 'About Page Content 2', name: 'content2', widget: 'markdown'} 
+  - name: 'sharedComponents' 
+    label: 'Shared Components'
+    files: 
+      - file: 'src/pages/content/social-media-data.md'
+        label: 'Social Media'
+        name: 'socialMedia'
+        fields: 
+          - {
+            label: 'Twitter', 
+            name: 'twitter', 
+            widget: string, 
+            pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)', 'Must be valid URL beginning with https']
+          }
+          - {
+            label: 'Facebook', 
+            name: 'facebook', 
+            widget: string,
+            pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)' , 'Must be valid URL beginning with https']
+          }
+          - {
+             label: 'Instagram', 
+             name: 'instagram', 
+             widget: string,
+             pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)', 'Must be valid URL beginning with https']
+
+          }
+          - {
+            label: 'LinkedIn', 
+            name: 'linkedin', 
+            widget: string,
+            pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)', 'Must be valid URL beginning with https']         
+          }
+              
+          

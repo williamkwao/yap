@@ -92,7 +92,6 @@ class IndexPage extends Component {
     splash: true,
   }
   componentDidMount() {
-    console.log('props', this.props)
     window.setTimeout(() => {
       this.setState({ splash: false })
     }, 1000)
@@ -102,7 +101,10 @@ class IndexPage extends Component {
     const events = data.events.childMarkdownRemark.frontmatter.event
     const parsedEventsData = parseEventsFromMarkdown(events)
     const landingText = data.landingText.childMarkdownRemark.frontmatter
-    console.log('data', landingText)
+    const landingCardsData =
+      data.landingCards.childMarkdownRemark.frontmatter.cards
+    const leadershipData = data.leadership.childMarkdownRemark.frontmatter
+    const sponsorshipData = data.sponsors.childMarkdownRemark.frontmatter
     return this.state.splash ? (
       <SplashScreen />
     ) : (
@@ -120,7 +122,7 @@ class IndexPage extends Component {
             </YapMission>
             <Slider />
           </LandingSection>
-          <LandingSectionCard />
+          <LandingSectionCard data={landingCardsData} />
         </YapSection>
         <YapSection id="events">
           <EventsSection>
@@ -132,11 +134,10 @@ class IndexPage extends Component {
           <MemberSection />
         </YapSection>
         <YapSection id="leadership">
-          <TeamCardsLayout />
+          <TeamCardsLayout data={leadershipData} />
         </YapSection>
         <YapSection>
-          <h1 className="title center">OUR PARTNERS AND SPONSORS</h1>
-          <Sponsors />
+          <Sponsors data={sponsorshipData} />
         </YapSection>
       </Layout>
     )
@@ -163,6 +164,46 @@ export const query = graphql`
           Title
           text
           aboutLink
+        }
+      }
+    }
+    landingCards: file(name: { eq: "landing-cards" }) {
+      childMarkdownRemark {
+        frontmatter {
+          cards {
+            header
+            description
+            image
+            link
+          }
+        }
+      }
+    }
+
+    leadership: file(name: { eq: "leadership" }) {
+      childMarkdownRemark {
+        frontmatter {
+          header
+          leaders {
+            firstName
+            lastName
+            about
+            image
+            description
+          }
+        }
+      }
+    }
+
+    sponsors: file(name: { eq: "sponsors" }) {
+      childMarkdownRemark {
+        frontmatter {
+          header
+          sponsor {
+            name
+            image
+            url
+          }
         }
       }
     }

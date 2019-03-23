@@ -1,37 +1,6 @@
 import React from 'react'
 import TeamCard from '../teamCard/teamCard'
 import styled from 'styled-components'
-import RoseImage from '../../images/rose.jpg'
-import MargaretImage from '../../images/margaret.jpg'
-import AishaImage from '../../images/aisha.jpg'
-import ELizabethImage from '../../images/elizabeth.jpg'
-const TeamMembersData = [
-  {
-    image: MargaretImage,
-    firstName: 'Margaret',
-    lastName: 'Kamara',
-    subText: 'President',
-  },
-  {
-    image: AishaImage,
-    firstName: 'Aisha',
-    lastName: 'Saaka',
-    subText: 'Secretary',
-  },
-
-  {
-    image: ELizabethImage,
-    firstName: 'Elizabeth',
-    lastName: 'Ogunwo',
-    subText: 'Treasurer',
-  },
-  {
-    image: RoseImage,
-    firstName: 'Rose',
-    lastName: 'Essiem',
-    subText: 'Executive Director/Board Member',
-  },
-]
 
 const TeamCardsLayoutDiv = styled.div`
   max-width: 100%;
@@ -60,23 +29,26 @@ const TeamCardsLayoutDiv = styled.div`
   }
 `
 
-const TeamCardsLayout = () => (
-  <TeamCardsLayoutDiv>
-    <h1>BOARD OF DIRECTORS</h1>
-    <div className="cards">
-      {TeamMembersData.map((member, index) => {
-        return (
-          <TeamCard
-            key={index}
-            image={member.image}
-            firstName={member.firstName}
-            lastName={member.lastName}
-            subText={member.subText}
-          />
-        )
-      })}
-    </div>
-  </TeamCardsLayoutDiv>
-)
-
+const TeamCardsLayout = props => {
+  const header = props.data ? props.data.header : ''
+  const leaders = props.data ? props.data.leaders : []
+  return (
+    <TeamCardsLayoutDiv>
+      <h1>{header}</h1>
+      <div className="cards">
+        {leaders.map((member, index) => {
+          return (
+            <TeamCard
+              key={index}
+              image={member.image}
+              firstName={member.firstName}
+              lastName={member.lastName}
+              subText={member.description}
+            />
+          )
+        })}
+      </div>
+    </TeamCardsLayoutDiv>
+  )
+}
 export default TeamCardsLayout
