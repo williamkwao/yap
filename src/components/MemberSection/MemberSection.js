@@ -4,13 +4,8 @@ import yapAppImg from './yap-app.png'
 import Modal from 'react-modal'
 
 const customStyles = styled.section`
-content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
+  content: {
+    transform: 'translate(-50%, -50%)';
   }
 `
 
@@ -50,6 +45,9 @@ const MemberSectionDiv = styled.section`
       display: block;
     }
   }
+  button {
+    margin: 10px;
+  }
 `
 Modal.setAppElement('#___gatsby')
 
@@ -67,7 +65,7 @@ class MemberSection extends Component {
 
   afterOpenModal() {
     // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00'
+    //this.subtitle.style.color = '#f00'
   }
 
   closeModal() {
@@ -86,7 +84,10 @@ class MemberSection extends Component {
               excited to provide an innovative platform to continue to connect
               our community for career development opportunities.
             </p>
-            <button onClick={this.openModal}>GET THE APP</button>
+            <a href="https://yapdc.mn.co">
+              <button>GET THE APP</button>
+            </a>
+            <button onClick={this.openModal}>LEARN MORE</button>
             <Modal
               isOpen={this.state.modalIsOpen}
               onAfterOpen={this.afterOpenModal}
