@@ -1,4 +1,5 @@
 ---
+header: Become a Member of our YAP APP
 sectionText: >-
   We are proud to announce our NEW professional networking app for our YAP DC
   Membership. With over 10,000 members to date, we are excited to provide an
