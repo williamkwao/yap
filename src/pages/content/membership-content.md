@@ -5,7 +5,7 @@ sectionText: >-
   innovative platform to continue to connect our community for career
   development opportunities
 sectionImage:
-  description: Yap app screen shot
+  description: YAP app screen shot
   image: /img/yap-app.png
 appButton:
   text: GET THE APP
