@@ -10,5 +10,8 @@ items:
   - pageLink: N/A
     scrollLink: membership
     text: MEMBERSHIP
+  - pageLink: N/A
+    scrollLink: leadership
+    text: LEADERSHIP
 ---
 
