@@ -13,6 +13,9 @@ const customStyles = {
 const ModalButton = styled.button`
   color: #fff;
   font-size: 18px;
+  padding: 0;
+  border: none;
+  background: none;
 `
 const MemberSectionDiv = styled.section`
   display: grid;
@@ -100,7 +103,7 @@ class MemberSection extends Component {
               contentLabel="Example Modal"
               ariaHideApp={false}
             >
-              <div style={{ textAlign: 'right', border: 'none' }}>
+              <div style={{ textAlign: 'right' }}>
                 <ModalButton onClick={this.closeModal}>X</ModalButton>
               </div>
               <p>
@@ -145,7 +148,6 @@ class MemberSection extends Component {
                   background: `#fcbc19`,
                   color: '#fff',
                   padding: '19px 52px',
-                  border: 'none',
                 }}
               >
                 <a href="https://yapdc.mn.co">
