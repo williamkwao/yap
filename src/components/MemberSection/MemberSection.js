@@ -123,7 +123,6 @@ class MemberSection extends Component {
                 interests, and build communities of support and collaboration.
                 Become a member today!
               </p>
-
               <p>
                 Whether you are considering an advanced degree or looking to
                 advance in the workplace, we can support you. Our curated
@@ -132,7 +131,6 @@ class MemberSection extends Component {
                 relevant in the global market. See our upcoming professional
                 development programs here [hyperlink to program calendar?]
               </p>
-
               <p>
                 This year we launched an online networking platform to help you
                 elevate your networking by connecting you to other ambitious,
