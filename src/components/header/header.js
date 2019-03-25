@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import logo from '../../images/yap-logo-full.png'
+import { StaticQuery, graphql } from 'gatsby'
 import toggleIcon from './toggleIcon.png'
 import closeIcon from './close.png'
 import SocialMediaIcons from '../socialMedia/socialmedia'
@@ -13,12 +13,6 @@ import {
   openDrawerStyle,
 } from './headerStyles'
 
-const menuItems = [
-  { text: 'ABOUT YAP', link: '/about' },
-  { text: 'UPCOMING EVENTS', scrollLink: 'events' },
-  { text: 'MEMBERSHIP', scrollLink: 'membership' },
-  { text: 'LEADERSHIP', scrollLink: 'leadership' },
-]
 class Header extends Component {
   state = {
     showDrawer: false,
@@ -41,80 +35,127 @@ class Header extends Component {
     }
   }
   render() {
-    const generateMenuItemsList = () => {
+    const generateMenuItemsList = data => {
       let renderedMenuItems = []
       if (typeof window !== `undefined` && window.location.pathname !== '/') {
-        renderedMenuItems = menuItems.filter(items => !items.scrollLink)
+        renderedMenuItems = data.items.filter(
+          items => items.scrollLink == 'N/A'
+        )
 
-        renderedMenuItems = [{ text: 'HOME', link: '/' }].concat(
+        renderedMenuItems = [{ text: 'HOME', pagelink: '/' }].concat(
           renderedMenuItems
         )
       } else {
-        renderedMenuItems = menuItems
+        renderedMenuItems = data.items
       }
+
       return (
         <ul>
-          {renderedMenuItems.map((menuItem, index) =>
-            menuItem.scrollLink ? (
-              <ScrollLink
-                to={menuItem.scrollLink}
-                spy={true}
-                smooth={true}
-                offset={20}
-                duration={500}
-                key={index}
-              >
-                <li
-                  onClick={e => {
-                    this.setState({ showDrawer: false })
-                  }}
+          {renderedMenuItems.map((menuItem, index) => {
+            if (menuItem.pageLink != 'N/A') {
+              return (
+                <Link
+                  to={menuItem.pageLink ? `/${menuItem.pageLink}` : '/'}
+                  key={index}
                 >
-                  {menuItem.text}
-                </li>
-              </ScrollLink>
-            ) : (
-              <Link to={menuItem.link ? menuItem.link : '/'} key={index}>
-                <li
-                  onClick={e => {
-                    this.setState({ showDrawer: false })
-                  }}
+                  <li
+                    onClick={e => {
+                      this.setState({ showDrawer: false })
+                    }}
+                  >
+                    {menuItem.text}
+                  </li>
+                </Link>
+              )
+            } else if (menuItem.scrollLink && menuItem.scrollLink != 'N/A') {
+              return (
+                <ScrollLink
+                  to={menuItem.scrollLink}
+                  spy={true}
+                  smooth={true}
+                  offset={20}
+                  duration={500}
+                  key={index}
                 >
-                  {menuItem.text}
-                </li>
-              </Link>
-            )
-          )}
+                  <li
+                    onClick={e => {
+                      this.setState({ showDrawer: false })
+                    }}
+                  >
+                    {menuItem.text}
+                  </li>
+                </ScrollLink>
+              )
+            } else if (
+              menuItem.externalLink &&
+              menuItem.externalLink != 'N/A'
+            ) {
+              return (
+                <a href={menuItem.externalLink}>
+                  <li>{menuItem.text}</li>{' '}
+                </a>
+              )
+            }
+          })}
         </ul>
       )
     }
     const toggleNavDrawer = () => {
       this.setState({ showDrawer: !this.state.showDrawer })
     }
-    return (
-      <React.Fragment>
-        <YapHeader>
-          <div>
-            <Link to="/">
-              <img id="logo" src={logo} alt="yap logo" />
-            </Link>
-          </div>
-          {generateMenuItemsList()}
-          <NoStyleButton onClick={toggleNavDrawer}>
-            <img id="nav-toggle" src={toggleIcon} alt="mobile menu toggle" />
-          </NoStyleButton>
-        </YapHeader>
 
-        <MobileNavDraw
-          ref={node => (this.node = node)}
-          style={this.state.showDrawer ? openDrawerStyle : null}
-        >
-          <NoStyleButton onClick={toggleNavDrawer}>
-            <img src={closeIcon} alt="close mobile draw button" />
-          </NoStyleButton>
-          {generateMenuItemsList()}
-          <SocialMediaIcons />
-        </MobileNavDraw>
-      </React.Fragment>
+    const navFragment = data => {
+      return (
+        <React.Fragment>
+          <YapHeader>
+            <div>
+              <Link to="/">
+                <img id="logo" src={data.logo} alt="yap logo" />
+              </Link>
+            </div>
+            {generateMenuItemsList(data)}
+            <NoStyleButton onClick={toggleNavDrawer}>
+              <img id="nav-toggle" src={toggleIcon} alt="mobile menu toggle" />
+            </NoStyleButton>
+          </YapHeader>
+
+          <MobileNavDraw
+            ref={node => (this.node = node)}
+            style={this.state.showDrawer ? openDrawerStyle : null}
+          >
+            <NoStyleButton onClick={toggleNavDrawer}>
+              <img src={closeIcon} alt="close mobile draw button" />
+            </NoStyleButton>
+            {generateMenuItemsList(data)}
+            <SocialMediaIcons />
+          </MobileNavDraw>
+        </React.Fragment>
+      )
+    }
+
+    return (
+      <StaticQuery
+        query={graphql`
+          query getHeaderData {
+            file(name: { eq: "header-content" }) {
+              childMarkdownRemark {
+                frontmatter {
+                  logo
+                  items {
+                    pageLink
+                    scrollLink
+                    text
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={data => {
+          const fetchedData = data.file.childMarkdownRemark.frontmatter
+          return navFragment(fetchedData)
+        }}
+      />
     )
   }
 }

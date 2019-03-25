@@ -160,6 +160,34 @@ collections:
   - name: 'sharedComponents' 
     label: 'Shared Components'
     files: 
+      - file: 'src/pages/content/header-content.md'
+        name: 'header'
+        label: 'Navigation Header'
+        fields: 
+          - {label: 'logo', name: 'logo', widget: image}
+          - label: 'Navigation Links'
+            name: 'items'
+            widget: list 
+            fields: 
+              - { name: 'text', label: 'text', widget: string}
+              - name: 'pageLink'
+                label: 'Page Link'
+                widget: 'select'
+                default: 'N/A'
+                options: ["home", "about", "N/A"]
+              - name: 'scrollLink'
+                label: 'Scroll Link'
+                widget: 'select'
+                default: 'N/A'
+                options: ["events","membership", "leadership", "sponsors","N/A"]
+              - { 
+                 name: 'externalLink', 
+                 label: 'External', 
+                 widget: string,
+                 required: false,
+                 hint: 'Link to external website',
+                 pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)', 'Must be valid URL beginning with https']
+                }
       - file: 'src/pages/content/social-media-data.md'
         label: 'Social Media'
         name: 'socialMedia'
