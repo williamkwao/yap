@@ -100,7 +100,7 @@ class MemberSection extends Component {
               contentLabel="Example Modal"
               ariaHideApp={false}
             >
-              <div style={{ textAlign: 'right' }}>
+              <div style={{ textAlign: 'right', border: 'none' }}>
                 <ModalButton onClick={this.closeModal}>X</ModalButton>
               </div>
               <p>
@@ -145,6 +145,7 @@ class MemberSection extends Component {
                   background: `#fcbc19`,
                   color: '#fff',
                   padding: '19px 52px',
+                  border: 'none',
                 }}
               >
                 <a href="https://yapdc.mn.co">
