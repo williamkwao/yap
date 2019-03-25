@@ -1,18 +1,19 @@
 @font-face {
   font-family: TradeGothic;
-  src: url("../fonts/trade-gothic/TradeGothicLTStd.otf") format("opentype");
+  src: url('../fonts/trade-gothic/TradeGothicLTStd.otf') format('opentype');
 }
 
 @font-face {
   font-family: TradeGothic;
   font-weight: bold;
-  src: url("../fonts/trade-gothic/TradeGothicLTStd-Bd2.otf") format("opentype");
+  src: url('../fonts/trade-gothic/TradeGothicLTStd-Bd2.otf') format('opentype');
 }
 
 @font-face {
   font-family: TradeGothic;
   font-weight: light;
-  src: url("../fonts/trade-gothic/TradeGothicLTStd-Light.otf") format("opentype");
+  src: url('../fonts/trade-gothic/TradeGothicLTStd-Light.otf')
+    format('opentype');
 }
 
 html {
@@ -26,11 +27,25 @@ body {
   margin: 0;
 }
 
-article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
   display: block;
 }
 
-audio, canvas, progress, video {
+audio,
+canvas,
+progress,
+video {
   display: inline-block;
 }
 
@@ -43,7 +58,8 @@ progress {
   vertical-align: baseline;
 }
 
-[hidden], template {
+[hidden],
+template {
   display: none;
 }
 
@@ -52,7 +68,8 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 
-a:active, a:hover {
+a:active,
+a:hover {
   outline-width: 0;
 }
 
@@ -62,7 +79,8 @@ abbr[title] {
   text-decoration: underline dotted;
 }
 
-b, strong {
+b,
+strong {
   font-weight: inherit;
   font-weight: bolder;
 }
@@ -85,7 +103,8 @@ small {
   font-size: 80%;
 }
 
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -108,7 +127,10 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   font-family: TradeGothic, monospace, monospace;
   font-size: 1em;
 }
@@ -123,7 +145,11 @@ hr {
   overflow: visible;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font: inherit;
   margin: 0;
 }
@@ -132,24 +158,35 @@ optgroup {
   font-weight: 700;
 }
 
-button, input {
+button,
+input {
   overflow: visible;
 }
 
-button, select {
+button,
+select {
   text-transform: none;
 }
 
-[type='reset'], [type='submit'], button, html [type='button'] {
+[type='reset'],
+[type='submit'],
+button,
+html [type='button'] {
   -webkit-appearance: button;
 }
 
-[type='button']::-moz-focus-inner, [type='reset']::-moz-focus-inner, [type='submit']::-moz-focus-inner, button::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner,
+button::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
-[type='button']:-moz-focusring, [type='reset']:-moz-focusring, [type='submit']:-moz-focusring, button:-moz-focusring {
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring,
+button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -172,12 +209,14 @@ textarea {
   overflow: auto;
 }
 
-[type='checkbox'], [type='radio'] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
 
-[type='number']::-webkit-inner-spin-button, [type='number']::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -186,7 +225,8 @@ textarea {
   outline-offset: -2px;
 }
 
-[type='search']::-webkit-search-cancel-button, [type='search']::-webkit-search-decoration {
+[type='search']::-webkit-search-cancel-button,
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -252,7 +292,8 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: TradeGothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: TradeGothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
@@ -269,7 +310,8 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: TradeGothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: TradeGothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
@@ -286,7 +328,8 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: TradeGothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: TradeGothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
@@ -303,7 +346,8 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: TradeGothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: TradeGothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -320,7 +364,8 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: TradeGothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: TradeGothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -337,7 +382,8 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: TradeGothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: TradeGothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
@@ -566,13 +612,13 @@ ul li {
   padding-left: 0;
 }
 
-li>ol {
+li > ol {
   margin-left: 1.45rem;
   margin-bottom: calc(1.45rem / 2);
   margin-top: calc(1.45rem / 2);
 }
 
-li>ul {
+li > ul {
   margin-left: 1.45rem;
   margin-bottom: calc(1.45rem / 2);
   margin-top: calc(1.45rem / 2);
@@ -590,7 +636,7 @@ p *:last-child {
   margin-bottom: 0;
 }
 
-li>p {
+li > p {
   margin-bottom: calc(1.45rem / 2);
 }
 
@@ -629,7 +675,8 @@ thead {
   text-align: left;
 }
 
-td, th {
+td,
+th {
   text-align: left;
   border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
   font-feature-settings: 'tnum';
@@ -642,18 +689,22 @@ td, th {
   padding-bottom: calc(0.725rem - 1px);
 }
 
-th:first-child, td:first-child {
+th:first-child,
+td:first-child {
   padding-left: 0;
 }
 
-th:last-child, td:last-child {
+th:last-child,
+td:last-child {
   padding-right: 0;
 }
 
-tt, code {
+tt,
+code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family: TradeGothic, 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono', 'Liberation Mono', Menlo, Courier, monospace;
+  font-family: TradeGothic, 'SFMono-Regular', Consolas, 'Roboto Mono',
+    'Droid Sans Mono', 'Liberation Mono', Menlo, Courier, monospace;
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
@@ -664,17 +715,39 @@ pre code {
   line-height: 1.42;
 }
 
-code:before, code:after, tt:before, tt:after {
+code:before,
+code:after,
+tt:before,
+tt:after {
   letter-spacing: -0.2em;
   content: ' ';
 }
 
-pre code:before, pre code:after, pre tt:before, pre tt:after {
+pre code:before,
+pre code:after,
+pre tt:before,
+pre tt:after {
   content: '';
 }
 
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .ReactModal__Content,
+  .ReactModal__Content--after-open {
+    right: auto;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 66px 161px;
+    margin-right: -50%;
+    max-height: 100vh;
+    overflow-y: auto;
+    width: 800px;
   }
 }

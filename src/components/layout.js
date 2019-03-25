@@ -20,6 +20,7 @@ const Layout = ({ children }) => (
       <React.Fragment>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
+          id="modal78"
           style={{
             maxWidth: '100%',
             width: '100%',

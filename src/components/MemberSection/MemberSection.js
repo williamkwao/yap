@@ -3,20 +3,22 @@ import styled from 'styled-components'
 import yapAppImg from './yap-app.png'
 import Modal from 'react-modal'
 
-const customStyles = styled.section`
+const customStyles = {
   content: {
-    transform: 'translate(-50%, -50%)';
-  }
-`
+    color: '#fff',
+    background: 'rgba(0, 0, 0, 0.85)',
+  },
+}
 
+const ModalButton = styled.button`
+  color: #fff;
+  font-size: 18px;
+`
 const MemberSectionDiv = styled.section`
   display: grid;
   h2 {
     transition: 0.5s;
   }
-  /* p {
-    padding-bottom: 20px;
-  } */
   button {
     :focus {
       border: none;
@@ -49,8 +51,9 @@ const MemberSectionDiv = styled.section`
     margin: 10px;
   }
 `
-Modal.setAppElement('#___gatsby')
-
+function getParent() {
+  return document.querySelector('#modal78')
+}
 class MemberSection extends Component {
   state = {
     modalIsOpen: false,
@@ -93,9 +96,13 @@ class MemberSection extends Component {
               onAfterOpen={this.afterOpenModal}
               onRequestClose={this.closeModal}
               style={customStyles}
+              parentSelector={getParent}
               contentLabel="Example Modal"
+              ariaHideApp={false}
             >
-              <h3>We Provide Resources</h3>
+              <div style={{ textAlign: 'right' }}>
+                <ModalButton onClick={this.closeModal}>X</ModalButton>
+              </div>
               <p>
                 We are excited about the growth of our network over the years.
                 Whether you are a budding entrepreneur, a recent graduate, or a
@@ -116,7 +123,7 @@ class MemberSection extends Component {
                 interests, and build communities of support and collaboration.
                 Become a member today!
               </p>
-              <h3>We Facilitate Professional Development</h3>
+
               <p>
                 Whether you are considering an advanced degree or looking to
                 advance in the workplace, we can support you. Our curated
@@ -125,7 +132,7 @@ class MemberSection extends Component {
                 relevant in the global market. See our upcoming professional
                 development programs here [hyperlink to program calendar?]
               </p>
-              <h3>We Foster Networking and Encourage Community Building</h3>
+
               <p>
                 This year we launched an online networking platform to help you
                 elevate your networking by connecting you to other ambitious,
@@ -134,7 +141,18 @@ class MemberSection extends Component {
                 similar interests, and build communities of support and
                 collaboration. Become a member today!
               </p>
-              <button onClick={this.closeModal}>close</button>
+              <div
+                style={{
+                  textAlign: 'center',
+                  background: `#fcbc19`,
+                  color: '#fff',
+                  padding: '19px 52px',
+                }}
+              >
+                <a href="https://yapdc.mn.co">
+                  <ModalButton>Sign Up</ModalButton>
+                </a>
+              </div>
             </Modal>
           </div>
           <div className="yap-app-screenshot">
