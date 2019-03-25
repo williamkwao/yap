@@ -1,10 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import remark from 'remark'
-import recommended from 'remark-preset-lint-recommended'
-import remarkHtml from 'remark-html'
-import { Layout, TeamCardsLayout } from '../components'
 import styled from 'styled-components'
+import { Layout, TeamCardsLayout } from '../components'
+import { convertMarkdownToHtml } from '../utils/utils'
 
 const AboutStyle = styled.section`
   line-height: 1.5;
@@ -90,12 +88,6 @@ const AboutStyle = styled.section`
     }
   }
 `
-const covertMarkdownToHtml = markdown =>
-  remark()
-    .use(recommended)
-    .use(remarkHtml)
-    .processSync(markdown)
-    .toString()
 
 export const AboutTemplate = props => {
   return (
@@ -106,7 +98,7 @@ export const AboutTemplate = props => {
       <section
         className="text-section"
         dangerouslySetInnerHTML={{
-          __html: covertMarkdownToHtml(props.html1),
+          __html: convertMarkdownToHtml(props.html1),
         }}
       />
       <section className="text-section">
@@ -115,7 +107,7 @@ export const AboutTemplate = props => {
       <section
         className="text-section content2"
         dangerouslySetInnerHTML={{
-          __html: covertMarkdownToHtml(props.html2),
+          __html: convertMarkdownToHtml(props.html2),
         }}
       />
     </AboutStyle>
