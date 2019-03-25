@@ -51,7 +51,7 @@ const MemberSectionDiv = styled.section`
     }
   }
   button {
-    margin: 10px;
+    margin: 10px 10px 0px 0px;
   }
 `
 function getParent() {
