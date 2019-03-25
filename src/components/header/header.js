@@ -37,7 +37,10 @@ class Header extends Component {
   render() {
     const generateMenuItemsList = data => {
       let renderedMenuItems = []
-      if (typeof window !== `undefined` && window.location.pathname !== '/') {
+      if (
+        typeof window !== `undefined` &&
+        (window.location.pathname !== '/' && !data.preview)
+      ) {
         renderedMenuItems = data.items.filter(
           items => items.scrollLink == 'N/A'
         )
@@ -127,12 +130,14 @@ class Header extends Component {
               <img src={closeIcon} alt="close mobile draw button" />
             </NoStyleButton>
             {generateMenuItemsList(data)}
-            <SocialMediaIcons />
+            {!data.preview ? <SocialMediaIcons /> : null}
           </MobileNavDraw>
         </React.Fragment>
       )
     }
-
+    if (this.props.data) {
+      return navFragment(this.props.data)
+    }
     return (
       <StaticQuery
         query={graphql`

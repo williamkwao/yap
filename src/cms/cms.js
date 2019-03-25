@@ -9,6 +9,7 @@ import LeadershipPreview from './preview-templates/leadershipPreview'
 import SponsorsPreview from './preview-templates/sponsorsPreview'
 import AboutPreview from './preview-templates/aboutPreview'
 import SocialMediaPreview from './preview-templates/socialMediaPreview'
+import HeaderPreview from './preview-templates/headerPreview'
 class CSSInjector extends React.Component {
   constructor(props) {
     super(props)
@@ -81,5 +82,11 @@ CMS.registerPreviewTemplate('about', props => (
 CMS.registerPreviewTemplate('socialMedia', props => (
   <CSSInjector>
     <SocialMediaPreview {...props} />
+  </CSSInjector>
+))
+
+CMS.registerPreviewTemplate('header', props => (
+  <CSSInjector>
+    <HeaderPreview {...props} />
   </CSSInjector>
 ))
