@@ -1,3 +1,7 @@
+import recommended from 'remark-preset-lint-recommended'
+import remarkHtml from 'remark-html'
+import remark from 'remark'
+
 export const parseEventsFromMarkdown = events =>
   events.map(event => {
     const date = new Date(event.date)
@@ -18,3 +22,10 @@ export const parseEventsFromMarkdown = events =>
       url: event.url,
     }
   })
+
+export const convertMarkdownToHtml = markdown =>
+  remark()
+    .use(recommended)
+    .use(remarkHtml)
+    .processSync(markdown)
+    .toString()
