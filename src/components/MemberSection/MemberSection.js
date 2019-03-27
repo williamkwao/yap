@@ -54,7 +54,7 @@ const MemberSectionDiv = styled.section`
   }
 `
 function getParent() {
-  return document.querySelector('#modal78')
+  return document.querySelector('body')
 }
 class MemberSection extends Component {
   state = {
@@ -95,7 +95,6 @@ class MemberSection extends Component {
               onAfterOpen={this.afterOpenModal}
               onRequestClose={this.closeModal}
               style={customStyles}
-              parentSelector={getParent}
               contentLabel="Example Modal"
               ariaHideApp={false}
             >
