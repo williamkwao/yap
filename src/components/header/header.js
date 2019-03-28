@@ -152,6 +152,7 @@ class Header extends Component {
                     pageLink
                     scrollLink
                     text
+                    externalLink
                   }
                 }
               }
