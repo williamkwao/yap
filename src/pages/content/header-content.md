@@ -8,10 +8,12 @@ items:
   - pageLink: N/A
     scrollLink: events
     text: UPCOMING EVENTS
-  - pageLink: N/A
+  - externalLink: ''
+    pageLink: N/A
     scrollLink: membership
     text: MEMBERSHIP
-  - pageLink: N/A
+  - externalLink: ''
+    pageLink: N/A
     scrollLink: leadership
     text: LEADERSHIP
 ---
