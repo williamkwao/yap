@@ -10,6 +10,7 @@ import Footer from './footer/footer'
 import Header from './header/header'
 import Sponsors from './sponsors/sponsors'
 import MemberSection from './MemberSection/MemberSection'
+import SubscribeSection from './subscribe/subscribeSection'
 export {
   TeamCardsLayout,
   Layout,
@@ -23,4 +24,5 @@ export {
   Footer,
   Sponsors,
   MemberSection,
+  SubscribeSection,
 }

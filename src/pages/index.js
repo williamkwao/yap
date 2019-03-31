@@ -12,6 +12,7 @@ import {
   SplashScreen,
   Sponsors,
   MemberSection,
+  SubscribeSection,
 } from '../components'
 import { parseEventsFromMarkdown } from '../utils/utils'
 
@@ -139,6 +140,9 @@ class IndexPage extends Component {
         </YapSection>
         <YapSection>
           <Sponsors data={sponsorshipData} />
+        </YapSection>
+        <YapSection>
+          <SubscribeSection />
         </YapSection>
       </Layout>
     )
