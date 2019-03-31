@@ -1,21 +1,15 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Modal from 'react-modal'
+import Modal from 'react-responsive-modal'
 import { convertMarkdownToHtml } from '../../utils/utils'
-const customStyles = {
-  content: {
-    color: '#fff',
-    background: 'rgba(0, 0, 0, 0.85)',
-  },
-}
 
-const ModalButton = styled.button`
-  color: #fff;
-  font-size: 18px;
-  padding: 0;
-  border: none;
-  background: none;
-`
+const buttonStyle = {
+  textAlign: 'center',
+  background: `#fcbc19`,
+  color: '#fff',
+  padding: '19px 52px',
+  border: 'none',
+}
 const MemberSectionDiv = styled.section`
   display: grid;
   h2 {
@@ -61,27 +55,26 @@ class MemberSection extends Component {
     modalIsOpen: false,
   }
   openModal = this.openModal.bind(this)
-  afterOpenModal = this.afterOpenModal.bind(this)
   closeModal = this.closeModal.bind(this)
 
   openModal() {
     this.setState({ modalIsOpen: true })
   }
 
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    //this.subtitle.style.color = '#f00'
-  }
-
   closeModal() {
     this.setState({ modalIsOpen: false })
   }
-
+  membership
   render() {
     const data = this.props.data
     const modalContent = convertMarkdownToHtml(data.popup.content)
     return (
-      <div>
+      <div
+        className="membership"
+        ref={inst => {
+          this.membership = inst
+        }}
+      >
         <MemberSectionDiv>
           <div>
             <h2 className="title">{data.header}</h2>
@@ -91,33 +84,60 @@ class MemberSection extends Component {
             </a>
             <button onClick={this.openModal}>{data.modalButtonText}</button>
             <Modal
-              isOpen={this.state.modalIsOpen}
-              onAfterOpen={this.afterOpenModal}
-              onRequestClose={this.closeModal}
-              style={customStyles}
-              contentLabel="Example Modal"
-              ariaHideApp={false}
+              open={this.state.modalIsOpen}
+              onClose={this.closeModal}
+              showCloseIcon={false}
+              container={document.getElementsByClassName('membership')[0]}
             >
               <div style={{ textAlign: 'right' }}>
-                <ModalButton onClick={this.closeModal}>X</ModalButton>
+                <button
+                  style={{
+                    color: '#f2f2f2',
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                  }}
+                  onClick={this.closeModal}
+                >
+                  X
+                </button>
               </div>
+
               <div
+                className="markdown"
+                style={{
+                  color: '#000 !important',
+                  '& li': {
+                    color: '#000',
+                  },
+                }}
                 dangerouslySetInnerHTML={{
                   __html: convertMarkdownToHtml(modalContent),
                 }}
               />
-              <div
-                style={{
-                  textAlign: 'center',
-                  background: `#fcbc19`,
-                  color: '#fff',
-                  padding: '19px 52px',
+              <style
+                type="text/css"
+                dangerouslySetInnerHTML={{
+                  __html: `
+                   .markdown { color: #f2f2f2 !important;}
+                   .markdown p, .markdown li { color: #f2f2f2 !important;}
+                   .markdown p { margin-bottom: 1.45rem;} 
+                   .markdown li {
+                     margin-bottom: calc(1.45rem / 2);
+                     
+                   }
+                   .markdown ul {margin-left: 1.45rem;}
+                   .styles_modal__gNwvD {
+                     background:  rgba(0, 0, 0, 0.85);
+                     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+                   }`,
                 }}
-              >
-                <a href={data.popup.buttonUrl}>
-                  <ModalButton>{data.popup.actionButtonText}</ModalButton>
-                </a>
-              </div>
+              />
+
+              <a href={data.popup.buttonUrl}>
+                <button style={{ ...buttonStyle, width: '100%' }}>
+                  {data.popup.actionButtonText}
+                </button>
+              </a>
             </Modal>
           </div>
           <div className="yap-app-screenshot">
