@@ -94,7 +94,11 @@ class Header extends Component {
               menuItem.externalLink !== 'N/A'
             ) {
               return (
-                <a href={menuItem.externalLink}>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={menuItem.externalLink}
+                >
                   <li>{menuItem.text}</li>
                 </a>
               )
