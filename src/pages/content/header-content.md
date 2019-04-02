@@ -12,9 +12,10 @@ items:
     pageLink: N/A
     scrollLink: membership
     text: MEMBERSHIP
-  - externalLink: ''
+  - externalLink: >-
+      https://www.paypal.com/donate/?token=UQ9Xl9y0TKvcPLIXX_ShVNNKJxl_DoVmiUaVPYJys2BvpXAShP9msUD1MdiRhSw4IbOiW0&country.x=US&locale.x=US
     pageLink: N/A
-    scrollLink: leadership
-    text: LEADERSHIP
+    scrollLink: N/A
+    text: DONATE
 ---
 
