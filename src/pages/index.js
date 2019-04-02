@@ -12,8 +12,10 @@ import {
   SplashScreen,
   Sponsors,
   MemberSection,
+  SubscribeSection,
 } from '../components'
 import { parseEventsFromMarkdown } from '../utils/utils'
+import SubscribeModal from '../components/subscribe/subscribeModal'
 
 const LandingSection = styled.section`
   overflow-x: hidden;
@@ -140,6 +142,7 @@ class IndexPage extends Component {
         <YapSection>
           <Sponsors data={sponsorshipData} />
         </YapSection>
+        <SubscribeModal />
       </Layout>
     )
   }
