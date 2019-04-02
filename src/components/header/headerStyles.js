@@ -153,3 +153,18 @@ export const openDrawerStyle = {
   paddingRight: '18px',
   visibility: 'visible',
 }
+export const StyleButton = styled.button`
+  :focus {
+    border: none;
+    outline: 0;
+  }
+
+  background: #fbbc18;
+  color: #fff;
+  @media (min-width: 992px) {
+    border: none;
+    padding: 8px 35px 1px 35px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    vertical-align: super;
+  }
+`

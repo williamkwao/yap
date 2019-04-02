@@ -11,7 +11,9 @@ import {
   MobileNavDraw,
   NoStyleButton,
   openDrawerStyle,
+  StyleButton,
 } from './headerStyles'
+const DONATE = 'DONATE'
 
 class Header extends Component {
   state = {
@@ -88,6 +90,18 @@ class Header extends Component {
                     {menuItem.text}
                   </li>
                 </ScrollLink>
+              )
+            } else if (menuItem.text.toLowerCase() === DONATE.toLowerCase()) {
+              return (
+                <li>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={menuItem.externalLink}
+                  >
+                    <StyleButton>{menuItem.text}</StyleButton>
+                  </a>
+                </li>
               )
             } else if (
               menuItem.externalLink &&
