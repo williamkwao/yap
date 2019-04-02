@@ -2,7 +2,19 @@ import React, { Component } from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import styled from 'styled-components'
 
-const SubscribeStyle = styled.div``
+const SubscribeStyle = styled.div`
+  input {
+    border-radius: 4px;
+    padding: 6px;
+    box-shadow: none;
+  }
+
+  button {
+    padding: 6px;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+`
 
 class SubscribeSection extends Component {
   state = {
@@ -15,10 +27,11 @@ class SubscribeSection extends Component {
     if (re.test(email)) {
       try {
         const result = await addToMailchimp(email)
-        console.log('result', result)
+        if (result.result === 'success') {
+          this.props.onSuccess()
+        }
         this.setState({ resultMessage: result.msg })
       } catch (error) {
-        console.log('error', error.msg)
         this.setState({ resultMessage: error.msg })
       }
     } else {
@@ -27,13 +40,18 @@ class SubscribeSection extends Component {
   }
   render() {
     return (
-      <SubscribeStyle>
-        <h3>Keep up Keep Up With Young African Professionals DC </h3>
+      <SubscribeStyle className="subscribe">
         <form onSubmit={e => this.handleSubmit(e)}>
           <input type="email" name="email" placeholder="email" />
-          <button type="submit">Subscribe</button>
+          {this.props.button ? <button type="submit">Subscribe</button> : null}
         </form>
-        <p>{this.state.resultMessage} </p>
+        {this.state.resultMessage ? (
+          <p
+            dangerouslySetInnerHTML={{
+              __html: this.state.resultMessage,
+            }}
+          />
+        ) : null}
       </SubscribeStyle>
     )
   }

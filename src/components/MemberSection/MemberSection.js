@@ -111,7 +111,7 @@ class MemberSection extends Component {
                   },
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: convertMarkdownToHtml(modalContent),
+                  __html: modalContent,
                 }}
               />
               <style
