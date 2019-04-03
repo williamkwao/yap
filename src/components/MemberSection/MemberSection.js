@@ -126,6 +126,9 @@ class MemberSection extends Component {
                      
                    }
                    .markdown ul {margin-left: 1.45rem;}
+                   .styles_modal__gNwvD svg {
+                    fill: #fff;
+                   }
                    .styles_modal__gNwvD {
                      background:  rgba(0, 0, 0, 0.85);
                      box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);

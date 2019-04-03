@@ -3,22 +3,26 @@ import Modal from 'react-responsive-modal'
 import SubscribeSection from './subscribeSection'
 class SubscribeModal extends Component {
   state = {
-    modalIsOpen: true,
+    modalIsOpen: sessionStorage.getItem('modalShown') !== '1',
   }
-  openModal = this.openModal.bind(this)
-  closeModal = this.closeModal.bind(this)
 
-  openModal() {
+  openModal = () => {
     this.setState({ modalIsOpen: true })
   }
 
-  closeModal() {
+  closeModal = () => {
     this.setState({ modalIsOpen: false })
+    sessionStorage.setItem('modalShown', '1')
   }
 
   render() {
     return (
-      <Modal open={this.state.modalIsOpen} onClose={this.closeModal}>
+      <Modal
+        open={this.state.modalIsOpen}
+        onClose={this.closeModal}
+        center={true}
+        blockScroll={false}
+      >
         <style
           type="text/css"
           dangerouslySetInnerHTML={{
