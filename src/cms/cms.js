@@ -11,7 +11,6 @@ import AboutPreview from './preview-templates/aboutPreview'
 import SocialMediaPreview from './preview-templates/socialMediaPreview'
 import HeaderPreview from './preview-templates/headerPreview'
 import MemberSectionPreview from './preview-templates/memberSectionPreview'
-import { LayoutStyle } from '../components/layoutStyles'
 class CSSInjector extends React.Component {
   constructor(props) {
     super(props)
@@ -32,7 +31,7 @@ class CSSInjector extends React.Component {
       <div>
         {this.state.iframeRef && (
           <StyleSheetManager target={this.state.iframeRef}>
-            <LayoutStyle>{this.props.children}</LayoutStyle>
+            {this.props.children}
           </StyleSheetManager>
         )}
       </div>
