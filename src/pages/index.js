@@ -100,8 +100,11 @@ class IndexPage extends Component {
   }
   render() {
     const data = this.props.data
-    const events = data.events.childMarkdownRemark.frontmatter.event
-    const parsedEventsData = parseEventsFromMarkdown(events)
+    const eventsData = data.events.childMarkdownRemark.frontmatter
+    const parsedEventsData = {
+      event: parseEventsFromMarkdown(eventsData.event),
+      intro: eventsData.intro,
+    }
     const landingText = data.landingText.childMarkdownRemark.frontmatter
     const landingCardsData =
       data.landingCards.childMarkdownRemark.frontmatter.cards
@@ -153,6 +156,7 @@ export const query = graphql`
       relativePath
       childMarkdownRemark {
         frontmatter {
+          intro
           event {
             date
             name

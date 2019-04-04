@@ -83,7 +83,8 @@ const YapEvents = styled.ul`
 const Events = props => {
   return (
     <YapEvents>
-      {props.eventsData.map((event, index) => {
+      <p>{props.eventsData.intro}</p>
+      {props.eventsData.event.map((event, index) => {
         return (
           <a
             target="_blank"

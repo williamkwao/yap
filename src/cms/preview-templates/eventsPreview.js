@@ -2,7 +2,7 @@ import React from 'react'
 import { Events } from '../../components'
 import { parseEventsFromMarkdown } from '../../utils/utils'
 
-const EventsPreview = ({ widgetsFor }) => {
+const EventsPreview = ({ widgetsFor, entry }) => {
   const events = widgetsFor('event').map((event, index) => {
     const name = event.getIn(['data', 'name'])
     const date = event.getIn(['data', 'date'])
@@ -10,7 +10,9 @@ const EventsPreview = ({ widgetsFor }) => {
     const address = event.getIn(['data', 'address'])
     return { name, date, url, address }
   })
-  return <Events eventsData={parseEventsFromMarkdown(events)} />
+  const intro = entry.getIn(['data', 'intro'])
+  const eventsData = { intro, event: parseEventsFromMarkdown(events) }
+  return <Events eventsData={eventsData} />
 }
 
 export default EventsPreview
