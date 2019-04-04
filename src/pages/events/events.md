@@ -1,4 +1,10 @@
 ---
+intro: >
+  YAP DC provides opportunities to engage with and learn from influential people
+  from the DC area and the African continent. We do that through our live
+  programming, which includes everything from networking happy hours to town
+  hall discussions, panel events, author readings, business conferences,
+  international and economic development forums and more!
 event:
   - address: '919 19th St NW, Washington, DC 20006'
     date: 2019-03-06T23:00:15.795Z
