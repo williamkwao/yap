@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import Modal from 'react-responsive-modal'
+import { noConflict } from 'q'
+
 const YapTeamCard = styled.div`
   display: inline-block;
   transition: 0.5s;
@@ -60,19 +63,96 @@ const YapTeamCard = styled.div`
     }
   }
 `
+const AboutMemberModal = props => {
+  return (
+    <Modal open={props.modalIsOpen} onClose={() => props.onClose()}>
+      <h1>Hello</h1>
+    </Modal>
+  )
+}
 
-const TeamCard = props => (
-  <YapTeamCard className="team-card">
-    <img src={props.image} alt="Team members" />
-    <div className="img-description">
-      <div>
-        <h2>{props.firstName}</h2>
-        <h2>{props.lastName}</h2>
-        <h4 className="sub-text">{props.subText}</h4>
-      </div>
-    </div>
-  </YapTeamCard>
-)
+class TeamCard extends Component {
+  state = {
+    modalIsOpen: false,
+    updated: false,
+  }
+
+  openModal = () => {
+    this.setState({ updated: true, modalIsOpen: true })
+  }
+
+  closeModal = () => {
+    this.setState({ modalIsOpen: false, updated: false })
+  }
+  render() {
+    return (
+      <>
+        <YapTeamCard className="team-card" onClick={this.openModal}>
+          <img src={this.props.image} alt="Team members" />
+          <div className="img-description">
+            <div>
+              <h2>{this.props.firstName}</h2>
+              <h2>{this.props.lastName}</h2>
+              <h4 className="sub-text">{this.props.subText}</h4>
+            </div>
+          </div>
+        </YapTeamCard>
+        <Modal
+          center={true}
+          open={this.state.modalIsOpen}
+          onClose={this.closeModal}
+        >
+          <style
+            type="text/css"
+            dangerouslySetInnerHTML={{
+              __html: `
+                .about-modal-content{
+                   margin: 20px 40px;
+                   color: #fff;
+                }
+
+                .about-modal-content img{
+                    max-height: 150px;
+                    object-fit: cover;
+                 }
+                 .about-modal-content p{
+                    color: #fff;
+                 }
+                 .about-modal-content h2{
+                    margin-bottom: 0.4rem;
+                 }
+                 .about-modal-content h2{
+                  margin-bottom: 0.4rem;
+                 }
+                 .about-modal-content h2, .about-modal-content h4{
+                   color: #fcbc19;
+                 }
+               
+                .styles_modal__gNwvD {
+                  background:  rgba(0, 0, 0, 0.85);
+                  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+                }
+
+                .styles_modal__gNwvD svg {
+                    fill: #fff;
+                }
+                .styles_overlay__CLSq-{
+                    background: rgba(0, 0, 0, 0.25);
+                }
+           }`,
+            }}
+          />
+          <div className="about-modal-content">
+            <h2>{`${this.props.firstName} ${this.props.lastName}`}</h2>
+            <h4>{this.props.subText}</h4>
+            <p>{this.props.about}</p>
+          </div>
+        </Modal>
+      </>
+    )
+  }
+}
+
 TeamCard.propTypes = {
   image: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
