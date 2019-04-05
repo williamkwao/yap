@@ -93,7 +93,7 @@ class Header extends Component {
               )
             } else if (menuItem.text.toLowerCase() === DONATE.toLowerCase()) {
               return (
-                <li>
+                <li key={index}>
                   <a
                     target="_blank"
                     rel="noopener noreferrer"

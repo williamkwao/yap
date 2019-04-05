@@ -44,6 +44,7 @@ const TeamCardsLayout = props => {
               firstName={member.firstName}
               lastName={member.lastName}
               subText={member.description}
+              about={member.about}
             />
           )
         })}
