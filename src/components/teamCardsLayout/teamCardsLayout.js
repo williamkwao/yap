@@ -33,7 +33,7 @@ const TeamCardsLayout = props => {
   const header = props.data ? props.data.header : ''
   const leaders = props.data ? props.data.leaders : []
   return (
-    <TeamCardsLayoutDiv>
+    <TeamCardsLayoutDiv className="team-cards">
       <h1>{header}</h1>
       <div className="cards">
         {leaders.map((member, index) => {

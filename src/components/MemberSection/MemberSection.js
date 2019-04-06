@@ -75,7 +75,7 @@ class MemberSection extends Component {
           this.membership = inst
         }}
       >
-        <MemberSectionDiv>
+        <MemberSectionDiv className="members-section">
           <div>
             <h2 className="title">{data.header}</h2>
             <p>{data.sectionText}</p>
