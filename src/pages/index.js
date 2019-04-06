@@ -12,21 +12,67 @@ import {
   SplashScreen,
   Sponsors,
   MemberSection,
-  SubscribeSection,
 } from '../components'
 import { parseEventsFromMarkdown } from '../utils/utils'
 import SubscribeModal from '../components/subscribe/subscribeModal'
 
 const LandingSection = styled.section`
   overflow-x: hidden;
+  :hover {
+    .mission {
+      ::before {
+        min-height: 90%;
+        margin-bottom: 20px;
+        min-width: 100px;
+        padding-right: 50px;
+        transition: 0.6s;
+        border-left: 3px solid #fcbc19;
+      }
+    }
+  }
   /* Dextop Styles */
   @media (min-width: 992px) {
     display: grid;
     grid-template-columns: 32% 68%;
+    :hover {
+      #subtract {
+        display: inline-block;
+        visibility: visible;
+        opacity: 1;
+        max-width: 100%;
+      }
+    }
   }
 `
 export const YapMission = styled.div`
   position: relative;
+  ::before {
+    content: '';
+    display: block;
+    /* z-index: -30; */
+    position: absolute;
+    min-height: 30%;
+    margin-bottom: 20px;
+    min-width: 100px;
+    padding-right: 50px;
+    transition: 0.6s;
+    border-left: 2px solid #000;
+  }
+
+  :hover {
+    ::before {
+      min-height: 95%;
+      margin-bottom: 20px;
+      min-width: 100px;
+      padding-right: 50px;
+      transition: 0.6s;
+      border-left: 3px solid #fcbc19;
+    }
+  }
+
+  .content {
+    padding-left: 12px;
+  }
   h1 {
     transition: 0.5s;
     text-transform: uppercase;
@@ -118,13 +164,15 @@ class IndexPage extends Component {
         <SEO title="Home" keywords={[`YAP`, 'Young African Professionals']} />
         <YapSection>
           <LandingSection className="no-padding">
-            <YapMission>
-              <h1 className="title">{landingText.Title}</h1>
-              <p>{landingText.text}</p>
-              <Link to="/about">
-                <p>{landingText.aboutLink}</p>
-              </Link>
-              <SocialMediaIcons />
+            <YapMission className="mission">
+              <div className="content">
+                <h1 className="title">{landingText.Title}</h1>
+                <p>{landingText.text}</p>
+                <Link to="/about">
+                  <p>{landingText.aboutLink}</p>
+                </Link>
+                <SocialMediaIcons />
+              </div>
             </YapMission>
             <Slider />
           </LandingSection>
@@ -132,8 +180,10 @@ class IndexPage extends Component {
         </YapSection>
         <YapSection id="events">
           <EventsSection>
-            <h1 className="title">Upcoming Events</h1>
-            <Events eventsData={parsedEventsData} />
+            <div>
+              <h1 className="title">Upcoming Events</h1>
+              <Events eventsData={parsedEventsData} />
+            </div>
           </EventsSection>
         </YapSection>
         <YapSection id="membership">

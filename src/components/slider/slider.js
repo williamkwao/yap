@@ -4,8 +4,11 @@ import { StaticQuery, graphql } from 'gatsby'
 import { default as SlickSlider } from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import subtract from '../../images/subtract.png'
 
 const YapSlider = styled.div`
+  position: relative;
+
   .slick-dots {
     position: static;
   }
@@ -23,6 +26,17 @@ const YapSlider = styled.div`
     padding: 0;
   }
 
+  #subtract {
+    position: absolute;
+    height: 50%;
+    /* display: none; */
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.2s, opacity 1s linear;
+    bottom: 0;
+    right: 0;
+  }
+
   @media (min-width: 992px) {
     .slick-track {
       .slide-div {
@@ -30,6 +44,14 @@ const YapSlider = styled.div`
           height: 500px;
           margin: 0;
         }
+      }
+    }
+    :hover {
+      #subtract {
+        display: inline-block;
+        visibility: visible;
+        opacity: 1;
+        max-width: 100%;
       }
     }
   }
@@ -57,6 +79,7 @@ const generateSlider = images => {
           )
         })}
       </SlickSlider>
+      <img id="subtract" src={subtract} />
     </YapSlider>
   )
 }
