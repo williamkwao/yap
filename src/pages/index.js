@@ -12,7 +12,6 @@ import {
   SplashScreen,
   Sponsors,
   MemberSection,
-  SubscribeSection,
 } from '../components'
 import { parseEventsFromMarkdown } from '../utils/utils'
 import SubscribeModal from '../components/subscribe/subscribeModal'
@@ -181,8 +180,10 @@ class IndexPage extends Component {
         </YapSection>
         <YapSection id="events">
           <EventsSection>
-            <h1 className="title">Upcoming Events</h1>
-            <Events eventsData={parsedEventsData} />
+            <div>
+              <h1 className="title">Upcoming Events</h1>
+              <Events eventsData={parsedEventsData} />
+            </div>
           </EventsSection>
         </YapSection>
         <YapSection id="membership">
