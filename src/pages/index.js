@@ -59,17 +59,6 @@ export const YapMission = styled.div`
     border-left: 2px solid #000;
   }
 
-  :hover {
-    ::before {
-      min-height: 95%;
-      margin-bottom: 20px;
-      min-width: 100px;
-      padding-right: 50px;
-      transition: 0.6s;
-      border-left: 3px solid #fcbc19;
-    }
-  }
-
   .content {
     padding-left: 12px;
   }
@@ -98,10 +87,38 @@ export const YapMission = styled.div`
   }
 `
 const EventsSection = styled.section`
+  position: relative;
   min-height: 710px;
   h1 {
     text-align: right;
     text-transform: uppercase;
+  }
+
+  :after {
+    content: '';
+    top: 0;
+    right: 0;
+    position: absolute;
+    min-height: 40px;
+    padding-right: 50px;
+    transition: 0.6s;
+    border-right: 2px solid #000;
+  }
+
+  .content {
+    padding-right: 12px;
+  }
+  :hover {
+    :after {
+      content: '';
+      top: 0;
+      right: 0;
+      position: absolute;
+      min-height: 90%;
+      padding-right: 50px;
+      transition: 0.6s;
+      border-right: 2px solid #fcbc19;
+    }
   }
 
   @media (min-width: 992px) {
@@ -125,6 +142,35 @@ const YapSection = styled.section`
 
   .center {
     text-align: center;
+  }
+  .members {
+    position: relative;
+    :before {
+      content: '';
+      display: block;
+      /* z-index: -30; */
+      position: absolute;
+      min-height: 30%;
+      margin-bottom: 20px;
+      min-width: 100px;
+      padding-right: 50px;
+      transition: 0.6s;
+      border-left: 2px solid #000;
+    }
+    :hover {
+      ::before {
+        min-height: 90%;
+        margin-bottom: 20px;
+        min-width: 100px;
+        padding-right: 50px;
+        transition: 0.6s;
+        border-left: 3px solid #fcbc19;
+      }
+    }
+
+    .members-section {
+      padding-left: 12px;
+    }
   }
 
   @media (min-width: 992px) {
@@ -180,14 +226,16 @@ class IndexPage extends Component {
         </YapSection>
         <YapSection id="events">
           <EventsSection>
-            <div>
+            <div className="content">
               <h1 className="title">Upcoming Events</h1>
               <Events eventsData={parsedEventsData} />
             </div>
           </EventsSection>
         </YapSection>
         <YapSection id="membership">
-          <MemberSection data={membershipData} />
+          <div className="members">
+            <MemberSection className="members-section" data={membershipData} />
+          </div>
         </YapSection>
         <YapSection id="leadership">
           <TeamCardsLayout data={leadershipData} />
