@@ -143,7 +143,8 @@ const YapSection = styled.section`
   .center {
     text-align: center;
   }
-  .members {
+  .members,
+  .team {
     position: relative;
     :before {
       content: '';
@@ -168,7 +169,8 @@ const YapSection = styled.section`
       }
     }
 
-    .members-section {
+    .members-section,
+    .team-cards {
       padding-left: 12px;
     }
   }
@@ -238,7 +240,9 @@ class IndexPage extends Component {
           </div>
         </YapSection>
         <YapSection id="leadership">
-          <TeamCardsLayout data={leadershipData} />
+          <div className="team">
+            <TeamCardsLayout data={leadershipData} />
+          </div>
         </YapSection>
         <YapSection>
           <Sponsors data={sponsorshipData} />
