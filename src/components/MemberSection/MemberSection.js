@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Modal from 'react-responsive-modal'
 import { convertMarkdownToHtml } from '../../utils/utils'
+import Img from 'gatsby-image'
 
 const buttonStyle = {
   textAlign: 'center',
@@ -144,10 +145,18 @@ class MemberSection extends Component {
             </Modal>
           </div>
           <div className="yap-app-screenshot">
-            <img
-              src={data.sectionImage.image}
-              alt={data.sectionImage.description}
-            />
+            {data.sectionImage.image.childImageSharp ? (
+              <Img
+                fluid={data.sectionImage.image.childImageSharp.fluid}
+                alt={data.sectionImage.description}
+                objectFit="contain"
+              />
+            ) : (
+              <img
+                src={data.sectionImage.image}
+                alt={data.sectionImage.description}
+              />
+            )}
           </div>
         </MemberSectionDiv>
       </div>

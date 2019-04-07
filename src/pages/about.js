@@ -1,10 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { Layout, TeamCardsLayout } from '../components'
 import { convertMarkdownToHtml } from '../utils/utils'
 
 const AboutStyle = styled.section`
+  .gatsby-image-wrapper {
+    max-height: 100%;
+    height: 400px;
+    margin: 0 0 1.45rem;
+  }
   line-height: 1.5;
   h1 {
     transition: 0.5s;
@@ -93,7 +99,15 @@ export const AboutTemplate = props => {
   return (
     <AboutStyle>
       <section className="banner-section">
-        <img className="banner-image" src={props.coverImage} alt="Yap Banner" />
+        {props.coverImage.childImageSharp ? (
+          <Img
+            fluid={props.coverImage.childImageSharp.fluid}
+            alt="cover"
+            objectFit="contain"
+          />
+        ) : (
+          <img className="banner-image" src={props.coverImage} alt="cover" />
+        )}
       </section>
       <section
         className="text-section"
@@ -145,7 +159,13 @@ export const query = graphql`
             firstName
             lastName
             about
-            image
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             description
           }
         }
@@ -155,7 +175,13 @@ export const query = graphql`
     content: file(name: { eq: "about-content" }) {
       childMarkdownRemark {
         frontmatter {
-          coverImage
+          coverImage {
+            childImageSharp {
+              fluid(maxWidth: 1020, quality: 92) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           content1
           content2
         }

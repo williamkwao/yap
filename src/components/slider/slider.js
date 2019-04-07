@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import { default as SlickSlider } from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -8,12 +9,26 @@ import subtract from '../../images/subtract.png'
 
 const YapSlider = styled.div`
   position: relative;
+  /* height: 450px; */
 
-  .slick-dots {
+  .slick-slider .slick-track,
+  .slick-slider .slick-list {
+    height: 100%;
+  }
+
+  /* .slick-dots {
     position: static;
+  } */
+  .slick-slider {
+    height: 100%;
   }
   .slick-track {
     .slide-div {
+      height: 100%;
+      .gatsby-image-wrapper {
+        height: 100%;
+      }
+
       img {
         width: 100%;
         max-width: 100%;
@@ -35,9 +50,12 @@ const YapSlider = styled.div`
     transition: visibility 0.2s, opacity 1s linear;
     bottom: 0;
     right: 0;
+    margin-bottom: 0px;
   }
 
   @media (min-width: 992px) {
+    min-height: 400px;
+    height: calc(100vh - 400px);
     .slick-track {
       .slide-div {
         img {
@@ -58,7 +76,7 @@ const YapSlider = styled.div`
 `
 var settings = {
   autoplay: true,
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 3000,
   slidesToShow: 1,
@@ -74,12 +92,20 @@ const generateSlider = images => {
         {images.map((image, index) => {
           return (
             <div key={index} className="slide-div">
-              <img src={image.image} alt={image.description} />
+              {image.image.childImageSharp ? (
+                <Img
+                  fluid={image.image.childImageSharp.fluid}
+                  alt={image.description}
+                  objectFit="contain"
+                />
+              ) : (
+                <img src={image.image} alt={image.description} />
+              )}
             </div>
           )
         })}
       </SlickSlider>
-      <img id="subtract" src={subtract} />
+      <img id="subtract" src={subtract} alt="" />
     </YapSlider>
   )
 }
@@ -102,7 +128,13 @@ class Slider extends Component {
               childMarkdownRemark {
                 frontmatter {
                   image {
-                    image
+                    image {
+                      childImageSharp {
+                        fluid(maxWidth: 600, quality: 92) {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
+                    }
                     description
                   }
                 }

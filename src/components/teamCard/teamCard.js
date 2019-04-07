@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import Modal from 'react-responsive-modal'
-import { noConflict } from 'q'
+import Img from 'gatsby-image'
 
 const YapTeamCard = styled.div`
+  .gatsby-image-wrapper {
+    height: 100%;
+  }
   display: inline-block;
   transition: 0.5s;
   position: relative;
@@ -88,7 +91,15 @@ class TeamCard extends Component {
     return (
       <>
         <YapTeamCard className="team-card" onClick={this.openModal}>
-          <img src={this.props.image} alt="Team members" />
+          {this.props.image.childImageSharp ? (
+            <Img
+              fluid={this.props.image.childImageSharp.fluid}
+              alt={this.props.firstName}
+              objectFit="contain"
+            />
+          ) : (
+            <img src={this.props.image} alt={this.props.firstName} />
+          )}
           <div className="img-description">
             <div>
               <h2>{this.props.firstName}</h2>
@@ -154,7 +165,6 @@ class TeamCard extends Component {
 }
 
 TeamCard.propTypes = {
-  image: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string,
   subText: PropTypes.string,
