@@ -88,6 +88,7 @@ export const YapMission = styled.div`
     .content {
       p:last-child {
         margin-bottom: 70px;
+        position: relative;
       }
     }
   }
