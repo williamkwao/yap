@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import styled from 'styled-components'
-
+import Img from 'gatsby-image'
 const LandingSectionCardDiv = styled.div`
   text-align: center;
   display: grid;
@@ -15,6 +15,10 @@ const LandingSectionCardDiv = styled.div`
 const YapLandingSectionCard = styled.div`
   position: relative;
   transition: 0.5s;
+  height: 210px;
+  .gatsby-image-wrapper {
+    height: 100%;
+  }
   :hover {
     .img-description {
       background-color: #fcbc19;
@@ -72,7 +76,15 @@ const LandingSectionCard = ({ data }) => (
               key={index}
             >
               <YapLandingSectionCard>
-                <img src={card.image} alt="Quick menu" />
+                {card.image.childImageSharp ? (
+                  <Img
+                    fluid={card.image.childImageSharp.fluid}
+                    alt="menu image"
+                    objectFit="contain"
+                  />
+                ) : (
+                  <img src={card.image} alt="Quick menu" />
+                )}
                 <div className="img-description">
                   <div>
                     <h3> {card.header}</h3>
@@ -86,5 +98,4 @@ const LandingSectionCard = ({ data }) => (
       : null}
   </LandingSectionCardDiv>
 )
-
 export default LandingSectionCard

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import toggleIcon from './toggleIcon.png'
 import closeIcon from './close.png'
 import SocialMediaIcons from '../socialMedia/socialmedia'
@@ -133,7 +134,9 @@ class Header extends Component {
           <YapHeader>
             <div>
               <Link to="/">
-                <img id="logo" src={data.logo} alt="yap logo" />
+                <div style={{ width: '170px' }}>
+                  <Img fluid={data.logo.childImageSharp.fluid} />
+                </div>
               </Link>
             </div>
             {generateMenuItemsList(data)}
@@ -165,7 +168,14 @@ class Header extends Component {
             file(name: { eq: "header-content" }) {
               childMarkdownRemark {
                 frontmatter {
-                  logo
+                  logo {
+                    childImageSharp {
+                      fluid(maxWidth: 526, quality: 92) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
+
                   items {
                     pageLink
                     scrollLink

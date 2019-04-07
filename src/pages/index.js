@@ -84,6 +84,12 @@ export const YapMission = styled.div`
       position: absolute;
       bottom: 25px;
     }
+
+    .content {
+      p:last-child {
+        margin-bottom: 70px;
+      }
+    }
   }
 `
 const EventsSection = styled.section`
@@ -283,8 +289,14 @@ export const query = graphql`
           cards {
             header
             description
-            image
             link
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
@@ -296,7 +308,13 @@ export const query = graphql`
           sectionText
           sectionImage {
             description
-            image
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           appButton {
             text
@@ -319,7 +337,13 @@ export const query = graphql`
             firstName
             lastName
             about
-            image
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             description
           }
         }
@@ -332,8 +356,31 @@ export const query = graphql`
           header
           sponsor {
             name
-            image
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             url
+          }
+        }
+      }
+    }
+
+    slider: file(name: { eq: "slider" }) {
+      childMarkdownRemark {
+        frontmatter {
+          image {
+            description
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

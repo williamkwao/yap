@@ -1,4 +1,5 @@
 import React from 'react'
+import Img from 'gatsby-image'
 import { default as SlickSlider } from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -75,6 +76,18 @@ var settings = {
 const Sponsors = ({ data }) => {
   const header = data.header
   const sponsors = data.sponsor
+  const GenerateImage = props => {
+    const sponsor = props.sponsor
+    return sponsor.image.childImageSharp ? (
+      <Img
+        fluid={sponsor.image.childImageSharp.fluid}
+        alt={sponsor.name}
+        objectFit="contain"
+      />
+    ) : (
+      <img src={sponsor.image} alt={sponsor.name} />
+    )
+  }
   return (
     <SlideStyle>
       <h1 className="title center">{header}</h1>
@@ -87,10 +100,10 @@ const Sponsors = ({ data }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={sponsor.image} alt={sponsor.name} />
+              <GenerateImage key={index} sponsor={sponsor} />
             </a>
           ) : (
-            <img key={index} src={sponsor.image} alt={sponsor.name} />
+            <GenerateImage key={index} sponsor={sponsor} />
           )
         })}
       </SlickSlider>
