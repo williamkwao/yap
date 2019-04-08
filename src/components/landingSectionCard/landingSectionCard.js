@@ -68,7 +68,7 @@ const LandingSectionCard = ({ data }) => (
       ? data.map((card, index) => {
           return (
             <ScrollLink
-              to={card.link.trim()}
+              to={card.link ? card.link.trim() : card}
               spy={true}
               smooth={true}
               offset={20}
@@ -76,7 +76,7 @@ const LandingSectionCard = ({ data }) => (
               key={index}
             >
               <YapLandingSectionCard>
-                {card.image.childImageSharp ? (
+                {card.image && card.image.childImageSharp ? (
                   <Img
                     fluid={card.image.childImageSharp.fluid}
                     alt="menu image"
