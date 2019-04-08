@@ -68,7 +68,7 @@ const LandingSectionCard = ({ data }) => (
       ? data.map((card, index) => {
           return (
             <ScrollLink
-              to={card.link ? card.link.trim() : card}
+              to={card.link ? card.link.trim() : card.link}
               spy={true}
               smooth={true}
               offset={20}
