@@ -91,7 +91,7 @@ class TeamCard extends Component {
     return (
       <>
         <YapTeamCard className="team-card" onClick={this.openModal}>
-          {this.props.image.childImageSharp ? (
+          {this.props.image && this.props.image.childImageSharp ? (
             <Img
               fluid={this.props.image.childImageSharp.fluid}
               alt={this.props.firstName}

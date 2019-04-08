@@ -145,7 +145,8 @@ class MemberSection extends Component {
             </Modal>
           </div>
           <div className="yap-app-screenshot">
-            {data.sectionImage.image.childImageSharp ? (
+            {data.sectionImage.image &&
+            data.sectionImage.image.childImageSharp ? (
               <Img
                 fluid={data.sectionImage.image.childImageSharp.fluid}
                 alt={data.sectionImage.description}

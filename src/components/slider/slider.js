@@ -92,7 +92,7 @@ const generateSlider = images => {
         {images.map((image, index) => {
           return (
             <div key={index} className="slide-div">
-              {image.image.childImageSharp ? (
+              {image.image && image.image.childImageSharp ? (
                 <Img
                   fluid={image.image.childImageSharp.fluid}
                   alt={image.description}

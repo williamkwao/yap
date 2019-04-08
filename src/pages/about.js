@@ -99,7 +99,7 @@ export const AboutTemplate = props => {
   return (
     <AboutStyle>
       <section className="banner-section">
-        {props.coverImage.childImageSharp ? (
+        {props.coverImage && props.coverImage.childImageSharp ? (
           <Img
             fluid={props.coverImage.childImageSharp.fluid}
             alt="cover"

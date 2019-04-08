@@ -78,7 +78,7 @@ const Sponsors = ({ data }) => {
   const sponsors = data.sponsor
   const GenerateImage = props => {
     const sponsor = props.sponsor
-    return sponsor.image.childImageSharp ? (
+    return sponsor.image && sponsor.image.childImageSharp ? (
       <Img
         fluid={sponsor.image.childImageSharp.fluid}
         alt={sponsor.name}
